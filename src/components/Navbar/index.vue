@@ -1,7 +1,7 @@
 <template>
     <v-toolbar flat scroll-off-screen>
         <v-toolbar-side-icon></v-toolbar-side-icon>
-        <v-toolbar-title>Title</v-toolbar-title>
+        <v-img :src=logoImage ></v-img>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
             <v-btn flat>Link One</v-btn>
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import logoImage from '../../assets/tokopedia.png'
 
 </script>
 
