@@ -21,6 +21,7 @@ const facebook = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-page
 const twitter = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Ftwitter.png?alt=media&token=1777d5c5-5291-4ac2-a220-ccd8bd198cfc'
 const mail_logo = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fmail_logo.png?alt=media&token=8d8f5c8f-13a5-4795-96d0-59b6491f92b6'
 const message = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fmessage.png?alt=media&token=f1248038-77f1-4199-8fbc-a0b8f12ad999'
+const logoImage = "https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2FArtboard%201.png?alt=media&token=244012db-a7ef-42a0-afcb-e4b86aa48cca"
 export {
     playstore,
     phone,
@@ -42,5 +43,6 @@ export {
     facebook,
     twitter,
     mail_logo,
-    message
+    message,
+    logoImage
 }

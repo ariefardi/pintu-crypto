@@ -42,7 +42,7 @@
         mail_logo,
         message,
         playstore
-    } from '../../config/imagesj.js'
+    } from '../../config/images.js'
     export default {
         data: () => ({
             image: playstore,

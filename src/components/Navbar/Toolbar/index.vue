@@ -83,7 +83,7 @@
 </template>
 
 <script>
-    import logoImage from "../../../assets/Artboard 1.png"
+    import  {logoImage} from "../../../config/images";
     import {mapState, mapActions} from 'vuex'
     export default {
         created () {
