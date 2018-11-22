@@ -2,11 +2,12 @@
     <v-container>
         <v-card flat>
             <v-card-title class="card-title">
-                <h1 class="text-join" >Our Mission is to accelerate the transition to an open financial system</h1>
+                <h1 v-if="version==='english'" class="text-join" > {{title_english}}</h1>
+                <h1 v-if="version==='indonesia'" class="text-join" > {{title_indo}}</h1>
             </v-card-title>
             <v-container>
                 <v-layout align-center justify-center row fill-height>
-                    <v-btn class="button-join" color="#1867c0">Join Us!</v-btn>
+                    <v-btn @click="scrollDown" class="button-join" color="#1867c0">Join Us!</v-btn>
                 </v-layout>
             </v-container>
         </v-card>
@@ -14,18 +15,39 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     export default {
+        computed: {
+            ...mapState([
+                'version'
+            ])
+        },
         data () {
-            return {}
+            return {
+                title_english : "Our Mission is to accelerate the transition to an open financial system",
+                title_indo: "Misi kami adalah mempercepat transisi menuju sistem keuangan terbuka"
+            }
 
+        },
+        methods: {
+            scrollDown () {
+                console.log("image work")
+                window.scrollBy({
+                    top: 500, // could be negative value
+                    left: 0,
+                    behavior: 'smooth'
+                });
+                location.href = "#positions-job"
+
+            }
         }
     }
 </script>
 
 <style scoped>
     .card-title {
-        padding-left: 14rem;
-        padding-right: 14rem;
+        padding-left: 8rem;
+        padding-right: 8rem;
     }
     .button-join {
         text-transform: capitalize;

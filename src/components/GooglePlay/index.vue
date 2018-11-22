@@ -2,8 +2,11 @@
     <v-container>
         <v-card flat>
             <v-container class="container-card">
-                <v-card-title class="title-style" >
-                    Tempat termudah untuk jual beli crypto
+                <v-card-title v-if="version=='english'" class="title-style" >
+                    {{title_english}}
+                </v-card-title>
+                <v-card-title v-if="version=='indonesia'" class="title-style" >
+                    {{title_indo}}
                 </v-card-title>
                 <v-container>
                     <v-layout align-center justify-center column fill-height>
@@ -19,6 +22,7 @@
 <script>
     import phone1 from '../../assets/phone.png'
     import playstore from '../../assets/google_play.png'
+    import {mapState} from 'vuex'
     export default {
         mounted () {
             this.checkingSize()
@@ -29,8 +33,15 @@
                 image2: playstore,
                 width: 2000,
                 height: 2000,
+                title_english: "Easiest place for buying crypto",
+                title_indo: "Tempat termudah untuk jual beli crypto"
 
             }
+        },
+        computed: {
+            ...mapState([
+                "version"
+            ])
         },
         methods: {
             checkingSize () {

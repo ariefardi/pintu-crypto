@@ -1,13 +1,24 @@
 <template>
   <v-container class="page-wrapper" fluid>
     <GooglePlay />
+      <Subscribe />
       <HowTo />
-      <CardStep v-for="(card, index) in cardData"
-                :key="index"
-                :title1="card.title1"
-                :title2="card.title2"
-                :phoneImage="card.phoneImage"
-                :isi="card.isi"/>
+      <div v-if="version=='indonesia'" style="width: 100%">
+          <CardStep  v-for="(card, index) in cardData_ind"
+                    :key="index"
+                    :title1="card.title1"
+                    :title2="card.title2"
+                    :phoneImage="card.phoneImage"
+                    :isi="card.isi"/>
+      </div>
+      <div v-if="version=='english'" style="width: 100%">
+          <CardStep  v-for="(card, index) in cardDate_eng"
+                     :key="index"
+                     :title1="card.title1"
+                     :title2="card.title2"
+                     :phoneImage="card.phoneImage"
+                     :isi="card.isi"/>
+      </div>
   </v-container>
 </template>
 
@@ -15,16 +26,53 @@
 import GooglePlay from '../components/GooglePlay'
 import HowTo from '../components/HowTo'
 import CardStep from '../components/CardStep'
+import Subscribe from '../components/Subscribe'
 import phoneImage from '../assets/phone.png'
+import {mapState} from 'vuex'
 
   export default {
     components: {
-        GooglePlay, HowTo, CardStep
+        GooglePlay, HowTo, CardStep, Subscribe
     },
+      computed: {
+          ...mapState([
+              "version"
+          ])
+      },
     data () {
         return {
             phoneImage: phoneImage,
-            cardData: [
+            cardDate_eng: [
+                {
+                    phoneImage: phoneImage,
+                    title1: 'Trade Buy.',
+                    title2: 'No Fee.',
+                    isi: 'We believe that crypto must be accessible to everyone, so we offer' +
+                         'trade without commission'
+                },
+                {
+                    phoneImage: phoneImage,
+                    title1: 'Mainstay Security.',
+                    title2: 'Secured.',
+                    isi: 'More than 90% of your crypto is stored offline and the rest is protected by the system' +
+                        'online security guaranteed by insurance'
+                },
+                {
+                    phoneImage: phoneImage,
+                    title1: 'Kripto.',
+                    title2: 'Without Risk.',
+                    isi: 'Door provides crypto assets that are supported by real currencies stored in the bank and regulated by' +
+                        'the government, so the price is stable.'
+                },
+                {
+                    phoneImage: phoneImage,
+                    title1: 'Learn Crypto.',
+                    title2: 'Practice immediately.',
+                    isi: 'Learn about crypto through various categories and explore knowledge about excellence, weaknesses,' +
+                         'and the use of each crypto'
+                },
+            ],
+            cardData_ind: [
                 {
                     phoneImage: phoneImage,
                     title1: 'Jual Beli.',

@@ -1,27 +1,33 @@
 <template>
     <v-container>
-        <v-card flat>
+        <v-card flat v-for="(blog, index) in blogs" :key="index">
             <v-container class="container-card">
                 <v-card-text class="title-date">
-                    10 November 2018
+                    {{blog.publish_date | getDate}}
                 </v-card-text>
-                <v-card-title class="title-style" >
-                    Keamanan Brankas.
-                    Kemudahan Uang Kas.
-                </v-card-title>
-                <v-card-text class="isi-blog">
-                    Setiap Transaksi Token dan Crypto Currency disimpan diatas ledger book yang
+                <v-card-text class="title-style" >
+                    {{blog.title}}
                 </v-card-text>
+                <v-card-text v-html="blog.content" class="isi-blog" />
             </v-container>
+            <v-divider></v-divider>
         </v-card>
     </v-container>
 </template>
 
 <script>
+    import moment from 'moment'
     export default {
+        props: ['blogs'],
         data () {
             return {
 
+            }
+        },
+        filters : {
+            getDate (value) {
+                let date = moment(value.seconds*1000).format("MMMM Do YYYY");
+                return date
             }
         }
     }
@@ -29,13 +35,12 @@
 
 <style scoped>
     .container-card {
-        text-align: center;
+        text-align: center !important;
     }
     .title-style {
         font-size: 56px;
         padding: 0;
         width: 70%;
-        margin: auto;
     }
     .title-date {
         font-size: 24px;
@@ -49,5 +54,25 @@
         color: slategrey;
         padding-left: 3rem;
         padding-right: 3rem;
+    }
+    @media only screen and (max-width: 480px) {
+        .title-style {
+            font-size: 28px;
+            padding: 0;
+            width: 70%;
+        }
+        .title-date {
+            font-size: 14px;
+            font-weight: 500;
+            color: slategrey;
+            padding: 0;
+        }
+        .isi-blog {
+            font-size: 14px;
+            font-weight: 700;
+            color: slategrey;
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
     }
 </style>

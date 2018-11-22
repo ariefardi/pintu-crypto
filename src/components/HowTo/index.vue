@@ -1,16 +1,22 @@
 <template>
             <v-card flat width="100%">
                 <v-container class="container-card">
-                    <v-card-title class="title-style">
-                        Ambil langkah pertama dengan Pintu
+                    <v-card-title v-if="version=='indonesia'" class="title-style">
+                        {{title_indo}}
                     </v-card-title>
-                    <v-card-text class="card-text">
-                        Pintu adalah tempat termudah, tercepat, dan paling terpercaya untuk
-                        membeli, menjual, mentransfer, dan deposit cryptocurrency.
+                    <v-card-text v-if="version=='indonesia'" class="card-text">
+                        {{content_indo}}
+                    </v-card-text>
+
+                    <v-card-title v-if="version=='english'" class="title-style">
+                        {{title_english}}
+                    </v-card-title>
+                    <v-card-text v-if="version=='english'" class="card-text">
+                        {{content_english}}
                     </v-card-text>
                 </v-container>
-                    <v-layout align-center justify-center column fill-height>
-                        <v-flex xs12 v-for="(card, index) in cardData" :key="index">
+                    <v-layout v-if="version=='indonesia'" align-center justify-center column fill-height>
+                        <v-flex xs12 v-for="(card, index) in cardData_ind" :key="index">
                             <v-card style="border-radius: 20px; margin-top: 2rem;" class="width-card">
                                 <v-layout>
                                     <v-layout align-center justify-center column fill-height>
@@ -31,6 +37,28 @@
                             </v-card>
                         </v-flex>
                     </v-layout>
+                <v-layout v-if="version=='english'" align-center justify-center column fill-height>
+                    <v-flex xs12 v-for="(card, index) in cardData_eng" :key="index">
+                        <v-card style="border-radius: 20px; margin-top: 2rem;" class="width-card">
+                            <v-layout>
+                                <v-layout align-center justify-center column fill-height>
+                                    <v-flex xs5>
+                                        <v-img
+                                                class="image-title"
+                                                :src="card.image"
+                                        ></v-img>
+                                    </v-flex>
+                                </v-layout>
+                                <v-flex xs7>
+                                    <div style="padding: 1rem;">
+                                        <div class="title-string"> {{card.string1}} </div>
+                                        <div class="title-string"> {{card.string2}} </div>
+                                    </div>
+                                </v-flex>
+                            </v-layout>
+                        </v-card>
+                    </v-flex>
+                </v-layout>
             </v-card>
 </template>
 
@@ -40,10 +68,43 @@
     import image2 from '../../assets/free.png'
     import image3 from '../../assets/3_arah.png'
     import image4 from '../../assets/sarjana_logo.png'
+    import {mapState} from 'vuex'
     export default {
+        computed: {
+            ...mapState([
+                'version'
+            ])
+        },
         data () {
             return {
-                cardData: [
+                title_indo: "Ambil langkah pertama dengan Pintu",
+                title_english: "Take your step with Pintu",
+                content_english: "Pintu is easiest place, fastest, and most trusted for buy, trading, transfer and saving cryptocurrency",
+                content_indo: "Pintu adalah tempat termudah, tercepat, dan paling terpercaya untuk " +
+                    "membeli, menjual, mentransfer, dan deposit cryptocurrency.",
+                cardData_eng: [
+                    {
+                        image: image1,
+                        string1: "Mainstay Security",
+                        string2: "Secured Insurance"
+                    },
+                    {
+                        image:image2,
+                        string1: "Trade Buy.",
+                        string2: "No Fee."
+                    },
+                    {
+                        image: image3,
+                        string1: "Aggregator.",
+                        string2: "Free."
+                    },
+                    {
+                        image: image4,
+                        string1: "Learn Crypto. ",
+                        string2: "Practice immediately."
+                    }
+                ],
+                cardData_ind: [
                     {
                         image: image1,
                         string1: "Keamanan Andalan.",
