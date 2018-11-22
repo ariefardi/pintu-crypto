@@ -96,10 +96,9 @@
         margin-bottom: -1rem;
     }
 </style>
+
 <script>
-    import image1 from '../../assets/defender.png'
-    import image2 from '../../assets/ronald/Free.png'
-    import image3 from '../../assets/ronald/panah.png'
+    import { defender, free, arah} from '../../config/images.js'
     import {DB, swal} from '../../config'
     import {mapState} from 'vuex'
     export default {
@@ -152,20 +151,20 @@
                     "membeli, menjual, mentransfer, dan deposit cryptocurrency.",
                 cardData_ind: [
                     {
-                        image: image1,
+                        image: defender,
                         string1: "sistem kemanan yang terjamin oleh asuransi.",
                         string2: `Lebih dari 90% kripto anda disimpan secara offline dan sisanya
                         dilindungi oleh sistem kemanan online yang terjamin oleh asuransi`
                     },
                     {
-                        image:image2,
+                        image: free,
                         string1: "Jual beli kripto bebas biaya komisi.",
                         string2: `Pintu bekerja sama dengan berbagai exchange ternama untuk
                         memberikan harga beli dan jual terbaik apapun produk dan jumlahnya`
 
                     },
                     {
-                        image: image3,
+                        image: arah,
                         string1: "Aggregator pastikan dapat harga lebih baik.",
                         string2: `Kami percaya bahwa kripto harus bisa diakses oleh semua orang,
                          sehingga kami menawarkan perdagangan tanpa komisi.`
@@ -173,17 +172,17 @@
                 ],
                 cardData_eng: [
                     {
-                        image: image1,
+                        image: defender,
                         string1: "Keamanan Andalan.",
                         string2: "Terjamin oleh Asuransi."
                     },
                     {
-                        image:image2,
+                        image: free,
                         string1: "Jual Beli.",
                         string2: "Biaya Gratis."
                     },
                     {
-                        image: image3,
+                        image: arah,
                         string1: "Aggregator.",
                         string2: "Biaya Gratis."
                     }

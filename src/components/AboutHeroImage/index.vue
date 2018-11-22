@@ -5,11 +5,13 @@
 </template>
 
 <script>
-    import imageHero from '../../assets/candi_1.png'
+    // import imageHero from '../../assets/candi_1.png'
+    import {candi1} from "../../config/images";
+
     export default {
         data () {
             return {
-                image_hero: imageHero
+                image_hero: candi1
             }
         }
     }

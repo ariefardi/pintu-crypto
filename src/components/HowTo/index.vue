@@ -64,10 +64,7 @@
 
 
 <script>
-    import image1 from '../../assets/defender.png'
-    import image2 from '../../assets/free.png'
-    import image3 from '../../assets/3_arah.png'
-    import image4 from '../../assets/sarjana_logo.png'
+    import { defender, free, arah, sarjana} from '../../config/images.js'
     import {mapState} from 'vuex'
     export default {
         computed: {
@@ -84,44 +81,44 @@
                     "membeli, menjual, mentransfer, dan deposit cryptocurrency.",
                 cardData_eng: [
                     {
-                        image: image1,
+                        image: defender,
                         string1: "Mainstay Security",
                         string2: "Secured Insurance"
                     },
                     {
-                        image:image2,
+                        image:free,
                         string1: "Trade Buy.",
                         string2: "No Fee."
                     },
                     {
-                        image: image3,
+                        image: arah,
                         string1: "Aggregator.",
                         string2: "Free."
                     },
                     {
-                        image: image4,
+                        image: sarjana,
                         string1: "Learn Crypto. ",
                         string2: "Practice immediately."
                     }
                 ],
                 cardData_ind: [
                     {
-                        image: image1,
+                        image: defender,
                         string1: "Keamanan Andalan.",
                         string2: "Terjamin oleh Asuransi."
                     },
                     {
-                        image:image2,
+                        image:free,
                         string1: "Jual Beli.",
                         string2: "Biaya Gratis."
                     },
                     {
-                        image: image3,
+                        image: arah,
                         string1: "Aggregator.",
                         string2: "Biaya Gratis."
                     },
                     {
-                        image: image4,
+                        image: sarjana,
                         string1: "Belajar Crypto. ",
                         string2: "Langsung Praktek."
                     }

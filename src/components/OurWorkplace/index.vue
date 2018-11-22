@@ -50,12 +50,12 @@
 </template>
 
 <script>
-    import tokopedia from '../../assets/tokopedia.png'
-    import concensys from '../../assets/concensys.png'
-    import goldman_sachs from '../../assets/goldman_sachs.png'
-    import mit_logo from '../../assets/mit_logo.png'
-    import kampus_logo from '../../assets/kampus_logo.png'
-    import yale_logo from '../../assets/yale_logo.png'
+    import {tokopedia,
+        concensys,
+        goldman_sachs,
+        mit_logo,
+        kampus_logo,
+        yale_logo} from '../../config/images'
     export default {
         data () {
             return {
@@ -63,7 +63,7 @@
                     tokopedia, concensys, goldman_sachs
                 ],
                 imagesBot : [
-                    mit_logo, kampus_logo, tokopedia, yale_logo
+                    mit_logo, kampus_logo, kampus_logo, yale_logo
                 ]
             }
         }

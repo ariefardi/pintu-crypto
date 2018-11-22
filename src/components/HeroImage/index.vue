@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import imageHero from '../../assets/pintu.png'
+    import {imageHero} from '../../config/images'
     export default {
         data () {
             return {

@@ -20,8 +20,7 @@
 </template>
 
 <script>
-    import phone1 from '../../assets/phone.png'
-    import playstore from '../../assets/google_play.png'
+    import {playstore, phone} from "../../config/images";
     import {mapState} from 'vuex'
     export default {
         mounted () {
@@ -29,8 +28,8 @@
         },
         data () {
             return {
-                image1: phone1,
-                image2: playstore,
+                image1: playstore,
+                image2: phone,
                 width: 2000,
                 height: 2000,
                 title_english: "Easiest place for buying crypto",

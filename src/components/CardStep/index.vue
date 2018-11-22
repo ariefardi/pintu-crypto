@@ -22,13 +22,12 @@
 </template>
 
 <script>
-    import phone1 from '../../assets/phone.png'
-    import playstore from '../../assets/google_play.png'
+    import {playstore, phone} from "../../config/images";
     export default {
         props: ['title1','title2' ,'phoneImage', 'isi'],
         data () {
             return {
-                image1: phone1,
+                image1: phone,
                 image2: playstore
             }
         }

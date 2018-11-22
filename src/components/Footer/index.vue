@@ -35,15 +35,17 @@
 </template>
 
 <script>
-    import instagram from '../../assets/instagram.png'
-    import facebook from '../../assets/facebook.png'
-    import twitter from '../../assets/twitter.png'
-    import mail_logo from '../../assets/mail_logo.png'
-    import message from '../../assets/message.png'
-    import google_play from '../../assets/google_play.png'
+    import {
+        instagram,
+        facebook,
+        twitter,
+        mail_logo,
+        message,
+        playstore
+    } from '../../config/imagesj.js'
     export default {
         data: () => ({
-            image: google_play,
+            image: playstore,
             icons: [
                 instagram, facebook, twitter, mail_logo, message
             ]

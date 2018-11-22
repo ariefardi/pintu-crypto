@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import OurImage from '../../assets/candi_2.png'
+import {candi2} from "../../config/images";
 import {mapState} from 'vuex'
     export default {
     computed: {
@@ -66,7 +66,7 @@ import {mapState} from 'vuex'
     },
         data () {
             return {
-                image: OurImage
+                image: candi2
             }
         }
     }
