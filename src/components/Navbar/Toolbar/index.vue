@@ -1,16 +1,8 @@
 <template>
     <div>
-        <v-toolbar  v-if="width>=960" style="margin-right: 300px" fixed class="nav-class" flat scroll-off-screen>
-            <img class="logo-image" :src="logo" alt="">
-            <v-spacer></v-spacer>
-            <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn to="/" class="button-menu" flat>App</v-btn>
-                <v-btn to="/blog" class="button-menu" flat>Blog</v-btn>
-                <v-btn to="/about" class="button-menu" flat>About</v-btn>
-            </v-toolbar-items>
-            <v-spacer></v-spacer>
-            <v-toolbar-side-icon  v-if="width<960" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-            <v-btn-toggle  @change="triggerToggle" v-model="toggle_exclusive">
+        <v-toolbar id="nav-class" style="margin-right: 300px" fixed flat>
+            <img v-if="width>960" class="logo-image" :src="logo" alt="">
+            <v-btn-toggle v-if="width>960" style="margin-left: 1rem" @change="triggerToggle" v-model="toggle_exclusive">
                 <v-btn class="button-toggle" v-if="!this.toggle_exclusive" color="blue" :value="0" >
                     EN
                 </v-btn>
@@ -24,11 +16,31 @@
                     ID
                 </v-btn>
             </v-btn-toggle>
-            <v-layout slot="extension"  align-center row reverse fill-height>
-                <v-btn  v-if="width>=960" class="button-download" color="#1867c0">Download</v-btn>
-            </v-layout>
+            <v-spacer></v-spacer>
+            <v-toolbar-items class="hidden-sm-and-down">
+                <v-btn to="/" class="button-menu" flat>App</v-btn>
+                <v-btn to="/blog" class="button-menu" flat>Blog</v-btn>
+                <v-btn to="/about" class="button-menu" flat>About</v-btn>
+            </v-toolbar-items>
+            <v-spacer></v-spacer>
+            <v-btn  v-if="width>=960" class="button-download" color="#1867c0">Download</v-btn>
+            <v-toolbar-side-icon  v-if="width<960" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         </v-toolbar>
-        <v-toolbar v-if="width<960" style="margin-right: 300px" fixed class="nav-class" flat scroll-off-screen>
+        <v-toolbar v-if="width<960" style="margin-right: 400px" fixed id="nav-class" flat >
+            <v-btn-toggle v-if="width<960" @change="triggerToggle" v-model="toggle_exclusive">
+                <v-btn class="button-toggle" v-if="!this.toggle_exclusive" color="blue" :value="0" >
+                    EN
+                </v-btn>
+                <v-btn  v-if="this.toggle_exclusive" :value="0" >
+                    EN
+                </v-btn>
+                <v-btn class="button-toggle" v-if="this.toggle_exclusive" color="blue" :value="1">
+                    ID
+                </v-btn>
+                <v-btn v-if="!this.toggle_exclusive"  :value="1">
+                    ID
+                </v-btn>
+            </v-btn-toggle>
             <v-spacer></v-spacer>
             <img class="logo-image" :src="logo" alt="">
             <v-spacer></v-spacer>
@@ -36,22 +48,6 @@
             <v-toolbar-side-icon style="color: black;" v-if="width<960 && page==='blog' && scroll>180" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
             <v-toolbar-side-icon  v-if="width<960 && page==='home'" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
             <v-toolbar-side-icon  v-if="width<960 && page==='about'" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-            <v-layout slot="extension"  align-center row reverse fill-height>
-                <v-btn-toggle slot="extension"  @change="triggerToggle" v-model="toggle_exclusive">
-                    <v-btn small class="button-toggle" v-if="!this.toggle_exclusive" color="blue" :value="0" >
-                        EN
-                    </v-btn>
-                    <v-btn small  v-if="this.toggle_exclusive" :value="0" >
-                        EN
-                    </v-btn>
-                    <v-btn small class="button-toggle" v-if="this.toggle_exclusive" color="blue" :value="1">
-                        ID
-                    </v-btn>
-                    <v-btn small v-if="!this.toggle_exclusive"  :value="1">
-                        ID
-                    </v-btn>
-                </v-btn-toggle>
-            </v-layout>
         </v-toolbar>
 
         <v-navigation-drawer
@@ -114,6 +110,7 @@
         data () {
             return {
                 toggle_exclusive: 0,
+                downloadPosition: false,
                 logo : logoImage,
                 width: 2000,
                 height: 2000,
@@ -132,12 +129,21 @@
                 'changeVersion'
             ]),
             onScroll () {
-                // window.addEventListener('scroll', function(e) {
-                //     // console.log("ini loh",e.path[1].scrollY)
-                //     this.scroll = e.path[1].scrollY
-                //     // console.log("ini this scroll",this.scroll)
-                //     return e.path[1].scrollY
-                // })
+                console.log("scrolling ...")
+                window.addEventListener('scroll', (e) => {
+                    this.scroll = e.path[1].scrollY
+                    if (e.path[1].scrollY>200)  {
+                        this.downloadPosition = true
+                        document.getElementById('nav-class').style.backgroundColor = "white"
+                    }
+                    else {
+                        this.downloadPosition = false
+                        document.getElementById('nav-class').style.backgroundColor = "transparent"
+                        // document.getElementById('download-layout').style.backgroundColor = "transparent"
+                        // document.getElementById('download-layout').style.display = "flex"
+                    }
+                    return e.path[1].scrollY
+                })
             },
             checkVersionsStorage () {
               let version = localStorage.getItem('version')
@@ -180,8 +186,11 @@
 
 
 <style>
-    .nav-class {
-        background-color: transparent !important;
+    #nav-class {
+        background-color: transparent ;
+    }
+    #download-layout {
+        background-color: transparent ;
     }
     .logo-image {
         width: 64px;
@@ -197,5 +206,12 @@
     }
     .button-toggle {
         color: white !important;
+    }
+
+    @media only screen and (max-width: 960px) {
+        .logo-image {
+            width: 64px;
+            margin-left: 0 !important;
+        }
     }
 </style>
