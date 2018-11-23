@@ -22,7 +22,7 @@
         font-weight: 500;
     }
     .page-wrapper {
-        padding: 0;
+        padding: 0 !important;
     }
     .card-container {
         text-align: center;

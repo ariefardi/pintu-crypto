@@ -3,6 +3,7 @@
         <HeroImage />
         <BlogContainer v-if="blogs.length" :blogs="blogs" />
         <h1 v-if="!blogs.length">Loading....</h1>
+        <Footer />
     </v-container>
 </template>
 
@@ -10,9 +11,10 @@
     import HeroImage from '../components/HeroImage'
     import BlogContainer from '../components/BlogContainer'
     import {mapState} from 'vuex'
+    import Footer from '../components/Footer'
     export default {
         components: {
-            HeroImage, BlogContainer
+            HeroImage, BlogContainer, Footer
         },
         data () {
             return {

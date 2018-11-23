@@ -1,24 +1,25 @@
 <template>
-  <v-container class="page-wrapper" fluid>
+  <v-container fluid class="page-wrapper">
     <GooglePlay />
       <Subscribe />
-      <HowTo />
-      <div v-if="version=='indonesia'" class="max-width" >
-          <CardStep  v-for="(card, index) in cardData_ind"
-                    :key="index"
-                    :title1="card.title1"
-                    :title2="card.title2"
-                    :phoneImage="card.phoneImage"
-                    :isi="card.isi"/>
-      </div>
-      <div v-if="version=='english'" lass="max-width" >
-          <CardStep  v-for="(card, index) in cardDate_eng"
-                     :key="index"
-                     :title1="card.title1"
-                     :title2="card.title2"
-                     :phoneImage="card.phoneImage"
-                     :isi="card.isi"/>
-      </div>
+      <!--<HowTo />-->
+      <!--<div v-if="version=='indonesia'" class="max-width" >-->
+          <!--<CardStep  v-for="(card, index) in cardData_ind"-->
+                    <!--:key="index"-->
+                    <!--:title1="card.title1"-->
+                    <!--:title2="card.title2"-->
+                    <!--:phoneImage="card.phoneImage"-->
+                    <!--:isi="card.isi"/>-->
+      <!--</div>-->
+      <!--<div v-if="version=='english'" lass="max-width" >-->
+          <!--<CardStep  v-for="(card, index) in cardDate_eng"-->
+                     <!--:key="index"-->
+                     <!--:title1="card.title1"-->
+                     <!--:title2="card.title2"-->
+                     <!--:phoneImage="card.phoneImage"-->
+                     <!--:isi="card.isi"/>-->
+      <!--</div>-->
+      <Footer />
   </v-container>
 </template>
 
@@ -27,12 +28,13 @@ import GooglePlay from '../components/GooglePlay'
 import HowTo from '../components/HowTo'
 import CardStep from '../components/CardStep'
 import Subscribe from '../components/Subscribe'
+import Footer from '../components/Footer'
 import phoneImage from '../assets/phone.png'
 import {mapState} from 'vuex'
 
   export default {
     components: {
-        GooglePlay, HowTo, CardStep, Subscribe
+        GooglePlay, HowTo, CardStep, Subscribe, Footer
     },
       computed: {
           ...mapState([

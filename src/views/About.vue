@@ -29,8 +29,3 @@
 
   }
 </script>
-<style scoped>
-  .page-wrapper {
-    padding: 0;
-  }
-</style>
