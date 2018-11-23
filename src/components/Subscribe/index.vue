@@ -3,17 +3,17 @@
         <v-layout>
             <v-card flat width="100%">
                 <v-container class="container-card">
-                    <v-card-title v-if="version=='indonesia'" class="title-style">
+                    <v-card-title v-if="version=='indonesia'" class="title-header font-weight-bold">
                         {{title_indo}}
                     </v-card-title>
 
-                    <v-card-title v-if="version=='english'" class="title-style">
+                    <v-card-title v-if="version=='english'" class="title-header font-weight-bold">
                         {{title_english}}
                     </v-card-title>
                 </v-container>
                 <v-container fluid>
-                    <v-layout align-center justify-center row fill-height>
-                        <v-flex xs6 md4>
+                    <v-layout align-center justify-center row wrap>
+                        <v-flex xs12 md4>
                             <v-layout align-center justify-center row fill-height>
                                 <v-text-field
                                         label="Enter your email address"
@@ -22,32 +22,32 @@
                                 ></v-text-field>
                             </v-layout>
                         </v-flex>
-                        <v-flex style="margin-bottom: 2rem" xs6 md3>
+                        <v-flex style="margin-bottom: 2rem" xs12 md3>
                             <v-layout align-center justify-center row fill-height>
-                                <v-btn color="blue"
+                                <v-btn
                                        class="white--text"
                                        style="text-transform: capitalize; background-color: blue !important;border-radius: 5px !important;"
                                        @click="subs"
                                 >
-                                    Join Our Waitist
+                                    Join Our Waitlist
                                 </v-btn>
                             </v-layout>
                         </v-flex>
                     </v-layout>
                 </v-container>
                 <v-container>
-                    <v-layout align-center justify-center row fill-height>
-                        <v-flex v-for="(card, index) in cardData_ind" :key="index" xs4 sm4>
+                    <v-layout row wrap align-center justify-center>
+                        <v-flex xs12 sm6 md4 v-for="(card, index) in cardData_ind" :key="index">
                             <v-card flat>
                                 <v-layout align-end justify-start row fill-height>
                                     <v-flex xs3>
-                                        <img class="image-subs" :src="card.image" alt="">
+                                        <v-img class="image-subs" :src="card.image" alt="" />
                                     </v-flex>
                                 </v-layout>
-                                <v-card-text class="title-subscribe">
+                                <v-card-text class="subheader ">
                                     {{card.string1}}
                                 </v-card-text>
-                                <v-card-text class="content-subscribe">
+                                <v-card-text class="content-subscribe color-grey">
                                     {{card.string2}}
                                 </v-card-text>
                             </v-card>
@@ -78,24 +78,6 @@
     </v-container>
 </template>
 
-<style>
-    .title-subscribe {
-        font-weight: 500;
-        font-size: 24px;
-    }
-    .content-subscribe {
-        color: slategray;
-        font-size: 18px;
-        font-weight: 500;
-        padding-top: 0 !important;
-    }
-    .image-subs{
-        width: 64px;
-        height: auto;
-        margin-left: 1rem;
-        margin-bottom: -1rem;
-    }
-</style>
 
 <script>
     import { defender, free, arah} from '../../config/images.js'
@@ -168,7 +150,7 @@
                         string1: "Aggregator pastikan dapat harga lebih baik.",
                         string2: `Kami percaya bahwa kripto harus bisa diakses oleh semua orang,
                          sehingga kami menawarkan perdagangan tanpa komisi.`
-                    }
+                    },
                 ],
                 cardData_eng: [
                     {
@@ -185,9 +167,52 @@
                         image: arah,
                         string1: "Aggregator.",
                         string2: "Biaya Gratis."
-                    }
+                    },
                 ]
             }
         }
     }
 </script>
+
+
+<!--<style >-->
+<!--.title-subscribe {-->
+<!--font-weight: 500;-->
+<!--font-size: 24px;-->
+<!--}-->
+<!--.content-subscribe {-->
+<!--color: slategray;-->
+<!--font-size: 18px;-->
+<!--font-weight: 500;-->
+<!--padding-top: 0 !important;-->
+<!--}-->
+<!--.image-subs{-->
+<!--width: 64px;-->
+<!--height: auto;-->
+<!--margin-left: 1rem;-->
+<!--margin-bottom: -1rem;-->
+<!--}-->
+<!--@media only screen and (max-width: 480px) {-->
+<!--.title-subscribe {-->
+<!--font-weight: 500;-->
+<!--font-size: 14px;-->
+<!--padding-top: 8px !important;-->
+<!--padding-left: 4px;-->
+<!--padding-right: 4px;-->
+<!--}-->
+<!--.content-subscribe {-->
+<!--color: slategray;-->
+<!--font-size: 12px;-->
+<!--font-weight: 500;-->
+<!--padding-top: 0 !important;-->
+<!--padding-left: 4px;-->
+<!--padding-right: 4px;-->
+<!--}-->
+<!--.image-subs{-->
+<!--width: 48px;-->
+<!--height: auto;-->
+<!--margin-left: 1rem;-->
+<!--margin-bottom: -1rem;-->
+<!--}-->
+<!--}-->
+<!--</style>-->

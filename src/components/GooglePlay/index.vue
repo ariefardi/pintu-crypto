@@ -1,17 +1,17 @@
 <template>
     <v-container>
         <v-card flat>
-            <v-container class="container-card">
-                <v-card-title v-if="version=='english'" class="title-style" >
+            <v-container class="card-container">
+                <v-card-title v-if="version=='english'" class="title-header font-weight-bold" >
                     {{title_english}}
                 </v-card-title>
-                <v-card-title v-if="version=='indonesia'" class="title-style" >
+                <v-card-title v-if="version=='indonesia'" class="title-header" >
                     {{title_indo}}
                 </v-card-title>
                 <v-container>
                     <v-layout align-center justify-center column fill-height>
-                        <img class="image-phone" width="30% !important" :src="image1" />
-                        <img class="image-phone" width="25% !important" :src="image2" />
+                        <img class="phone-image per-30" width="30% !important" :src="image1" />
+                        <img class="phone-image" width="25% !important" :src="image2" />
                     </v-layout>
                 </v-container>
             </v-container>
@@ -28,8 +28,8 @@
         },
         data () {
             return {
-                image1: playstore,
-                image2: phone,
+                image1: phone,
+                image2: playstore,
                 width: 2000,
                 height: 2000,
                 title_english: "Easiest place for buying crypto",
@@ -63,35 +63,35 @@
 </script>
 
 
-<style >
-    .container-card {
-        text-align: center;
-    }
-    .title-style {
-        font-size: 56px;
-        padding: 4rem;
-        padding-bottom: 0px !important;
-        padding-top: 0px !important;
-        width: 70%;
-        margin: auto;
-        font-weight: 500;
-    }
-    .image-phone {
-        padding-left: 0px;
-    }
-    @media only screen and (max-width: 720px) {
-        .container-card {
-            text-align: center !important;
-        }
-        .title-style {
-            font-size: 22px !important;
-            padding: 4rem;
-            padding-bottom: 0px !important;
-            padding-top: 0px !important;
-            width: 100% !important;
-            margin: auto;
-            font-weight: 500;
-        }
-    }
+<!--<style >-->
+    <!--.container-card {-->
+        <!--text-align: center;-->
+    <!--}-->
+    <!--.title-style {-->
+        <!--font-size: 56px;-->
+        <!--padding: 4rem;-->
+        <!--padding-bottom: 0px !important;-->
+        <!--padding-top: 0px !important;-->
+        <!--width: 70%;-->
+        <!--margin: auto;-->
+        <!--font-weight: 500;-->
+    <!--}-->
+    <!--.image-phone {-->
+        <!--padding-left: 0px;-->
+    <!--}-->
+    <!--@media only screen and (max-width: 720px) {-->
+        <!--.container-card {-->
+            <!--text-align: center !important;-->
+        <!--}-->
+        <!--.title-style {-->
+            <!--font-size: 22px !important;-->
+            <!--padding: 4rem;-->
+            <!--padding-bottom: 0px !important;-->
+            <!--padding-top: 0px !important;-->
+            <!--width: 100% !important;-->
+            <!--margin: auto;-->
+            <!--font-weight: 500;-->
+        <!--}-->
+    <!--}-->
 
-</style>
+<!--</style>-->

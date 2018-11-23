@@ -1,6 +1,5 @@
-const playstore = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fphone.png?alt=media&token=a20b24c7-b50c-4fdb-8898-a5fbcf55c572'
-const phone = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fgoogle_play.png?alt=media&token=eff409c3-401d-4fd4-b948-e364b2219809'
-
+const phone = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fphone.png?alt=media&token=a20b24c7-b50c-4fdb-8898-a5fbcf55c572'
+const playstore = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fgoogle_play.png?alt=media&token=eff409c3-401d-4fd4-b948-e364b2219809%27'
 const imageHero = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fpintu.png?alt=media&token=8b8de22f-b834-40b3-a111-f36374719c30'
 const defender = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fdefender.png?alt=media&token=6abc20fd-8801-45b9-a026-475c850d188d'
 const free = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fronald%2FFree.png?alt=media&token=e6b9e146-0438-45f6-a4a2-a840cd6098d6'

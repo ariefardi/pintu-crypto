@@ -1,0 +1,143 @@
+    .title-header {
+        font-size: 56px;
+        padding: 4rem;
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
+        width: 70%;
+        margin: auto;
+        font-weight: 500;
+    }
+    .max-width {
+        width: 100%;
+    }
+    .per-30-width {
+        width: 30% ;
+    }
+    .subtitle-header {
+        font-size: 44px;
+        font-weight: 500;
+    }
+    .subheader {
+        font-size: 28px;
+        font-weight: 500;
+    }
+    .page-wrapper {
+        padding: 0;
+    }
+    .card-container {
+        text-align: center;
+    }
+    .phone-image {
+        padding-left: 0px;
+    }
+    .image-subs{
+        width: 48px;
+        height: auto;
+        margin-left: 1rem;
+        margin-bottom: -1rem;
+    }
+    .content-subscribe {
+        color: slategray;
+        font-size: 28px;
+        font-weight: 500;
+        padding-top: 0 !important;
+    }
+    .image-how {
+        width: 64px;
+        height: auto !important;
+        padding: 1rem;
+        margin-top: 12px !important;
+    }
+
+    .color-grey {
+        color: slategray;
+    }
+
+    .card-border {
+        border-radius: 20px;
+        margin-top: 2rem;
+    }
+
+    .card-how {
+        width: 400px;
+    }
+    card-content {
+        font-size: 18px;
+        font-weight: 700 !important;
+        text-align: center;
+
+    }
+
+    .isi-blog {
+        font-size: 24px;
+        font-weight: 700;
+        color: slategrey;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .btn--blue {
+        text-transform: capitalize; background-color: blue !important;border-radius: 5px !important;
+    }
+
+    @media only screen and (max-width: 720px) {
+        .title-header {
+            font-size: 28px !important;
+            padding: 4rem;
+            padding-bottom: 0px !important;
+            padding-top: 0px !important;
+            width: 100% !important;
+            margin: auto;
+            font-weight: 500;
+        }
+        .subtitle-header {
+            font-size: 40px;
+        }
+        .subheader {
+            font-size: 14px !important;
+            font-weight: 500;
+        }
+        .content-subscribe {
+            font-size: 14px;
+            font-weight: 500;
+            padding-top: 0 !important;
+        }
+        .card-content {
+            font-size: 14px !important;
+            text-align: center;
+        }
+        .card-how {
+            width: 300px;
+        }
+        .image-how {
+            width: 64px;
+            height: auto !important;
+            padding: 1rem;
+            margin-top: 12px !important;
+        }
+        .isi-blog {
+            font-size: 14px !important;
+            padding: 0px;
+            padding-bottom: 0px !important;
+            padding-top: 0px !important;
+            width: 100% !important;
+            margin: auto;
+            font-weight: 500;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .card-how {
+            width: 300px;
+        }
+        .subheader {
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+    @media only screen and (max-width: 200px) {
+        .card-how {
+            width: 100%;
+        }
+
+    }
