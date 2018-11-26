@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container style="margin-top: 1rem">
         <v-card flat>
             <v-container class="card-container">
                 <v-card-title v-if="version=='english'" class="title-header font-weight-bold" >

@@ -21,6 +21,9 @@ const twitter = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages
 const mail_logo = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fmail_logo.png?alt=media&token=8d8f5c8f-13a5-4795-96d0-59b6491f92b6'
 const message = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fmessage.png?alt=media&token=f1248038-77f1-4199-8fbc-a0b8f12ad999'
 const logoImage = "https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2FArtboard%201.png?alt=media&token=244012db-a7ef-42a0-afcb-e4b86aa48cca"
+const heroImageMobile = "https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fpintu.jpg?alt=media&token=b75f4e48-b3ea-4dd8-973d-d5d2a0caf947"
+const flagUSA = "https://www.countries-ofthe-world.com/flags-normal/flag-of-United-States-of-America.png"
+const flagINDO = "https://www.countries-ofthe-world.com/flags-normal/flag-of-Indonesia.png"
 export {
     playstore,
     phone,
@@ -43,5 +46,8 @@ export {
     twitter,
     mail_logo,
     message,
-    logoImage
+    logoImage,
+    heroImageMobile,
+    flagINDO,
+    flagUSA
 }

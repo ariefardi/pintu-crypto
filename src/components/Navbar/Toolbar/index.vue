@@ -4,23 +4,41 @@
             <img v-if="width>960" class="logo-image" :src="logo" alt="">
             <v-btn-toggle v-if="width>960" style="margin-left: 1rem" @change="triggerToggle" v-model="toggle_exclusive">
                 <v-btn class="button-toggle" v-if="!this.toggle_exclusive" color="blue" :value="0" >
-                    EN
+                    <img class="img-flag" :src="flagUSA" alt="">
                 </v-btn>
                 <v-btn  v-if="this.toggle_exclusive" :value="0" >
-                    EN
+                    <img class="img-flag" :src="flagUSA" alt="">
                 </v-btn>
                 <v-btn class="button-toggle" v-if="this.toggle_exclusive" color="blue" :value="1">
-                    ID
+                    <img class="img-flag" :src="flagINDO" alt="">
                 </v-btn>
                 <v-btn v-if="!this.toggle_exclusive"  :value="1">
-                    ID
+                    <img class="img-flag" :src="flagINDO" alt="">
                 </v-btn>
             </v-btn-toggle>
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn to="/" class="button-menu" flat>App</v-btn>
-                <v-btn to="/blog" class="button-menu" flat>Blog</v-btn>
-                <v-btn to="/about" class="button-menu" flat>About</v-btn>
+                <v-btn v-if="page!=='home'" to="/" class="button-menu" flat>
+                    <p style="padding: 0;margin: 0;">App</p>
+                </v-btn>
+                <v-btn v-if="page==='home'"  to="/" class="button-menu" style="border-bottom: 3px solid blue" flat>
+                    <p style="padding: 0;margin: 0;">App</p>
+                </v-btn>
+
+                <v-btn v-if="page!=='blog'"  to="/blog" class="button-menu" flat>
+                    Blog
+                </v-btn>
+                <v-btn v-if="page==='blog'" to="/blog" class="button-menu" style="border-bottom: 3px solid blue" flat>
+                    Blog
+                </v-btn>
+
+
+                <v-btn v-if="page!=='about'" to="/about" class="button-menu" flat>
+                    About
+                </v-btn>
+                <v-btn v-if="page==='about'" to="/about" class="button-menu" style="border-bottom: 3px solid blue" flat>
+                    About
+                </v-btn>
             </v-toolbar-items>
             <v-spacer></v-spacer>
             <v-btn  v-if="width>=960" class="button-download" color="#1867c0">Download</v-btn>
@@ -29,25 +47,26 @@
         <v-toolbar v-if="width<960" style="margin-right: 400px" fixed id="nav-class" flat >
             <v-btn-toggle v-if="width<960" @change="triggerToggle" v-model="toggle_exclusive">
                 <v-btn class="button-toggle" v-if="!this.toggle_exclusive" color="blue" :value="0" >
-                    EN
+                    <img class="img-flag" :src="flagUSA" alt="">
                 </v-btn>
                 <v-btn  v-if="this.toggle_exclusive" :value="0" >
-                    EN
+                    <img class="img-flag" :src="flagUSA" alt="">
                 </v-btn>
                 <v-btn class="button-toggle" v-if="this.toggle_exclusive" color="blue" :value="1">
-                    ID
+                    <img class="img-flag" :src="flagINDO" alt="">
                 </v-btn>
                 <v-btn v-if="!this.toggle_exclusive"  :value="1">
-                    ID
+                    <img class="img-flag" :src="flagINDO" alt="">
                 </v-btn>
             </v-btn-toggle>
             <v-spacer></v-spacer>
             <img class="logo-image" :src="logo" alt="">
             <v-spacer></v-spacer>
-            <v-toolbar-side-icon style="color: grey" v-if="width<960 && page==='blog' && scroll<180" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-            <v-toolbar-side-icon style="color: black;" v-if="width<960 && page==='blog' && scroll>180" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-            <v-toolbar-side-icon  v-if="width<960 && page==='home'" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-            <v-toolbar-side-icon  v-if="width<960 && page==='about'" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+            <!--<v-toolbar-side-icon style="color: black" v-if="width<960 && page==='blog' && scroll<180" @click.stop="drawer = !drawer"></v-toolbar-side-icon>-->
+            <!--<v-toolbar-side-icon style="color: black;" v-if="width<960 && page==='blog' && scroll>180" @click.stop="drawer = !drawer"></v-toolbar-side-icon>-->
+            <!--<v-toolbar-side-icon  v-if="width<960 && page==='home'" @click.stop="drawer = !drawer"></v-toolbar-side-icon>-->
+            <!--<v-toolbar-side-icon  v-if="width<960 && page==='about'" @click.stop="drawer = !drawer"></v-toolbar-side-icon>-->
+            <v-toolbar-side-icon  v-if="width<960" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         </v-toolbar>
 
         <v-navigation-drawer
@@ -73,24 +92,33 @@
                         <v-list-tile-title>{{ item.title }}</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
+                <v-list-tile>
+                    <v-list-tile-action>
+                        <v-icon>cloud_download</v-icon>
+                    </v-list-tile-action>
+                    <v-btn  class="button-download" color="#1867c0">Download</v-btn>
+
+                </v-list-tile>
             </v-list>
         </v-navigation-drawer>
     </div>
 </template>
 
 <script>
-    import  {logoImage} from "../../../config/images";
+    import  {logoImage, flagUSA, flagINDO} from "../../../config/images";
     import {mapState, mapActions} from 'vuex'
     export default {
         created () {
             this.checkPage()
             this.checkVersionsStorage()
+            console.log("this page", this.page)
         },
         mounted () {
             this.checkingSize()
             this.checkPage()
             this.checkVersionsStorage()
             this.onScroll()
+            console.log("this page", this.page)
         },
         components: {
         },
@@ -109,6 +137,8 @@
         },
         data () {
             return {
+                flagUSA: flagUSA,
+                flagINDO: flagINDO,
                 toggle_exclusive: 0,
                 downloadPosition: false,
                 logo : logoImage,
@@ -136,7 +166,7 @@
                         this.downloadPosition = true
                         document.getElementById('nav-class').style.backgroundColor = "white"
                     }
-                    else {
+                    else if(e.path[1].scrollY<=200) {
                         this.downloadPosition = false
                         document.getElementById('nav-class').style.backgroundColor = "transparent"
                         // document.getElementById('download-layout').style.backgroundColor = "transparent"
@@ -162,7 +192,7 @@
             },
             checkPage () {
                 this.page = this.$route.name
-                console.log(this.page)
+                console.log('this page',this.page)
             },
             checkingSize () {
                 window.addEventListener('resize', (e) => {
@@ -211,7 +241,7 @@
     @media only screen and (max-width: 960px) {
         .logo-image {
             width: 64px;
-            margin-left: 0 !important;
+            margin-left: -24px !important;
         }
     }
 </style>

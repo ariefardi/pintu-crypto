@@ -15,16 +15,28 @@
             <a href="">
                 <img class="image-footer" :src="image" alt="">
             </a>
-            <div>
-                <a v-for="(icon, index) in icons" :key="index" href="/">
-                    <img class="icon-footer" :src="icon" alt="">
-                </a>
-                <v-card-text class="reserved white--text">
-                    &copy;2018 — <strong>PT Valar Alpha Sejahtera.</strong>
-                    <br>
-                    <strong>All rights reserved.</strong>
-                </v-card-text>
-            </div>
+            <v-container fluid>
+                <v-layout row wrap>
+                    <v-layout justify-end row>
+                    <v-flex  xs4 sm2 v-for="(icon, index) in icons" :key="index">
+                        <a  href="/">
+                            <img class="icon-footer" :src="icon" alt="">
+                        </a>
+                    </v-flex>
+                    </v-layout>
+                    <v-flex xs12 sm2>
+                    <v-layout justify-end>
+                    <v-flex xs12 sm12 >
+                        <v-card-text class="reserved white--text">
+                            &copy;2018 — <strong>PT Valar Alpha Sejahtera.</strong>
+                            <br>
+                            <strong>All rights reserved.</strong>
+                        </v-card-text>
+                    </v-flex>
+                    </v-layout>
+                    </v-flex>
+                </v-layout>
+            </v-container>
 
 
 
@@ -72,5 +84,10 @@
     }
     .reserved {
         text-align: right;
+    }
+    @media only screen and (max-width: 720px) {
+        .image-footer {
+            width: 40%;
+        }
     }
 </style>

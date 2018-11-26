@@ -10,10 +10,52 @@
 
 <script>
     import {imageHero} from '../../config/images'
+    import {heroImageMobile} from "../../config/images";
+
     export default {
+        mounted () {
+            this.changeImage()
+            this.onResize()
+        },
         data () {
             return {
-                image_hero: imageHero
+                image_hero: imageHero,
+                width: 0,
+                height: 0
+            }
+        }
+        ,
+        methods: {
+            changeImage () {
+                if (window.innerWidth<=480) {
+                    this.image_hero  = heroImageMobile
+                    this.width = 480
+                }
+                else {
+                    this.image_hero  = imageHero
+                    this.width = 1440
+                }
+            },
+            onResize () {
+                window.addEventListener('resize', (e) => {
+                    this.width = e.target.innerWidth
+                    this.height = e.target.innerHeight
+                    if (this.width<=480) {
+                        this.image_hero  = heroImageMobile
+                    }
+                    else {
+                        this.image_hero  = imageHero
+                    }
+                })
+                var w = window,
+                    d = document,
+                    e = d.documentElement,
+                    g = d.getElementsByTagName('body')[0],
+                    x = w.innerWidth || e.clientWidth || g.clientWidth,
+                    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+                this.width = x
+                this.height = y
+
             }
         }
     }
