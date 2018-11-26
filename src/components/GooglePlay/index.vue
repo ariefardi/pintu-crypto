@@ -2,10 +2,10 @@
     <v-container style="margin-top: 1rem">
         <v-card flat>
             <v-container class="card-container">
-                <v-card-title v-if="version=='english'" class="title-header font-weight-bold" >
+                <v-card-title v-if="version=='english'" class="title-header font-weight-medium" >
                     {{title_english}}
                 </v-card-title>
-                <v-card-title v-if="version=='indonesia'" class="title-header font-weight-bold" >
+                <v-card-title v-if="version=='indonesia'" class="title-header font-weight-medium" >
                     {{title_indo}}
                 </v-card-title>
                 <v-container>
@@ -32,8 +32,8 @@
                 image2: playstore,
                 width: 2000,
                 height: 2000,
-                title_english: "Easiest place for buying cryptocurrency",
-                title_indo: "Tempat termudah untuk jual beli cryptocurrency"
+                title_english: "Easiest place for buying crypto",
+                title_indo: "Tempat termudah untuk jual beli crypto"
 
             }
         },

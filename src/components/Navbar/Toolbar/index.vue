@@ -18,25 +18,25 @@
             </v-btn-toggle>
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn v-if="page!=='home'" to="/" class="button-menu" flat>
+                <v-btn :ripple="false" v-if="page!=='home'" to="/" class="button-menu" flat>
                     <p style="padding: 0;margin: 0;">App</p>
                 </v-btn>
-                <v-btn v-if="page==='home'"  to="/" class="button-menu" style="border-bottom: 3px solid blue" flat>
+                <v-btn :ripple="false" v-if="page==='home'"  to="/" class="button-menu" style="border-bottom: 3px solid blue" flat>
                     <p style="padding: 0;margin: 0;">App</p>
                 </v-btn>
 
-                <v-btn v-if="page!=='blog'"  to="/blog" class="button-menu" flat>
+                <v-btn :ripple="false" v-if="page!=='blog'"  to="/blog" class="button-menu" flat>
                     Blog
                 </v-btn>
-                <v-btn v-if="page==='blog'" to="/blog" class="button-menu" style="border-bottom: 3px solid blue" flat>
+                <v-btn :ripple="false" v-if="page==='blog'" to="/blog" class="button-menu" style="border-bottom: 3px solid blue" flat>
                     Blog
                 </v-btn>
 
 
-                <v-btn v-if="page!=='about'" to="/about" class="button-menu" flat>
+                <v-btn :ripple="false" v-if="page!=='about'" to="/about" class="button-menu" flat>
                     About
                 </v-btn>
-                <v-btn v-if="page==='about'" to="/about" class="button-menu" style="border-bottom: 3px solid blue" flat>
+                <v-btn :ripple="false" v-if="page==='about'" to="/about" class="button-menu" style="border-bottom: 3px solid blue" flat>
                     About
                 </v-btn>
             </v-toolbar-items>

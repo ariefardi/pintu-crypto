@@ -1,11 +1,11 @@
 <template>
-    <v-flex xs12>
+    <v-flex >
     <v-container>
         <v-card flat>
             <v-container class="card-container">
-                <v-layout align-center justify-center column fill-height>
-                    <h1 class="title-header">{{title1}}</h1>
-                    <h1 class="title-header">{{title2}}</h1>
+                <v-layout align-start justify-center column fill-height>
+                    <h1 class="title-header font-weight-medium">{{title1}}</h1>
+                    <h1 class="title-header font-weight-medium">{{title2}}</h1>
                 </v-layout>
                 <v-container>
                     <v-layout align-center justify-center column fill-height>

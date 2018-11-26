@@ -3,11 +3,11 @@
         <v-layout>
             <v-card flat width="100%">
                 <v-container class="container-card">
-                    <v-card-title v-if="version=='indonesia'" class="title-header font-weight-bold">
+                    <v-card-title v-if="version=='indonesia'" class="title-header font-weight-medium">
                         {{title_indo}}
                     </v-card-title>
 
-                    <v-card-title v-if="version=='english'" class="title-header font-weight-bold">
+                    <v-card-title v-if="version=='english'" class="title-header font-weight-medium">
                         {{title_english}}
                     </v-card-title>
                 </v-container>
@@ -35,12 +35,14 @@
                         </v-flex>
                     </v-layout>
                 </v-container>
+
+
                 <v-container>
-                    <v-layout row wrap align-center justify-center>
+                    <v-layout row wrap align-start justify-center>
                         <v-flex xs12 sm6 md4 v-for="(card, index) in cardData_ind" :key="index">
                             <v-card flat>
                                 <v-layout align-end justify-start row fill-height>
-                                    <v-flex xs3>
+                                    <v-flex xs4>
                                         <v-img class="image-subs" :src="card.image" alt="" />
                                     </v-flex>
                                 </v-layout>
@@ -54,6 +56,8 @@
                         </v-flex>
                     </v-layout>
                 </v-container>
+
+
             </v-card>
         </v-layout>
         <v-snackbar
