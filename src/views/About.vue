@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="page-wrapper">
+  <v-container fluid class="about-wrapper">
     <AboutHeroImage />
     <JoinUs />
     <OurName />
@@ -29,3 +29,9 @@
 
   }
 </script>
+
+<style>
+  .about-wrapper {
+    padding: 0 !important;
+  }
+</style>

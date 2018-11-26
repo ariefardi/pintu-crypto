@@ -23,7 +23,6 @@ export default new Vuex.Store({
         },
         setBlogs (state, payload) {
             state.blogs = payload
-            console.log("ini isi state",state.blogs)
         }
     },
     actions: {
@@ -31,7 +30,6 @@ export default new Vuex.Store({
             commit('setDrawer', payload)
         },
         changeVersion({commit}, payload) {
-            console.log("jalan")
             if (payload===0) {
                 localStorage.setItem('version', 0)
                 commit('setVersion', 'english')
@@ -44,7 +42,6 @@ export default new Vuex.Store({
             }
         },
         fetchingBlogs ({commit}, payload) {
-            console.log("fetching data")
             DB.collection("blogs")
                 .where("published", "==", true)
                 .get()
@@ -70,7 +67,6 @@ export default new Vuex.Store({
                         }
 
                     });
-                    console.log(temp, 'ini temp')
                     commit('setBlogs', temp )
                 })
                 .catch(function(error) {

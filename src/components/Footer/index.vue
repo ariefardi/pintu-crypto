@@ -17,17 +17,19 @@
             </a>
             <v-container fluid>
                 <v-layout row wrap>
-                    <v-layout justify-end row>
-                    <v-flex  xs4 sm2 v-for="(icon, index) in icons" :key="index">
+                    <v-flex sm12 md8>
+                    <v-layout justify-end align-center row  class="logo-margin" style="margin-right: 3.5rem" >
+                    <v-flex xs4 sm2 md1 v-for="(icon, index) in icons" :key="index">
                         <a  href="/">
                             <img class="icon-footer" :src="icon" alt="">
                         </a>
                     </v-flex>
                     </v-layout>
-                    <v-flex xs12 sm2>
+                    </v-flex>
+                    <v-flex xs12 sm12 md4>
                     <v-layout justify-end>
                     <v-flex xs12 sm12 >
-                        <v-card-text class="reserved white--text">
+                        <v-card-text class="align-right white--text no-padding">
                             &copy;2018 — <strong>PT Valar Alpha Sejahtera.</strong>
                             <br>
                             <strong>All rights reserved.</strong>
@@ -69,7 +71,6 @@
     .icon-footer {
         width: 36px;
         height: 36px;
-        margin: 2rem;
     }
     .title-footer {
         font-size: 28px;
@@ -77,17 +78,23 @@
         font-weight: 500;
     }
     .color-card {
-        background-color: blue !important;
+        background-color: #1347C9 !important;
     }
     .image-footer {
         width: 20%;
     }
-    .reserved {
-        text-align: right;
+    @media only screen and (max-width: 1200px) {
+
+        .logo-margin {
+            margin-right: 2.5rem !important;
+        }
     }
     @media only screen and (max-width: 720px) {
         .image-footer {
             width: 40%;
+        }
+        .logo-margin {
+            margin-right: 0rem !important;
         }
     }
 </style>

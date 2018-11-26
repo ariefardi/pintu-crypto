@@ -4,10 +4,10 @@
             <v-card flat>
                 <div class="container-job">
                     <v-card-title>
-                        <h1 class="position-title"> {{title_english}} </h1>
+                        <h1 class="title-header"> {{title_english}} </h1>
                     </v-card-title>
                     <div v-for="(value, index) in values_english" :key="index" style="width: 100%;padding: 2rem;">
-                        <v-card-text class="position-sub-title">
+                        <v-card-text class="subheader font-weight-medium color-blue align-left">
                             {{value.position}}
                         </v-card-text>
                         <v-card-text>
@@ -16,6 +16,12 @@
                             </p>
                         </v-card-text>
                     </div>
+                    <v-card-text class="position-container font-weight-medium align-center">
+                        Interested?
+                    </v-card-text>
+                    <v-card-text class="position-container font-weight-medium align-center">
+                        Let's Talk! <a href="/" class="color-blue font-weight-medium hrd-link" > hr@pintu.co.id </a>
+                    </v-card-text>
                 </div>
             </v-card>
         </v-layout>
@@ -51,12 +57,6 @@
 <style>
     .container-job {
         padding: 1rem 2rem;
-    }
-    .position-title{
-        text-align: center;
-        margin: auto;
-        font-size: 44px !important;
-        font-weight: 500;
     }
     .position-sub-title {
         text-align: left;
@@ -98,5 +98,19 @@
             font-size: 14px;
             padding-top: 0px !important;
         }
+    }
+    .hrd-link {
+        color: #1347C9;
+    }
+    .hrd-link:link {
+        text-decoration: none;
+    }
+    .hrd-link:hover {
+        text-decoration: none;
+        cursor: pointer;
+        color: dodgerblue;
+    }
+    no-padding {
+        padding: 0;
     }
 </style>

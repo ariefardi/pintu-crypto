@@ -3,16 +3,16 @@
         <v-toolbar id="nav-class" style="margin-right: 300px" fixed flat>
             <img v-if="width>960" class="logo-image" :src="logo" alt="">
             <v-btn-toggle v-if="width>960" style="margin-left: 1rem" @change="triggerToggle" v-model="toggle_exclusive">
-                <v-btn class="button-toggle" v-if="!this.toggle_exclusive" color="blue" :value="0" >
+                <v-btn class="button-toggle" v-if="!this.toggle_exclusive" color="blue darken-4" :value="0" >
                     <img class="img-flag" :src="flagUSA" alt="">
                 </v-btn>
-                <v-btn  v-if="this.toggle_exclusive" :value="0" >
+                <v-btn  v-if="this.toggle_exclusive" color="white" :value="0" >
                     <img class="img-flag" :src="flagUSA" alt="">
                 </v-btn>
-                <v-btn class="button-toggle" v-if="this.toggle_exclusive" color="blue" :value="1">
+                <v-btn class="button-toggle" v-if="this.toggle_exclusive" color="blue darken-4" :value="1">
                     <img class="img-flag" :src="flagINDO" alt="">
                 </v-btn>
-                <v-btn v-if="!this.toggle_exclusive"  :value="1">
+                <v-btn v-if="!this.toggle_exclusive" color="white"  :value="1">
                     <img class="img-flag" :src="flagINDO" alt="">
                 </v-btn>
             </v-btn-toggle>
@@ -46,16 +46,16 @@
         </v-toolbar>
         <v-toolbar v-if="width<960" style="margin-right: 400px" fixed id="nav-class" flat >
             <v-btn-toggle v-if="width<960" @change="triggerToggle" v-model="toggle_exclusive">
-                <v-btn class="button-toggle" v-if="!this.toggle_exclusive" color="blue" :value="0" >
+                <v-btn class="button-toggle" v-if="!this.toggle_exclusive" color="blue darken-4" :value="0" >
                     <img class="img-flag" :src="flagUSA" alt="">
                 </v-btn>
-                <v-btn  v-if="this.toggle_exclusive" :value="0" >
+                <v-btn  v-if="this.toggle_exclusive" color="white" :value="0" >
                     <img class="img-flag" :src="flagUSA" alt="">
                 </v-btn>
-                <v-btn class="button-toggle" v-if="this.toggle_exclusive" color="blue" :value="1">
+                <v-btn class="button-toggle" v-if="this.toggle_exclusive" color="blue darken-4" :value="1">
                     <img class="img-flag" :src="flagINDO" alt="">
                 </v-btn>
-                <v-btn v-if="!this.toggle_exclusive"  :value="1">
+                <v-btn v-if="!this.toggle_exclusive" color="white" :value="1">
                     <img class="img-flag" :src="flagINDO" alt="">
                 </v-btn>
             </v-btn-toggle>
@@ -71,34 +71,28 @@
 
         <v-navigation-drawer
                 v-model="drawer"
-                absolute
+                fixed
                 temporary
                 right
                 v-if="drawer"
         >
-            <v-list style="margin-top: 2rem" class="pt-0" dense>
+            <v-list class="pt-0 position-drawer" dense>
                 <v-divider></v-divider>
+                <v-layout align-center justify-end row fill-height>
+                    <v-flex xs12>
+                        <v-list-tile
+                                v-for="item in items"
+                                :key="item.title"
+                                @click="toLocation(item.location)"
+                        >
 
-                <v-list-tile
-                        v-for="item in items"
-                        :key="item.title"
-                        @click="toLocation(item.location)"
-                >
-                    <v-list-tile-action>
-                        <v-icon>{{ item.icon }}</v-icon>
-                    </v-list-tile-action>
+                                <v-list-tile-content >
+                                    <v-list-tile-title style="text-align: right">{{ item.title }}</v-list-tile-title>
+                                </v-list-tile-content>
+                        </v-list-tile>
+                    </v-flex>
+                </v-layout>
 
-                    <v-list-tile-content>
-                        <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile>
-                    <v-list-tile-action>
-                        <v-icon>cloud_download</v-icon>
-                    </v-list-tile-action>
-                    <v-btn  class="button-download" color="#1867c0">Download</v-btn>
-
-                </v-list-tile>
             </v-list>
         </v-navigation-drawer>
     </div>
@@ -111,14 +105,12 @@
         created () {
             this.checkPage()
             this.checkVersionsStorage()
-            console.log("this page", this.page)
         },
         mounted () {
             this.checkingSize()
             this.checkPage()
             this.checkVersionsStorage()
             this.onScroll()
-            console.log("this page", this.page)
         },
         components: {
         },
@@ -146,9 +138,10 @@
                 height: 2000,
                 drawer: null,
                 items: [
-                    { title: 'App', icon: 'android', location: '/' },
-                    { title: 'Blog', icon: 'question_answer', location: '/blog' },
-                    { title: 'About', icon: 'face', location: '/about' }
+                    { title: 'App', location: '/' },
+                    { title: 'Blog', location: '/blog' },
+                    { title: 'About', location: '/about' },
+                    { title: 'Download', location: '/' }
                 ],
                 right: null,
                 scroll: 0
@@ -159,7 +152,6 @@
                 'changeVersion'
             ]),
             onScroll () {
-                console.log("scrolling ...")
                 window.addEventListener('scroll', (e) => {
                     this.scroll = e.path[1].scrollY
                     if (e.path[1].scrollY>200)  {
@@ -192,7 +184,6 @@
             },
             checkPage () {
                 this.page = this.$route.name
-                console.log('this page',this.page)
             },
             checkingSize () {
                 window.addEventListener('resize', (e) => {
@@ -236,6 +227,13 @@
     }
     .button-toggle {
         color: white !important;
+    }
+    .img-flag {
+        width: 24px;
+        height: auto;
+    }
+    .position-drawer {
+        margin-top: 2rem;
     }
 
     @media only screen and (max-width: 960px) {

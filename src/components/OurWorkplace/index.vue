@@ -3,11 +3,11 @@
         <v-layout align-center justify-center column fill-height>
             <v-card flat>
                 <v-card-title>
-                    <h1 class="work-title"> Our Workplace </h1>
+                    <h1 class="title-header font-weight-medium"> Our Workplace </h1>
                 </v-card-title>
                 <div style="width: 100%;padding: 2rem">
                     <v-card-text>
-                        <p class="work-contain">
+                        <p class="subheader color-grey font-weight-medium">
                             Our version of the great workplace in not comprised of gourmet food,
                             great gyms, fancy offices, or frequent parties. Our version of the great
                             workplace is a dream team in pursuit of ambitious commons goals, for which
@@ -16,7 +16,7 @@
                         </p>
                     </v-card-text>
                     <v-card-text>
-                        <p class="work-contain">
+                        <p class="subheader color-grey font-weight-medium">
                             We model ourselves on being a team, not a family. A family is about
                             unconditional love, despite your siblings' unusual behavior. A dream team is
                             about pushing yourself to be the best teammate you can be, caring
@@ -27,7 +27,7 @@
                 </div>
                 <div style="width: 100%">
                     <v-card-title>
-                        <h1 class="work-title"> Our People </h1>
+                        <h1 class="title-header font-weight-medium"> Our People </h1>
                     </v-card-title>
                     <v-container class="image-container">
                         <v-layout align-center justify-center row fill-height>
@@ -55,7 +55,9 @@
         goldman_sachs,
         mit_logo,
         kampus_logo,
-        yale_logo} from '../../config/images'
+        yale_logo,
+        harvard
+    } from '../../config/images'
     export default {
         data () {
             return {
@@ -63,7 +65,7 @@
                     tokopedia, concensys, goldman_sachs
                 ],
                 imagesBot : [
-                    mit_logo, kampus_logo, kampus_logo, yale_logo
+                    mit_logo, kampus_logo, harvard, yale_logo
                 ]
             }
         }

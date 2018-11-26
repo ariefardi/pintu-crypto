@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-card flat>
-            <v-card-title class="card-title">
+            <v-card-title class="title-header font-weight-medium">
                 <h1 v-if="version==='english'" class="text-join" > {{title_english}}</h1>
                 <h1 v-if="version==='indonesia'" class="text-join" > {{title_indo}}</h1>
             </v-card-title>
@@ -45,10 +45,7 @@
 </script>
 
 <style scoped>
-    .card-title {
-        padding-left: 8rem;
-        padding-right: 8rem;
-    }
+
     .button-join {
         text-transform: capitalize;
         color: white !important;
@@ -63,10 +60,6 @@
             font-size: 28px;
             font-weight: 500;
             text-align: center
-        }
-        .card-title {
-            padding-left: 0;
-            padding: 0 !important;
         }
     }
 </style>

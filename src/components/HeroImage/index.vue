@@ -27,9 +27,9 @@
         ,
         methods: {
             changeImage () {
-                if (window.innerWidth<=480) {
+                if (window.innerWidth<=960) {
                     this.image_hero  = heroImageMobile
-                    this.width = 480
+                    this.width = 960
                 }
                 else {
                     this.image_hero  = imageHero
@@ -40,7 +40,7 @@
                 window.addEventListener('resize', (e) => {
                     this.width = e.target.innerWidth
                     this.height = e.target.innerHeight
-                    if (this.width<=480) {
+                    if (this.width<=960) {
                         this.image_hero  = heroImageMobile
                     }
                     else {

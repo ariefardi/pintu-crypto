@@ -3,11 +3,11 @@
         <v-layout>
             <v-card flat width="100%">
                 <v-container class="container-card">
-                    <v-card-title v-if="version=='indonesia'" class="title-header font-weight-medium">
+                    <v-card-title v-if="version=='indonesia'" class="title-header font-weight-medium no-padding">
                         {{title_indo}}
                     </v-card-title>
 
-                    <v-card-title v-if="version=='english'" class="title-header font-weight-medium">
+                    <v-card-title v-if="version=='english'" class="title-header font-weight-medium no-padding">
                         {{title_english}}
                     </v-card-title>
                 </v-container>
@@ -179,44 +179,3 @@
 </script>
 
 
-<!--<style >-->
-<!--.title-subscribe {-->
-<!--font-weight: 500;-->
-<!--font-size: 24px;-->
-<!--}-->
-<!--.content-subscribe {-->
-<!--color: slategray;-->
-<!--font-size: 18px;-->
-<!--font-weight: 500;-->
-<!--padding-top: 0 !important;-->
-<!--}-->
-<!--.image-subs{-->
-<!--width: 64px;-->
-<!--height: auto;-->
-<!--margin-left: 1rem;-->
-<!--margin-bottom: -1rem;-->
-<!--}-->
-<!--@media only screen and (max-width: 480px) {-->
-<!--.title-subscribe {-->
-<!--font-weight: 500;-->
-<!--font-size: 14px;-->
-<!--padding-top: 8px !important;-->
-<!--padding-left: 4px;-->
-<!--padding-right: 4px;-->
-<!--}-->
-<!--.content-subscribe {-->
-<!--color: slategray;-->
-<!--font-size: 12px;-->
-<!--font-weight: 500;-->
-<!--padding-top: 0 !important;-->
-<!--padding-left: 4px;-->
-<!--padding-right: 4px;-->
-<!--}-->
-<!--.image-subs{-->
-<!--width: 48px;-->
-<!--height: auto;-->
-<!--margin-left: 1rem;-->
-<!--margin-bottom: -1rem;-->
-<!--}-->
-<!--}-->
-<!--</style>-->

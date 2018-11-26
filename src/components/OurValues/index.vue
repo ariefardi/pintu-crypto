@@ -3,14 +3,14 @@
         <v-layout align-center justify-center column fill-height>
             <v-card flat>
                 <v-card-title>
-                    <h1 class="values-title">{{title_english}}</h1>
+                    <h1 class="title-header font-weight-medium">{{title_english}}</h1>
                 </v-card-title>
                 <div v-for="(value, index) in values_english" :key="index" style="width: 100%;padding: 2rem;">
-                    <v-card-text class="values-sub-title">
+                    <v-card-text class="values-sub-title font-weight-medium align-center">
                         {{value.sub_title}}
                     </v-card-text>
                     <v-card-text>
-                        <p class="values-contain">
+                        <p class="values-contain color-grey">
                            {{value.container}}
                         </p>
                     </v-card-text>
@@ -83,14 +83,28 @@
     .values-sub-title {
         text-align: center;
         margin: auto;
-        font-size: 22px !important;
+        font-size: 28px !important;
         font-weight: 500;
     }
     .values-contain {
         text-align: center;
         margin: auto;
-        font-size: 22px !important;
-        color: slategrey;
+        font-size: 24px !important;
         font-weight: 500;
+    }
+
+    @media only screen and (max-width: 720px) {
+        .values-contain {
+            text-align: center;
+            margin: auto;
+            font-size: 14px !important;
+            font-weight: 500;
+        }
+        .values-sub-title {
+            text-align: center;
+            margin: auto;
+            font-size: 16px !important;
+            font-weight: 500;
+        }
     }
 </style>

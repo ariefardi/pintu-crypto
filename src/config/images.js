@@ -10,7 +10,7 @@ const candi2 = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.
 const tokopedia = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Ftokopedia.png?alt=media&token=40fa0fe9-281b-460d-bc70-17cd7acde24f'
 const concensys = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fconcensys.png?alt=media&token=1ebba925-c1dd-48db-9f75-d0633f1e34c2'
 const goldman_sachs = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fgoldman_sachs.png?alt=media&token=fb67f637-9158-448b-a013-6e94a8a14a84'
-const harvard = 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fprojects.iq.harvard.edu%2Ffiles%2Fmilitary%2Ffiles%2Fharvardlibrary_vertical_mil.png%3Fm%3D1478641679&f=1'
+const harvard = 'http://itcentralstation.files.wordpress.com/2012/05/harvard-business-school-logo.jpg'
 const mit_logo = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fmit_logo.png?alt=media&token=18d89bcd-9b3c-415b-bb97-1797c19e6e48'
 const kampus_logo = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fronald%2Fkuning.png?alt=media&token=5b693804-74c3-4772-8092-0734ba668f6a'
 const yale_logo = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fyale_logo.png?alt=media&token=2581fb87-8175-433e-ae30-ce3ce7cafe8f'
@@ -24,6 +24,7 @@ const logoImage = "https://firebasestorage.googleapis.com/v0/b/pintu-landing-pag
 const heroImageMobile = "https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fpintu.jpg?alt=media&token=b75f4e48-b3ea-4dd8-973d-d5d2a0caf947"
 const flagUSA = "https://www.countries-ofthe-world.com/flags-normal/flag-of-United-States-of-America.png"
 const flagINDO = "https://www.countries-ofthe-world.com/flags-normal/flag-of-Indonesia.png"
+import BlueCandi from '../assets/BlueCandi.png'
 export {
     playstore,
     phone,
@@ -49,5 +50,6 @@ export {
     logoImage,
     heroImageMobile,
     flagINDO,
-    flagUSA
+    flagUSA,
+    BlueCandi
 }
