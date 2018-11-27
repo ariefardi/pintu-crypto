@@ -2,25 +2,47 @@
     <v-container id="positions-job" fluid>
         <v-layout align-center justify-center column fill-height>
             <v-card flat>
-                <div class="container-job">
+                <div v-if="version=='english'" class="container-job">
                     <v-card-title>
-                        <h1 class="title-header font-weight-bold"> {{title_english}} </h1>
+                        <h1 class="title-header font-weight-heavy"> {{title_english}} </h1>
                     </v-card-title>
                     <div v-for="(value, index) in values_english" :key="index" style="width: 100%;padding: 2rem;">
-                        <v-card-text class="subheader font-weight-medium color-blue align-left">
-                            {{value.position}}
+                        <v-card-text class="subheader font-weight-heavy color-blue align-left">
+                            {{value.job_name}}
                         </v-card-text>
                         <v-card-text>
                             <p class="position-container">
-                                {{value.description}}
+                                {{value.job_desc}}
                             </p>
                         </v-card-text>
                     </div>
-                    <v-card-text class="position-container font-weight-medium align-center">
-                        Interested?
+                    <v-card-text class="position-container font-weight-heavy align-center">
+                        {{our_position.sub_content_1_english}}
                     </v-card-text>
-                    <v-card-text class="position-container font-weight-medium align-center">
-                        Let's Talk! <a href="/" class="color-blue font-weight-medium hrd-link" > hr@pintu.co.id </a>
+                    <v-card-text class="position-container font-weight-heavy align-center">
+                        {{our_position.sub_content_2_english}} <a href="/" class="color-blue font-weight-heavy hrd-link" > {{our_position.email}} </a>
+                    </v-card-text>
+                </div>
+
+                <div v-if="version=='indonesia'" class="container-job">
+                    <v-card-title>
+                        <h1 class="title-header font-weight-heavy"> {{title_english}} </h1>
+                    </v-card-title>
+                    <div v-for="(value, index) in values_indo" :key="index" style="width: 100%;padding: 2rem;">
+                        <v-card-text class="subheader font-weight-heavy color-blue align-left">
+                            {{value.job_name}}
+                        </v-card-text>
+                        <v-card-text>
+                            <p class="position-container">
+                                {{value.job_desc}}
+                            </p>
+                        </v-card-text>
+                    </div>
+                    <v-card-text class="position-container font-weight-heavy align-center">
+                        {{our_position.sub_content_1_indo}}
+                    </v-card-text>
+                    <v-card-text class="position-container font-weight-heavy align-center">
+                        {{our_position.sub_content_2_indo}} <a href="/" class="color-blue font-weight-heavy hrd-link" > {{our_position.email}} </a>
                     </v-card-text>
                 </div>
             </v-card>
@@ -29,25 +51,20 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
+    import {our_position} from '../../config/documentAbout'
     export default {
+        computed: {
+            ...mapState([
+                'version'
+            ])
+        },
         data () {
             return {
                 title_english: "Open Positions",
-                values_english: [
-                    {
-                        position: "Senior Backend Engineer",
-                        description: `We Focus on delivering meaningful impact by creating a revolutionary
-                                    experience through the product and the customer's experience. We push
-                                    the boundary with our thirst for engineering excellence and pefection.`
-                    },
-                    {
-                        position: "Other Positions",
-                        description: `We share information openly and proactively. You area responsible and
-                        accountable for the work you have agreed so that poeple can trust you.
-                        No politics. You only say things about other employees to their face, not
-                        behind their back. You admit mistakes openly`
-                    }
-                ]
+                our_position: our_position,
+                values_english: our_position.values_english,
+                values_indo: our_position.values_indo
             }
         }
     }

@@ -2,7 +2,7 @@
     <v-container>
         <v-card flat v-for="(blog, index) in blogs" :key="index">
             <v-container class="container-card">
-                <v-card-text class="title-date font-weight-bold">
+                <v-card-text class="title-date font-weight-heavy">
                     {{blog.publish_date | getDate}}
                 </v-card-text>
                 <v-card-text class="title-header" >

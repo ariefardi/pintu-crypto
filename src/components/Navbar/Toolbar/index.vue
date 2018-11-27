@@ -6,13 +6,13 @@
                 <v-btn class="button-toggle" v-if="!this.toggle_exclusive" color="blue darken-4" :value="0" >
                     <img class="img-flag" :src="flagUSA" alt="">
                 </v-btn>
-                <v-btn  v-if="this.toggle_exclusive" color="white" :value="0" >
+                <v-btn  v-if="this.toggle_exclusive" color="blue-grey lighten-4" :value="0" >
                     <img class="img-flag" :src="flagUSA" alt="">
                 </v-btn>
                 <v-btn class="button-toggle" v-if="this.toggle_exclusive" color="blue darken-4" :value="1">
                     <img class="img-flag" :src="flagINDO" alt="">
                 </v-btn>
-                <v-btn v-if="!this.toggle_exclusive" color="white"  :value="1">
+                <v-btn v-if="!this.toggle_exclusive" color="blue-grey lighten-4"  :value="1">
                     <img class="img-flag" :src="flagINDO" alt="">
                 </v-btn>
             </v-btn-toggle>
@@ -43,19 +43,19 @@
                     <p style="padding: 0;margin: 0;">App</p>
                 </v-btn>
 
-                <v-btn :ripple="false" v-if="page!=='blog'"  to="/blog" class="button-menu" flat>
-                    Blog
-                </v-btn>
-                <v-btn :ripple="false" v-if="page==='blog'" to="/blog" class="button-menu" style="border-bottom: 3px solid blue" flat>
-                    Blog
-                </v-btn>
-
 
                 <v-btn :ripple="false" v-if="page!=='about'" to="/about" class="button-menu" flat>
                     About
                 </v-btn>
                 <v-btn :ripple="false" v-if="page==='about'" to="/about" class="button-menu" style="border-bottom: 3px solid blue" flat>
                     About
+                </v-btn>
+
+                <v-btn :ripple="false" v-if="page!=='blog'"  to="/blog" class="button-menu" flat>
+                    Blog
+                </v-btn>
+                <v-btn :ripple="false" v-if="page==='blog'" to="/blog" class="button-menu" style="border-bottom: 3px solid blue" flat>
+                    Blog
                 </v-btn>
             </v-toolbar-items>
             <v-spacer></v-spacer>
@@ -67,13 +67,13 @@
                 <v-btn class="button-toggle" v-if="!this.toggle_exclusive" color="blue darken-4" :value="0" >
                     <img class="img-flag" :src="flagUSA" alt="">
                 </v-btn>
-                <v-btn  v-if="this.toggle_exclusive" color="white" :value="0" >
+                <v-btn  v-if="this.toggle_exclusive" color="blue-grey lighten-4" :value="0" >
                     <img class="img-flag" :src="flagUSA" alt="">
                 </v-btn>
                 <v-btn class="button-toggle" v-if="this.toggle_exclusive" color="blue darken-4" :value="1">
                     <img class="img-flag" :src="flagINDO" alt="">
                 </v-btn>
-                <v-btn v-if="!this.toggle_exclusive" color="white" :value="1">
+                <v-btn v-if="!this.toggle_exclusive" color="blue-grey lighten-4" :value="1">
                     <img class="img-flag" :src="flagINDO" alt="">
                 </v-btn>
             </v-btn-toggle>
@@ -211,6 +211,7 @@
             },
             changeLanguage (value) {
                 console.log(value)
+                this.toggle_exclusive = value
                 this.changeVersion(value)
             },
             toLocation (location) {

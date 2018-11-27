@@ -3,43 +3,52 @@
         <v-layout align-center justify-center column fill-height>
             <v-card flat>
                 <v-card-title>
-                    <h1 class="title-header font-weight-bold"> Our Workplace </h1>
+                    <h1 v-if="version=='english'" class="title-header font-weight-heavy"> {{values.title_english}} </h1>
+                    <h1 v-if="version=='indonesia'" class="title-header font-weight-heavy"> {{values.title_indo}} </h1>
                 </v-card-title>
-                <div style="width: 100%;padding: 2rem">
+
+
+
+                <div v-if="version=='english'" style="width: 100%;padding: 2rem">
                     <v-card-text>
                         <p class="subheader color-grey font-weight-medium">
-                            Our version of the great workplace in not comprised of gourmet food,
-                            great gyms, fancy offices, or frequent parties. Our version of the great
-                            workplace is a dream team in pursuit of ambitious commons goals, for which
-                            we spend heavily. It is on such a team that you learn the most, perform
-                            you best work, improve the fastest, and have the most fun.
+                            {{values.content_english_p1}}
                         </p>
                     </v-card-text>
                     <v-card-text>
                         <p class="subheader color-grey font-weight-medium">
-                            We model ourselves on being a team, not a family. A family is about
-                            unconditional love, despite your siblings' unusual behavior. A dream team is
-                            about pushing yourself to be the best teammate you can be, caring
-                            intensely about your teammates, and knowing that you may not be on the
-                            team forever.
+                            {{values.content_english_p2}}
                         </p>
                     </v-card-text>
                 </div>
+                <div v-if="version=='indonesia'" style="width: 100%;padding: 2rem">
+                    <v-card-text>
+                        <p class="subheader color-grey font-weight-medium">
+                            {{values.content_indo_p1}}
+                        </p>
+                    </v-card-text>
+                    <v-card-text>
+                        <p class="subheader color-grey font-weight-medium">
+                            {{values.content_indo_p2}}
+                        </p>
+                    </v-card-text>
+                </div>
+
                 <div style="width: 100%; margin-top: 6rem">
                     <v-card-title>
-                        <h1 class="title-header font-weight-bold"> Our People </h1>
+                        <h1 class="title-header font-weight-heavy"> Our People </h1>
                     </v-card-title>
                     <v-container class="image-container">
                         <v-layout align-center justify-center row fill-height>
                             <div style="width: 100%">
-                                <img v-for="(image, index) in imagesTop" :key="index" class="image-flex" :src="image" alt="">
+                                <img v-for="(image, index) in imagesTop" :key="index" class="image-flex filter-grey" :src="image" alt="">
                             </div>
                         </v-layout>
                     </v-container>
                     <v-container class="image-container">
                         <v-layout align-center justify-center row fill-height>
                             <div style="width: 100%">
-                                <img v-for="(image, index) in imagesBot" :key="index" class="image-flex-2" :src="image" alt="">
+                                <img v-for="(image, index) in imagesBot" :key="index" class="image-flex-2 filter-grey" :src="image" alt="">
                             </div>
                         </v-layout>
                     </v-container>
@@ -58,9 +67,17 @@
         yale_logo,
         harvard
     } from '../../config/images'
+    import {our_workplace} from '../../config/documentAbout'
+    import {mapState} from 'vuex'
     export default {
+        computed: {
+            ...mapState([
+                'version'
+            ])
+        },
         data () {
             return {
+                values : our_workplace,
                 imagesTop : [
                     tokopedia, concensys, goldman_sachs
                 ],
@@ -100,6 +117,9 @@
         margin: auto;
         height: auto;
         padding: 2rem 4rem;
+    }
+    .filter-grey {
+        filter: grayscale(100%) ;
     }
 
     @media only screen and (max-width: 820px) {

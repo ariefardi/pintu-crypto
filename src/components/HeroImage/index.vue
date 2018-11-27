@@ -1,8 +1,13 @@
 <template>
     <div class="container-image">
-        <div class="center">
-            <p class="header-title">Dibalik Pintu</p>
-            <p class="subheader-title">The Official Pintu Blog</p>
+        <div v-if="version=='indonesia'" class="center">
+            <p class="header-title">{{blog.header_indo}}</p>
+            <p class="subheader-title">{{blog.sub_header_indo}}</p>
+        </div>
+
+        <div v-if="version=='english'" class="center">
+            <p class="header-title">{{blog.header_english}}</p>
+            <p class="subheader-title">{{blog.sub_header_english}}</p>
         </div>
         <img :src="image_hero" alt="Cinque Terre" class="hero-image">
     </div>
@@ -11,8 +16,15 @@
 <script>
     import {imageHero} from '../../config/images'
     import {heroImageMobile} from "../../config/images";
+    import blog from '../../config/documentBlog'
+    import {mapState} from 'vuex'
 
     export default {
+        computed: {
+            ...mapState([
+                'version'
+            ])
+        },
         mounted () {
             this.changeImage()
             this.onResize()
@@ -21,7 +33,8 @@
             return {
                 image_hero: imageHero,
                 width: 0,
-                height: 0
+                height: 0,
+                blog: blog
             }
         }
         ,

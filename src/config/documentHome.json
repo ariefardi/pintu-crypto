@@ -1,0 +1,126 @@
+{
+  "google_play": {
+    "title_english": "The best place to buy and sell crypto",
+    "title_indo": "Tempat terbaik untuk jual beli kripto"
+  },
+  "subscribe": {
+    "title_english": "The best place to enter the world of crypto",
+    "title_indo": "Tempat terbaik untuk masuk dunia kripto",
+    "card_english": [
+      {
+        "title": "A security system guaranteed by insurance.",
+        "content": "More than 90% of our crypto is stored offline and the rest is protected by an online security system guaranteed by insurance."
+      },
+      {
+        "title": "Buy and sell crypto with 0 commissions.",
+        "content": "We believe that crypto has to be accessible to everyone, so we provide trading without commission."
+      },
+      {
+        "title": "Aggregator guarantees the best prices.",
+        "content": "Pintu works with the world’s leading exchanges to give you the best buy and sell price for whatever the product and volume."
+      }
+    ],
+    "card_indo": [
+      {
+        "title": "sistem keamanan yang terjamin oleh asuransi.",
+        "content": "Lebih dari 90% kripto anda disimpan secara offline dan sisanya dilindungi oleh sistem keamanan online yang terjamin oleh asuransi."
+      },
+      {
+        "title": "Jual beli kripto bebas biaya komisi.",
+        "content": "Kami percaya bahwa kripto harus bisa diakses oleh semua orang, sehingga kami menawarkan perdagangan tanpa komisi."
+      },
+      {
+        "title": "Aggregator pastikan dapat harga terbaik.",
+        "content": "Pintu bekerja sama dengan berbagai exchange ternama untuk memberikan harga beli dan jual terbaik apapun produk dan jumlahnya."
+      }
+    ]
+  },
+  "how_to": {
+    "title_indo": "Ambil langkah pertama dengan Pintu",
+    "title_english": "Take your first step with Pintu",
+    "content_indo": "Pintu adalah tempat termudah, tercepat, dan paling terpercaya untuk membeli, menjual, mentransfer, dan deposit cryptocurrency.",
+    "content_english": "Pintu is the easiest, fastest, and most trusted place for to buy, sell, transfer and save cryptocurrency",
+    "card_indo": [
+      {
+        "top": "Keamanan Andalan.",
+        "bottom": "Terjamin oleh Asuransi."
+      },
+      {
+        "top": "Jual Beli.",
+        "bottom": "Biaya Gratis"
+      },
+      {
+        "top": "Aggregator.",
+        "bottom": "Harga Terbaik."
+      },
+      {
+        "top": "Belajar Crypto.",
+        "bottom": "Langsung Praktek."
+      }
+    ],
+    "card_english": [
+      {
+        "top": "Security Guaranteed.",
+        "bottom": "Assured with Insurance."
+      },
+      {
+        "top": "Buy and Sell.",
+        "bottom": "No Fees."
+      },
+      {
+        "top": "Aggregator.",
+        "bottom": "Best Price"
+      },
+      {
+        "top": "Learn Crypto.",
+        "bottom": "Langsung Praktek."
+      }
+    ]
+  },
+  "card_step": {
+    "card_english": [
+      {
+        "top": "Buy and Sell.",
+        "bottom": "No Fees.",
+        "content": "We believe that crypto must be accessible to everyone, so we offer trade without commission"
+      },
+      {
+        "top": "Security Guaranteed.",
+        "bottom": "Assured with Insurance.",
+        "content": "More than 90% of your crypto is stored offline and the rest is protected by an online security system guaranteed by insurance"
+      },
+      {
+        "top": "Crypto.",
+        "bottom": "No Risks.",
+        "content": "Pintu provides digital assets that are collateralized by fiat currency stored in the bank and regulated by the government, therefore offering a stable price."
+      },
+      {
+        "top": "Learn Crypto",
+        "bottom": "Act Immediately",
+        "content": "Learn about crypto through various categories and explore knowledge about strengths, weaknesses,and the use case for each crypto"
+      }
+    ],
+    "card_indo": [
+      {
+        "top": "Jual Beli.",
+        "bottom": "Biaya Gratis.",
+        "content": "Kami percaya bahwa kripto harus bisa diakses oleh semua orang, sehingga kami menawarkan perdagangan tanpa komisi"
+      },
+      {
+        "top": "Keamanan Andalan.",
+        "bottom": "Terjamin oleh Asuransi.",
+        "content": "Lebih dari 90% kripto anda disimpan secara offline dan sisanya dilindungi oleh sistem keamanan online yang terjamin oleh asuransi"
+      },
+      {
+        "top": "Kripto.",
+        "bottom": "Tanpa Resiko.",
+        "content": "Pintu menyediakan aset kripto yang didukung mata uang nyata yang tersimpan di bank dan diatur oleh pemerintah, sehingga harga tersebut stabil."
+      },
+      {
+        "top": "Belajar Kripto.",
+        "bottom": "Langsung Praktek.",
+        "content": "Belajar tentang cyrpto melalui berbagai macam kategori and jelajahi tentang kekuatan, kelemahan and kegunaan tiap tiap kasus crypto"
+      }
+    ]
+  }
+}

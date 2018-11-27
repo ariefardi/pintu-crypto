@@ -3,11 +3,11 @@
         <v-layout>
             <v-card flat width="100%">
                 <v-container class="container-card">
-                    <v-card-title v-if="version=='indonesia'" class="title-header font-weight-medium no-padding">
+                    <v-card-title v-if="version=='indonesia'" class="title-header font-weight-heavy no-padding justify-center">
                         {{title_indo}}
                     </v-card-title>
 
-                    <v-card-title v-if="version=='english'" class="title-header font-weight-medium no-padding">
+                    <v-card-title v-if="version=='english'" class="title-header font-weight-heavy no-padding justify-center">
                         {{title_english}}
                     </v-card-title>
                 </v-container>
@@ -38,19 +38,37 @@
 
 
                 <v-container>
-                    <v-layout row wrap align-start justify-center>
-                        <v-flex xs12 sm6 md4 v-for="(card, index) in cardData_ind" :key="index">
+                    <v-layout v-if="version=='indonesia'" row wrap align-start justify-center>
+                        <v-flex  xs12 sm12 md4 v-for="(card, index) in cardData_ind" :key="index">
                             <v-card flat>
-                                <v-layout align-end justify-start row fill-height>
+                                <v-layout align-end justify-start row fill-height class="to-center-content">
                                     <v-flex xs4>
-                                        <v-img class="image-subs" :src="card.image" alt="" />
+                                        <v-img class="image-subs" :src="images[index]" alt="" />
                                     </v-flex>
                                 </v-layout>
-                                <v-card-text class="subheader ">
-                                    {{card.string1}}
+                                <v-card-text class="subheader font-weight-heavy to-center ">
+                                    {{card.title}}
                                 </v-card-text>
-                                <v-card-text class="content-subscribe color-grey">
-                                    {{card.string2}}
+                                <v-card-text class="content font-weight-heavy color-grey to-center">
+                                    {{card.content}}
+                                </v-card-text>
+                            </v-card>
+                        </v-flex>
+                    </v-layout>
+
+                    <v-layout v-if="version=='english'" row wrap align-start justify-center>
+                        <v-flex  xs12 sm12 md4 v-for="(card, index) in cardData_eng" :key="index">
+                            <v-card flat>
+                                <v-layout align-end justify-start row class="to-center-content">
+                                    <v-flex xs4>
+                                        <v-img class="image-subs to-center" :src="images[index]" alt="" />
+                                    </v-flex>
+                                </v-layout>
+                                <v-card-text class="subheader font-weight-heavy to-center ">
+                                    {{card.title}}
+                                </v-card-text>
+                                <v-card-text class="content font-weight-heavy color-grey to-center">
+                                    {{card.content}}
                                 </v-card-text>
                             </v-card>
                         </v-flex>
@@ -87,6 +105,8 @@
     import { defender, free, arah} from '../../config/images.js'
     import {DB, swal} from '../../config'
     import {mapState} from 'vuex'
+    import {subscribe} from '../../config/documentHome.json'
+    console.log(subscribe)
     export default {
         computed: {
             ...mapState([
@@ -130,52 +150,33 @@
                 timeout: 6000,
                 text: 'Hello!! Email anda telah di tambahkan ke daftar waiting list kami ^^',
                 email: "",
-                title_indo: "Tempat terbaik untuk masuk dunia kripto",
-                title_english: "Take your step with Pintu",
-                content_english: "Pintu is easiest place, fastest, and most trusted for buy, trading, transfer and saving cryptocurrency",
-                content_indo: "Pintu adalah tempat termudah, tercepat, dan paling terpercaya untuk " +
-                    "membeli, menjual, mentransfer, dan deposit cryptocurrency.",
-                cardData_ind: [
-                    {
-                        image: defender,
-                        string1: "sistem kemanan yang terjamin oleh asuransi.",
-                        string2: `Lebih dari 90% kripto anda disimpan secara offline dan sisanya
-                        dilindungi oleh sistem kemanan online yang terjamin oleh asuransi`
-                    },
-                    {
-                        image: free,
-                        string1: "Jual beli kripto bebas biaya komisi.",
-                        string2: `Pintu bekerja sama dengan berbagai exchange ternama untuk
-                        memberikan harga beli dan jual terbaik apapun produk dan jumlahnya`
-
-                    },
-                    {
-                        image: arah,
-                        string1: "Aggregator pastikan dapat harga lebih baik.",
-                        string2: `Kami percaya bahwa kripto harus bisa diakses oleh semua orang,
-                         sehingga kami menawarkan perdagangan tanpa komisi.`
-                    },
-                ],
-                cardData_eng: [
-                    {
-                        image: defender,
-                        string1: "Keamanan Andalan.",
-                        string2: "Terjamin oleh Asuransi."
-                    },
-                    {
-                        image: free,
-                        string1: "Jual Beli.",
-                        string2: "Biaya Gratis."
-                    },
-                    {
-                        image: arah,
-                        string1: "Aggregator.",
-                        string2: "Biaya Gratis."
-                    },
-                ]
+                title_indo: subscribe.title_indo,
+                title_english: subscribe.title_english,
+                cardData_eng: subscribe.card_english,
+                cardData_ind: subscribe.card_indo,
+                images: [defender, free, arah]
             }
         }
     }
 </script>
+
+<style>
+    .content {
+        font-size: 18px;
+        padding-top: 0 !important;
+    }
+    @media only screen and (max-width: 720px) {
+        .content {
+            font-size: 14px;
+            padding-top: 0 !important;
+        }
+        .to-center {
+            text-align: center;
+        }
+        .to-center-content {
+            justify-content: center;
+        }
+    }
+</style>
 
 

@@ -2,10 +2,10 @@
     <v-container style="margin-top: 1rem">
         <v-card flat>
             <v-container class="card-container">
-                <v-card-title v-if="version=='english'" class="title-header font-weight-medium" >
+                <v-card-title  v-if="version=='english'" class="title-header font-weight-heavy align-center justify-center" >
                     {{title_english}}
                 </v-card-title>
-                <v-card-title v-if="version=='indonesia'" class="title-header font-weight-medium" >
+                <v-card-title v-if="version=='indonesia'" class="title-header font-weight-heavy align-center justify-center" >
                     {{title_indo}}
                 </v-card-title>
                 <v-container>
@@ -22,6 +22,7 @@
 <script>
     import {playstore, phone} from "../../config/images";
     import {mapState} from 'vuex'
+    import {google_play} from '../../config/documentHome.json'
     export default {
         mounted () {
             this.checkingSize()
@@ -32,8 +33,8 @@
                 image2: playstore,
                 width: 2000,
                 height: 2000,
-                title_english: "Easiest place for buying crypto",
-                title_indo: "Tempat termudah untuk jual beli crypto"
+                title_english: google_play.title_english,
+                title_indo: google_play.title_indo
 
             }
         },

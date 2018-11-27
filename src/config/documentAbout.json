@@ -1,0 +1,91 @@
+{
+  "join_us": {
+    "title_indo": "Misi kami adalah mempercepat transisi menuju sistem keuangan terbuka",
+    "title_english": "Our Mission is to accelerate the transition to an open financial system"
+  },
+  "our_name": {
+    "title_english": "Our Name",
+    "title_indo": "Nama Kami",
+    "content_english": "Our Mission is to accelerate the transition to an open financial system",
+    "content_indo": "Misi kami adalah mempercepat transisi menuju sistem keuangan terbuka",
+    "p1_english": "Pintu is the Indonesian word for door. Doors are not only used to safeguard belongings when closed, but also allow for new encounters and exchanges when opened.",
+    "p1_indo": "Pintu berasal dari kata bahasa Indonesia. Sebuah pintu tidak hanya untuk digunakan mengamankan barang-barang di dalamnya ketika ditutup, tetapi juga memungkinkan untuk pertemuan baru dan pertukaran saat dibuka.",
+    "p2_english": "Our founders were frustrated with the existing financial system, especially when they encountered high fees, the painful process, and non-transparent nature of the existing financial system. Our experience led us to believe in moving towards an open financial system, one that is not controlled by one company or country (just like what the internet did for information).",
+    "p2_indo": "Awalnya pendiri kami frustasi dengan sistem keuangan yang ada, khususnya ketika mereka menghadapi biaya tinggi, proses yang menyusahkan, dan sifat sistem keuangan yang tidak transparan. Pengalaman kami membuat kami percaya dan bergerak menuju sistem keuangan yang terbuka, sebuah sistem yang tidak dikendalikan oleh satu perusahaan atau negara (seperti apa yang dilakukan internet untuk informasi dan data).",
+    "p3_english": "Imagine if anyone who had a smartphone can have access to the same financial services enjoyed by the upper tier.",
+    "p3_indo": "Bayangkan jika siapapun yang memiliki smartphone dapat memiliki akses yang sama ke jasa keuangan yang dinikmati oleh tingkat atas.",
+    "p4_english": "We believe an open financial system can bring the biggest impact and lift billions out of poverty. Our plan is to take this opportunity to change the world.",
+    "p4_indo": "Kami percaya sistem keuangan yang terbuka dapat membawa dampak dan mengangkat miliaran orang dari kemiskinan. Rencana kami adalah mengambil kesempatan ini untuk mengubah dunia."
+  },
+  "our_values": {
+    "title_english": "Our Value",
+    "title_indo": "Nilai Kami",
+    "card_value": {
+      "value_indo": [
+        {
+          "sub_title": "Pengaruh melalui Inovasi",
+          "content": "Kami fokus untuk memberikan pengaruh yang berarti dengan menciptakan pengalaman revolusioner melalui produk dan pengalaman pelanggan kami. Kami mendorong batas teknologi dengan keinginan kami akan keunggulan teknis dan kesempurnaan."
+        },
+        {
+          "sub_title": "Integritas melalui Transparansi",
+          "content": "Kami membagi informasi secara terbuka dan proaktif. Setiap anggota tim kami bertanggung jawab secara penuh untuk menuntaskan pekerjaan yang sudah disepakati agar memastikan kami bisa saling mempercayai. Tidak ada Politik. Kami hanya mengatakan hal-hal tentang karyawan lain di depan mereka, tidak di belakangnya. Kami juga berani mengakui kesalahan."
+        },
+        {
+          "sub_title": "Menjunjung tinggi kerja sama dan kebersamaan",
+          "content": "Kami terus berjuang berkontribusi yang terbaik untuk mewujudkan visi Pintu diatas kepentingan tim atau grup anda. Kami berkeyakinan tinggi dan juga rendah hati. Kami mengakui kinerja dan prestasi seseorang, bukan jabatan, usia, dan senioritas anda."
+        }
+      ],
+      "value_english": [
+        {
+          "sub_title": "Impact through Innovation",
+          "content": "We Focus on delivering meaningful impact by creating a revolutionary experience through the product and the customer's experience. We push the boundary with our thirst for engineering excellence and perfection."
+        },
+        {
+          "sub_title": "Integrity through Transparency",
+          "content": "We share information openly and proactively. You are responsible and accountable for the work you have agreed so that people can trust you. No politics. You only say things about other employees to their face, not behind their back. You admit mistakes openly"
+        },
+        {
+          "sub_title": "Passion through teamwork and selflessness",
+          "content": "You fight for what is best for Pintu's Vision above group/ team's success and contribute your energy to make it happen. You area quietly confident and openly humble You are acknowledged for your performance and merit- not your tenure, age, or seniority."
+        }
+      ]
+    }
+  },
+  "our_workplace": {
+    "title_english": "Our Workplace",
+    "title_indo": "Tempat Kerja Kami",
+    "content_english_p1": "Our version of the great workplace in not comprised of gourmet food, great gyms, fancy offices, or frequent parties. Our version of the great workplace is a dream team in pursuit of ambitious commons goals, for which we spend heavily. It is on such a team that you learn the most, perform you best work, improve the fastest, and have the most fun.",
+    "content_indo_p1": "Versi dari tempat kerja yang terbaik bagi kami bukan berupa sebuah tempat yang menyediakan makanan lengkap, tempat berolahraga, peralatan mewah, ataupun pesta kantor. Bukan. Versi dari tempat kerja terbaik bagi kami adalah sebuah tim impian yang berkeinginan kuat untuk mengejar sebuah tujuan ambisius bersama, dimana kami rela membayar banyak untuk mendapatkan tim tersebut. Di tim inilah anda akan belajar paling banyak, bekerja terbaik, tumbuh tercepat, dan menghabiskan waktu paling menyenangkan.",
+    "content_english_p2": "We model ourselves on being a team, not a family. A family is about unconditional love, despite your siblings' unusual behavior. A dream team is about pushing yourself to be the best teammate you can be, caring intensely about your teammates, and knowing that you may not be on the team forever.",
+    "content_indo_p2": "Kami menciptakan Pintu seperti sebuah tim olahraga, bukan seperti keluarga. Sebuah keluarga saling mencintai anggotanya tanpa syarat meskipun perilaku saudaramu yang aneh. Sebuah tim impian yang kami contohi lebih seperti sebuah tim yang saling mendorong untuk menjadi anggota tim terbaik, saling memperhatikan rekan kami, dan waspada bahwa kita tidak mungkin berada di tim tersebut selamanya."
+  },
+  "our_position": {
+    "title_english": "Open Positions",
+    "title_indo": "Posisi terbuka",
+    "values_english": [
+      {
+        "job_name": "Senior Backend Engineer",
+        "job_desc": "We are currently looking for a Senior Backend Engineer ready to change the way people think about money. Our ideal candidate is someone capable of designing systems from scratch and has experience in setting up services using the service oriented architecture approach. The ideal candidate would have had 3+ years of experience working as a backend engineer, and have a strong interest in fintech, Blockchains, and cryptocurrencies."
+      },
+      {
+        "job_name": "Other Positions",
+        "job_desc": "We are always looking to exceptional talent, especially if you are interested in blockchain, cryptocurrencies, distributed computing, and open financial systems."
+      }
+    ],
+    "values_indo": [
+      {
+        "job_name": "Senior Backend Engineer",
+        "job_desc": "Kami sedang mencari seorang Senior Backend Engineer yang siap merubah cara orang berpikir tentang uang. Kandidat ideal kami adalah seseorang yang mampu merancang sistem dari awal dan memiliki pengalaman membuat pelayanan “micro services”. Kandidat yang ideal akan memiliki 3+ tahun pengalaman bekerja sebagai backend engineer, dan memiliki minat yang kuat dalam fintech, blockchains, dan cryptocurrency."
+      },
+      {
+        "job_name": "Posisi Lainnya",
+        "job_desc": "Kami juga sedang mencari kandidat-kandidat untuk menempati posisi lainnya, khususnya jika anda berminat dengan sistem blockchain, cryptocurrency, sistem komputasi terdistribusi dan sistem keuangan terbuka."
+      }
+    ],
+    "sub_content_1_english": "Interested?",
+    "sub_content_1_indo": "Berminat?",
+    "sub_content_2_english": "Let's Talk!",
+    "sub_content_2_indo": "Yuk Ngobrol!",
+    "email": "hr@pintu.co.id"
+  }
+}
