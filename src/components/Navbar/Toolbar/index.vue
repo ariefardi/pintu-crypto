@@ -120,6 +120,7 @@
 <script>
     import  {logoImage, flagUSA, flagINDO} from "../../../config/images";
     import {mapState, mapActions} from 'vuex'
+    import $ from "jquery";
     export default {
         created () {
             this.checkPage()
@@ -181,19 +182,18 @@
                 'changeVersion'
             ]),
             onScroll () {
-                window.addEventListener('scroll', (e) => {
-                    this.scroll = e.path[1].scrollY
-                    if (e.path[1].scrollY>200)  {
+                console.log('scrollll')
+                $(window).scroll(function(e) {
+                    let temp = $(window).scrollTop()
+                    if (temp>200)  {
                         this.downloadPosition = true
                         document.getElementById('nav-class').style.backgroundColor = "white"
                     }
-                    else if(e.path[1].scrollY<=200) {
+                    else if(temp<=200) {
                         this.downloadPosition = false
                         document.getElementById('nav-class').style.backgroundColor = "transparent"
-                        // document.getElementById('download-layout').style.backgroundColor = "transparent"
-                        // document.getElementById('download-layout').style.display = "flex"
                     }
-                    return e.path[1].scrollY
+
                 })
             },
             checkVersionsStorage () {

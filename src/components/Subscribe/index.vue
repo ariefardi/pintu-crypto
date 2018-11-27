@@ -41,17 +41,27 @@
                     <v-layout v-if="version=='indonesia'" row wrap align-start justify-center>
                         <v-flex  xs12 sm12 md4 v-for="(card, index) in cardData_ind" :key="index">
                             <v-card flat>
-                                <v-layout align-end justify-start row fill-height class="to-center-content">
-                                    <v-flex xs4>
-                                        <v-img class="image-subs" :src="images[index]" alt="" />
-                                    </v-flex>
-                                </v-layout>
-                                <v-card-text class="subheader font-weight-heavy to-center ">
-                                    {{card.title}}
-                                </v-card-text>
-                                <v-card-text class="content font-weight-heavy color-grey to-center">
-                                    {{card.content}}
-                                </v-card-text>
+                                <!--<v-layout align-end justify-start row fill-height class="to-center-content">-->
+                                    <!--<v-flex xs1 >-->
+                                    <!--</v-flex>-->
+                                <!--</v-layout>-->
+                                <v-container>
+                                    <v-layout row wrap class="to-center to-center-content">
+                                        <v-flex xs12>
+                                            <img class="image-subs to-center-content" :src="images[index]" alt="" />
+                                        </v-flex >
+                                        <v-flex xs12>
+                                            <v-card-text class="subheader font-weight-heavy to-center ">
+                                                {{card.title}}
+                                            </v-card-text>
+                                        </v-flex>
+                                        <v-flex xs12>
+                                            <v-card-text class="content font-weight-heavy color-grey to-center">
+                                                {{card.content}}
+                                            </v-card-text>
+                                        </v-flex>
+                                    </v-layout>
+                                </v-container>
                             </v-card>
                         </v-flex>
                     </v-layout>
@@ -164,6 +174,15 @@
     .content {
         font-size: 18px;
         padding-top: 0 !important;
+    }
+    .to-left {
+        text-align: left;
+    }
+    .to-left-content {
+        justify-content: flex-start;
+    }
+    .to-center-image {
+        justify-content: center;
     }
     @media only screen and (max-width: 720px) {
         .content {

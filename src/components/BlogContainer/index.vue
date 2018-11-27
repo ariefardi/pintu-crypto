@@ -1,15 +1,25 @@
 <template>
     <v-container>
         <v-card flat v-for="(blog, index) in blogs" :key="index">
-            <v-container class="container-card">
-                <v-card-text class="title-date font-weight-heavy">
-                    {{blog.publish_date | getDate}}
-                </v-card-text>
-                <v-card-text class="title-header" >
-                    {{blog.title}}
-                </v-card-text>
-                <img class="image-content" :src="blog.images" alt="">
-                <v-card-text v-html="blog.content" class="isi-blog" />
+            <v-container>
+                <v-layout row wrap align-center justify-center>
+                    <v-flex xs12>
+                        <v-card-text class="title-date font-weight-heavy">
+                            {{blog.publish_date | getDate}}
+                        </v-card-text>
+                    </v-flex>
+                    <v-flex xs12>
+                        <v-card-text class="title-header" >
+                            {{blog.title}}
+                        </v-card-text>
+                    </v-flex>
+                    <v-flex xs12>
+                        <img class="image-content" :src="blog.images" alt="">
+                    </v-flex>
+                    <v-flex xs12>
+                        <v-card-text v-html="blog.content" class="isi-blog" />
+                    </v-flex>
+                </v-layout>
             </v-container>
             <v-divider></v-divider>
         </v-card>
