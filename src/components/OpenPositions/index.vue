@@ -4,7 +4,7 @@
             <v-card flat>
                 <div class="container-job">
                     <v-card-title>
-                        <h1 class="title-header"> {{title_english}} </h1>
+                        <h1 class="title-header font-weight-bold"> {{title_english}} </h1>
                     </v-card-title>
                     <div v-for="(value, index) in values_english" :key="index" style="width: 100%;padding: 2rem;">
                         <v-card-text class="subheader font-weight-medium color-blue align-left">

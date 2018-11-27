@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-card flat>
-            <v-card-title class="title-header font-weight-medium">
+            <v-card-title class="title-header font-weight-bold">
                 <h1 v-if="version==='english'" class="text-join" > {{title_english}}</h1>
                 <h1 v-if="version==='indonesia'" class="text-join" > {{title_indo}}</h1>
             </v-card-title>

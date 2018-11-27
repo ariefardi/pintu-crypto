@@ -16,6 +16,24 @@
                     <img class="img-flag" :src="flagINDO" alt="">
                 </v-btn>
             </v-btn-toggle>
+            <!--<v-menu style="margin-left: 16px" open-on-hover top offset-y>-->
+                <!--<div slot="activator">-->
+                    <!--<img v-if="!toggle_exclusive" class="img-flag"  :src="flagUSA" alt="">-->
+                    <!--<img v-if="toggle_exclusive" class="img-flag"  :src="flagINDO" alt="">-->
+                <!--<v-icon>keyboard_arrow_down</v-icon>-->
+                <!--</div>-->
+
+                <!--<v-list>-->
+                    <!--<v-list-tile-->
+                            <!--v-for="(flag, index) in flags"-->
+                            <!--:key="index"-->
+                            <!--@click="changeLanguage(flag.value)"-->
+                    <!--&gt;-->
+                        <!--&lt;!&ndash;<v-list-tile-title>{{ flag.value }}</v-list-tile-title>&ndash;&gt;-->
+                        <!--<img class="img-flag"  :src="flag.image" alt="">-->
+                    <!--</v-list-tile>-->
+                <!--</v-list>-->
+            <!--</v-menu>-->
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">
                 <v-btn :ripple="false" v-if="page!=='home'" to="/" class="button-menu" flat>
@@ -75,6 +93,7 @@
                 temporary
                 right
                 v-if="drawer"
+                width="100"
         >
             <v-list class="pt-0 position-drawer" dense>
                 <v-divider></v-divider>
@@ -143,6 +162,16 @@
                     { title: 'About', location: '/about' },
                     { title: 'Download', location: '/' }
                 ],
+                flags: [
+                    {
+                        image: flagUSA,
+                        value: 0,
+                    },
+                    {
+                        image: flagINDO,
+                        value: 1,
+                    }
+                ],
                 right: null,
                 scroll: 0
             }
@@ -177,7 +206,12 @@
               }
             },
             triggerToggle (e) {
+                console.log(e)
                 this.changeVersion(e)
+            },
+            changeLanguage (value) {
+                console.log(value)
+                this.changeVersion(value)
             },
             toLocation (location) {
                 this.$router.push(location)
@@ -222,6 +256,9 @@
         color: white !important;
     }
     .button-menu {
+        font-size: 24px;
+        margin-left: 2rem !important;
+        margin-right: 2rem !important;
         text-transform: capitalize;
         color: lightslategrey !important;
     }

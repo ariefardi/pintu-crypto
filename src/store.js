@@ -53,7 +53,8 @@ export default new Vuex.Store({
                             let obj = {
                                 title: data.title_english,
                                 content: data.content_english,
-                                publish_date: data.publish_date
+                                publish_date: data.publish_date,
+                                images: data.images
                             }
                             temp.push(obj)
                         }
@@ -61,7 +62,8 @@ export default new Vuex.Store({
                             let obj = {
                                 title: data.title_indo,
                                 content: data.content_indo,
-                                publish_date: data.publish_date
+                                publish_date: data.publish_date,
+                                images: data.images
                             }
                             temp.push(obj)
                         }

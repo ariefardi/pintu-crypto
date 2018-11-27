@@ -3,7 +3,7 @@
         <v-layout align-center justify-center column fill-height>
             <v-card flat>
                 <v-card-title>
-                    <h1 class="title-header font-weight-medium">{{title_english}}</h1>
+                    <h1 class="title-header font-weight-bold">{{title_english}}</h1>
                 </v-card-title>
                 <div v-for="(value, index) in values_english" :key="index" style="width: 100%;padding: 2rem;">
                     <v-card-text class="values-sub-title font-weight-medium align-center">

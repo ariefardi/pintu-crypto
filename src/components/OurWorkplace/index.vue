@@ -3,7 +3,7 @@
         <v-layout align-center justify-center column fill-height>
             <v-card flat>
                 <v-card-title>
-                    <h1 class="title-header font-weight-medium"> Our Workplace </h1>
+                    <h1 class="title-header font-weight-bold"> Our Workplace </h1>
                 </v-card-title>
                 <div style="width: 100%;padding: 2rem">
                     <v-card-text>
@@ -25,9 +25,9 @@
                         </p>
                     </v-card-text>
                 </div>
-                <div style="width: 100%">
+                <div style="width: 100%; margin-top: 6rem">
                     <v-card-title>
-                        <h1 class="title-header font-weight-medium"> Our People </h1>
+                        <h1 class="title-header font-weight-bold"> Our People </h1>
                     </v-card-title>
                     <v-container class="image-container">
                         <v-layout align-center justify-center row fill-height>

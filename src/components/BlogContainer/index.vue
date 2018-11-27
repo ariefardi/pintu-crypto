@@ -8,6 +8,7 @@
                 <v-card-text class="title-header" >
                     {{blog.title}}
                 </v-card-text>
+                <img class="image-content" :src="blog.images" alt="">
                 <v-card-text v-html="blog.content" class="isi-blog" />
             </v-container>
             <v-divider></v-divider>
@@ -69,5 +70,8 @@
             padding-left: 3rem;
             padding-right: 3rem;
         }
+    }
+    .image-content {
+        width: 100% !important;
     }
 </style>

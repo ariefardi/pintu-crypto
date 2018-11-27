@@ -1,7 +1,7 @@
 <template>
     <div class="container-image">
         <div v-if="version==='english'" class="center">
-            <v-card-text class="header-title color-white font-weight-medium">Our Name</v-card-text>
+            <v-card-text class="header-title color-white font-weight-bold">Our Name</v-card-text>
             <v-card-text class="paragraph">
                 Pintu is the Indonesian word for door. Doors area not only to
                 safeguard belongings when closed, but also allow for new encounters and

@@ -22,8 +22,8 @@ const mail_logo = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pag
 const message = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fmessage.png?alt=media&token=f1248038-77f1-4199-8fbc-a0b8f12ad999'
 const logoImage = "https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2FArtboard%201.png?alt=media&token=244012db-a7ef-42a0-afcb-e4b86aa48cca"
 const heroImageMobile = "https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fpintu.jpg?alt=media&token=b75f4e48-b3ea-4dd8-973d-d5d2a0caf947"
-const flagUSA = "https://www.countries-ofthe-world.com/flags-normal/flag-of-United-States-of-America.png"
-const flagINDO = "https://www.countries-ofthe-world.com/flags-normal/flag-of-Indonesia.png"
+const flagUSA = "https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2FWhatsApp%20Image%202018-11-26%20at%2020.36.55.jpeg?alt=media&token=1526c6f0-b1c6-4b6d-98ef-93055d260a2c"
+const flagINDO = "https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2FWhatsApp%20Image%202018-11-26%20at%2020.35.51.jpeg?alt=media&token=4c3d911e-c789-4af5-9054-804bea495f21"
 import BlueCandi from '../assets/BlueCandi.png'
 export {
     playstore,

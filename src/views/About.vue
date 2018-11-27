@@ -1,11 +1,11 @@
 <template>
   <v-container fluid class="about-wrapper">
     <AboutHeroImage />
-    <JoinUs />
-    <OurName />
-    <OurValues />
-    <OurWorkplace />
-    <OpenPositions />
+    <JoinUs class="margin-top-4-rem" />
+    <OurName class="margin-top-4-rem" />
+    <OurValues class="margin-top-6-rem" />
+    <OurWorkplace class="margin-top-4-rem" />
+    <OpenPositions class="margin-top-6-rem" />
     <Footer />
   </v-container>
 </template>
@@ -34,4 +34,10 @@
   .about-wrapper {
     padding: 0 !important;
   }
+  .margin-top-4-rem {
+    margin-top: 4rem;
+  }
+  .margin-top-6-rem {
+    margin-top: 12rem !important;
+   }
 </style>

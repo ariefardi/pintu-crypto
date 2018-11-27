@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="page-wrapper">
+  <v-container  style="margin-top: 3rem;" fluid class="page-wrapper">
     <GooglePlay />
       <Subscribe />
       <HowTo />
