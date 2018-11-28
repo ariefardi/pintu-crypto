@@ -16,30 +16,12 @@
                     <img class="img-flag" :src="flagINDO" alt="">
                 </v-btn>
             </v-btn-toggle>
-            <!--<v-menu style="margin-left: 16px" open-on-hover top offset-y>-->
-                <!--<div slot="activator">-->
-                    <!--<img v-if="!toggle_exclusive" class="img-flag"  :src="flagUSA" alt="">-->
-                    <!--<img v-if="toggle_exclusive" class="img-flag"  :src="flagINDO" alt="">-->
-                <!--<v-icon>keyboard_arrow_down</v-icon>-->
-                <!--</div>-->
-
-                <!--<v-list>-->
-                    <!--<v-list-tile-->
-                            <!--v-for="(flag, index) in flags"-->
-                            <!--:key="index"-->
-                            <!--@click="changeLanguage(flag.value)"-->
-                    <!--&gt;-->
-                        <!--&lt;!&ndash;<v-list-tile-title>{{ flag.value }}</v-list-tile-title>&ndash;&gt;-->
-                        <!--<img class="img-flag"  :src="flag.image" alt="">-->
-                    <!--</v-list-tile>-->
-                <!--</v-list>-->
-            <!--</v-menu>-->
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">
                 <v-btn :ripple="false" v-if="page!=='home'" to="/" class="button-menu" @click="topScroll" flat>
                     <p style="padding: 0;margin: 0;">App</p>
                 </v-btn>
-                <v-btn :ripple="false" v-if="page==='home'"  to="/" class="button-menu" style="border-bottom: 3px solid blue" @click="topScroll" flat>
+                <v-btn :ripple="false" v-if="page==='home'"  to="/" class="button-menu" style="border-bottom: 3px solid blue; margin-bottom: 2px" @click="topScroll" flat>
                     <p style="padding: 0;margin: 0;">App</p>
                 </v-btn>
 
@@ -47,14 +29,14 @@
                 <v-btn :ripple="false" v-if="page!=='about'" to="/about" class="button-menu" @click="topScroll" flat>
                     About
                 </v-btn>
-                <v-btn :ripple="false" v-if="page==='about'" to="/about" class="button-menu" style="border-bottom: 3px solid blue" @click="topScroll"  flat>
+                <v-btn :ripple="false" v-if="page==='about'" to="/about" class="button-menu" style="border-bottom: 3px solid blue; margin-bottom: 2px" @click="topScroll"  flat>
                     About
                 </v-btn>
 
                 <v-btn :ripple="false" v-if="page!=='blog'"  to="/blog" class="button-menu" @click="topScroll"  flat>
                     Blog
                 </v-btn>
-                <v-btn :ripple="false" v-if="page==='blog'" to="/blog" class="button-menu" style="border-bottom: 3px solid blue" @click="topScroll"  flat>
+                <v-btn :ripple="false" v-if="page==='blog'" to="/blog" class="button-menu" style="border-bottom: 3px solid blue; margin-bottom: 2px" @click="topScroll"  flat>
                     Blog
                 </v-btn>
             </v-toolbar-items>
@@ -123,13 +105,13 @@
     import $ from "jquery";
     export default {
         created () {
-            this.checkPage()
+            // this.checkPage()
             this.checkVersionsStorage()
         },
         mounted () {
             this.checkingSize()
             this.checkPage()
-            this.checkVersionsStorage()
+            // this.checkVersionsStorage()
             this.onScroll()
         },
         components: {
@@ -163,16 +145,6 @@
                     { title: 'About', location: '/about' },
                     { title: 'Download', location: '/' }
                 ],
-                flags: [
-                    {
-                        image: flagUSA,
-                        value: 0,
-                    },
-                    {
-                        image: flagINDO,
-                        value: 1,
-                    }
-                ],
                 right: null,
                 scroll: 0
             }
@@ -183,6 +155,9 @@
             ]),
             topScroll () {
               window.scrollTo(0,0)
+                let version = localStorage.getItem('version')
+                // this.changeVersion(version)
+                console.log(' ini versionns', version)
             },
             onScroll () {
                 console.log('scrollll')
@@ -202,22 +177,19 @@
             checkVersionsStorage () {
               let version = localStorage.getItem('version')
               if (version==1) {
+                  console.log('ini jalan gak')
                   this.toggle_exclusive = 1
-                  this.$store.dispatch('changeVersion', 'indonesia')
+                  this.$store.dispatch('changeVersion', 1)
               }
               else {
                   this.toggle_exclusive = 0
-                  this.$store.dispatch('changeVersion', 'english')
+                  this.$store.dispatch('changeVersion', 0)
+                  console.log('ini jalan gak')
               }
             },
             triggerToggle (e) {
                 console.log(e)
                 this.changeVersion(e)
-            },
-            changeLanguage (value) {
-                console.log(value)
-                this.toggle_exclusive = value
-                this.changeVersion(value)
             },
             toLocation (location) {
                 this.$router.push(location)

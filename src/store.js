@@ -7,7 +7,7 @@ export default new Vuex.Store({
     state: {
         drawer: null,
         page: "",
-        version: "english",
+        version: "",
         blogs: []
 
     },
@@ -30,13 +30,16 @@ export default new Vuex.Store({
             commit('setDrawer', payload)
         },
         changeVersion({commit}, payload) {
+            console.log('jalan dimana', payload)
             if (payload===0) {
+                console.log(payload,'payloadnya 0')
                 localStorage.setItem('version', 0)
                 commit('setVersion', 'english')
                 this.dispatch('fetchingBlogs', 'english')
             }
-            else {
+            else if(payload===1) {
                 localStorage.setItem('version', 1)
+                console.log(payload,'payloadnya 0')
                 commit('setVersion', 'indonesia')
                 this.dispatch('fetchingBlogs', 'indonesia')
             }

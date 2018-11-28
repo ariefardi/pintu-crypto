@@ -24,7 +24,7 @@
     }
 
 
-    img {
+    .image-candi {
         width: 100%;
         height: auto;
     }

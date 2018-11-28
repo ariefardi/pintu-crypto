@@ -42,7 +42,7 @@
                         {{our_position.sub_content_1_indo}}
                     </v-card-text>
                     <v-card-text class="position-container font-weight-heavy align-center">
-                        {{our_position.sub_content_2_indo}} <a href="/" class="color-blue font-weight-heavy hrd-link" > {{our_position.email}} </a>
+                        {{our_position.sub_content_2_indo}} <a @click="emailSend()" class="color-blue font-weight-heavy hrd-link" > {{our_position.email}} </a>
                     </v-card-text>
                 </div>
             </v-card>
@@ -66,7 +66,15 @@
                 values_english: our_position.values_english,
                 values_indo: our_position.values_indo
             }
+        },
+        methods: {
+            emailSend () {
+                console.log('change halaman')
+                // window.open('mailto:hr@pintu.co.id');
+                window.location.href = "mailto:hr@pintu.co.id?subject=Subject&body=message%20goes%20here";
+            }
         }
+
     }
 </script>
 

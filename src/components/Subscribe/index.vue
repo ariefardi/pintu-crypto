@@ -19,6 +19,7 @@
                                         label="Enter your email address"
                                         solo
                                         v-model="email"
+                                        full-width
                                 ></v-text-field>
                             </v-layout>
                         </v-flex>
@@ -126,31 +127,44 @@
             ])
         },
         methods: {
-          subs () {
-              if (this.email) {
-                  console.log("kenapa dah")
-                  this.snackbar = true
-                  DB.collection('subscribers').add({
-                      email: this.email
-                  }).then(function(docRef) {
-                          console.log("Document written with ID: ", docRef.id);
-                          this.email = ""
-                      })
-                      .catch(function(error) {
-                          console.log("Error adding document: ", error);
-                      });
-              }
-              else {
-                  if (this.version==='english') {
-                      swal('Please Input your Email Address!!')
+            subs () {
+                  if (this.email && this.validateEmail(this.email)) {
+                      console.log("kenapa dah")
+                      let self = this
+                      this.snackbar = true
+                      DB.collection('subscribers').add({
+                          email: this.email,
+                          subscribe_date: new Date()
+                      }).then(function(docRef) {
+                              console.log("Document written with ID: ", docRef);
+                                self.email = ""
+                          })
+                          .catch(function(error) {
+                              console.log("Error adding document: ", error);
+                          });
+                  }
+                  else if (!this.validateEmail(this.email) && this.email) {
+                      if (this.version==='english') {
+                          swal('Please enter your correct email!')
+                      }
+                      else {
+                          swal('Alamat email anda tidak valid!')
+                      }
                   }
                   else {
-                      swal("Mohon Masukkan Alamat Email Anda!!")
+                      if (this.version==='english') {
+                          swal('Please Input your Email Address!!')
+                      }
+                      else {
+                          swal("Mohon Masukkan Alamat Email Anda!!")
+                      }
                   }
-              }
 
-
-          }
+            },
+            validateEmail (email) {
+                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
         },
 
         data () {

@@ -27,9 +27,9 @@
             ])
         },
         mounted () {
-            let payload = localStorage.getItem("version")
+            let version = localStorage.getItem('version')
             this.$store.commit('setPage', this.$route.name)
-            this.$store.dispatch('changeVersion', payload)
+            this.$store.dispatch('changeVersion', version)
         }
     }
 </script>
