@@ -186,7 +186,7 @@
     .to-center-image {
         justify-content: center;
     }
-    @media only screen and (max-width: 720px) {
+    @media only screen and (max-width: 1200px) {
         .content {
             font-size: 14px;
             padding-top: 0 !important;

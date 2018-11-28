@@ -36,25 +36,25 @@
             <!--</v-menu>-->
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn :ripple="false" v-if="page!=='home'" to="/" class="button-menu" flat>
+                <v-btn :ripple="false" v-if="page!=='home'" to="/" class="button-menu" @click="topScroll" flat>
                     <p style="padding: 0;margin: 0;">App</p>
                 </v-btn>
-                <v-btn :ripple="false" v-if="page==='home'"  to="/" class="button-menu" style="border-bottom: 3px solid blue" flat>
+                <v-btn :ripple="false" v-if="page==='home'"  to="/" class="button-menu" style="border-bottom: 3px solid blue" @click="topScroll" flat>
                     <p style="padding: 0;margin: 0;">App</p>
                 </v-btn>
 
 
-                <v-btn :ripple="false" v-if="page!=='about'" to="/about" class="button-menu" flat>
+                <v-btn :ripple="false" v-if="page!=='about'" to="/about" class="button-menu" @click="topScroll" flat>
                     About
                 </v-btn>
-                <v-btn :ripple="false" v-if="page==='about'" to="/about" class="button-menu" style="border-bottom: 3px solid blue" flat>
+                <v-btn :ripple="false" v-if="page==='about'" to="/about" class="button-menu" style="border-bottom: 3px solid blue" @click="topScroll"  flat>
                     About
                 </v-btn>
 
-                <v-btn :ripple="false" v-if="page!=='blog'"  to="/blog" class="button-menu" flat>
+                <v-btn :ripple="false" v-if="page!=='blog'"  to="/blog" class="button-menu" @click="topScroll"  flat>
                     Blog
                 </v-btn>
-                <v-btn :ripple="false" v-if="page==='blog'" to="/blog" class="button-menu" style="border-bottom: 3px solid blue" flat>
+                <v-btn :ripple="false" v-if="page==='blog'" to="/blog" class="button-menu" style="border-bottom: 3px solid blue" @click="topScroll"  flat>
                     Blog
                 </v-btn>
             </v-toolbar-items>
@@ -181,6 +181,9 @@
             ...mapActions([
                 'changeVersion'
             ]),
+            topScroll () {
+              window.scrollTo(0,0)
+            },
             onScroll () {
                 console.log('scrollll')
                 $(window).scroll(function(e) {
@@ -200,9 +203,11 @@
               let version = localStorage.getItem('version')
               if (version==1) {
                   this.toggle_exclusive = 1
+                  this.$store.dispatch('changeVersion', 'indonesia')
               }
               else {
                   this.toggle_exclusive = 0
+                  this.$store.dispatch('changeVersion', 'english')
               }
             },
             triggerToggle (e) {
