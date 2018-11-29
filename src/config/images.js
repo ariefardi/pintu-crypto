@@ -1,5 +1,5 @@
 // const phone = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fphone.png?alt=media&token=a20b24c7-b50c-4fdb-8898-a5fbcf55c572'
-import phone from '../assets/phone.png'
+import phone from '../assets/phone-02.png'
 // const playstore = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fgoogle_play.png?alt=media&token=eff409c3-401d-4fd4-b948-e364b2219809%27'
 import playstore from '../assets/google_play.png'
 // const imageHero = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fpintu.png?alt=media&token=8b8de22f-b834-40b3-a111-f36374719c30'
