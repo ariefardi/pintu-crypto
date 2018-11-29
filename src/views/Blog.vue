@@ -2,7 +2,6 @@
     <v-container class="page-wrapper" fluid>
         <HeroImage />
         <BlogContainer v-if="blogs.length" :blogs="blogs" />
-        <h1 v-if="!blogs.length">Loading....</h1>
         <Footer />
     </v-container>
 </template>
@@ -29,7 +28,14 @@
         mounted () {
             let version = localStorage.getItem('version')
             this.$store.commit('setPage', this.$route.name)
-            this.$store.dispatch('fetchingBlogs', version)
+            console.log('version berapa', version)
+            if (version==0) {
+                this.$store.dispatch('fetchingBlogs', 'english')
+            }
+            else if(version==1) {
+                this.$store.dispatch('fetchingBlogs', 'indonesia')
+            }
+
         }
     }
 </script>

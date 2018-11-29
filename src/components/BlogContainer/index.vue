@@ -16,11 +16,11 @@
                     <v-flex xs12>
                         <img class="image-content" :src="blog.images" alt="">
                     </v-flex>
-                    <v-flex xs12>
-                        <v-card-text v-html="blog.content" class="isi-blog" />
-                    </v-flex>
                 </v-layout>
             </v-container>
+            <v-flex xs12>
+                <v-card-text v-html="blog.content" class="isi-blog" />
+            </v-flex>
             <v-divider></v-divider>
         </v-card>
     </v-container>

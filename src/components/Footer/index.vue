@@ -12,7 +12,7 @@
             <v-card-text class="white--text pt-0 title-footer">
                     Buka Pintu ke Dunia Kripto
             </v-card-text>
-            <a href="">
+            <a href="" id="playstore">
                 <img class="image-footer" :src="image" alt="">
             </a>
             <v-container fluid>

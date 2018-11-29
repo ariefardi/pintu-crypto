@@ -17,7 +17,7 @@
                 </v-btn>
             </v-btn-toggle>
             <v-spacer></v-spacer>
-            <v-toolbar-items class="hidden-sm-and-down">
+            <v-toolbar-items class="hidden-sm-and-down" style="margin-right: 4rem">
                 <v-btn :ripple="false" v-if="page!=='home'" to="/" class="button-menu" @click="topScroll" flat>
                     <p style="padding: 0;margin: 0;">App</p>
                 </v-btn>
@@ -41,7 +41,7 @@
                 </v-btn>
             </v-toolbar-items>
             <v-spacer></v-spacer>
-            <v-btn  v-if="width>=960" class="button-download" color="#1867c0">Download</v-btn>
+            <v-btn  v-if="width>=960" @click="toDownload" class="button-download" color="#1867c0">Download</v-btn>
             <v-toolbar-side-icon  v-if="width<960" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         </v-toolbar>
         <v-toolbar v-if="width<960" style="margin-right: 400px" fixed id="nav-class" flat >
@@ -75,7 +75,7 @@
                 temporary
                 right
                 v-if="drawer"
-                width="100"
+                width="200"
         >
             <v-list class="pt-0 position-drawer" dense>
                 <v-divider></v-divider>
@@ -143,7 +143,7 @@
                     { title: 'App', location: '/' },
                     { title: 'Blog', location: '/blog' },
                     { title: 'About', location: '/about' },
-                    { title: 'Download', location: '/' }
+                    { title: 'Download', location: '/download' }
                 ],
                 right: null,
                 scroll: 0
@@ -153,11 +153,17 @@
             ...mapActions([
                 'changeVersion'
             ]),
+            toDownload () {
+                console.log('to download')
+              $('html, body').animate({
+                  scrollTop: $("#playstore").offset().top
+              }, 2000)
+            },
             topScroll () {
-              window.scrollTo(0,0)
-                let version = localStorage.getItem('version')
-                // this.changeVersion(version)
-                console.log(' ini versionns', version)
+                $('html, body').animate({
+                    scrollTop: (0,0)
+                }, 2000)
+
             },
             onScroll () {
                 console.log('scrollll')
@@ -192,7 +198,12 @@
                 this.changeVersion(e)
             },
             toLocation (location) {
-                this.$router.push(location)
+                if (location=="/download") {
+                    this.toDownload()
+                }
+                else {
+                    this.$router.push(location)
+                }
             },
             checkPage () {
                 this.page = this.$route.name

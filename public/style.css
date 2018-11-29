@@ -146,10 +146,10 @@
 
 
     h1, h2, h3, h4, h5, p, html, body {
-        font-family: 'Nunito', sans-serif !important;
+        font-family: 'Avenir' !important;
     }
     #app {
-        font-family: 'Nunito', sans-serif !important;
+        font-family: 'Avenir' !important;
     }
 
     .v-btn--active:before, .v-btn:hover:before, .v-btn:focus:before {

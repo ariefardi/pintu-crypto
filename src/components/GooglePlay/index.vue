@@ -23,7 +23,6 @@
     import {playstore, phone} from "../../config/images";
     import {mapState} from 'vuex'
     import {google_play} from '../../config/documentHome.json'
-    // const phone = require('../../assets/phone.jp2')
     export default {
         mounted () {
             this.checkingSize()

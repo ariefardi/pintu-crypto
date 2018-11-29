@@ -29,7 +29,7 @@ import HowTo from '../components/HowTo'
 import CardStep from '../components/CardStep'
 import Subscribe from '../components/Subscribe'
 import Footer from '../components/Footer'
-import phoneImage from '../assets/phone.png'
+import {phone} from '../config/images'
 import {mapState} from 'vuex'
 import {card_step} from '../config/documentHome.json'
 
@@ -44,7 +44,7 @@ import {card_step} from '../config/documentHome.json'
       },
     data () {
         return {
-            phoneImage: phoneImage,
+            phoneImage: phone,
             cardData_eng: card_step.card_english,
             cardData_ind: card_step.card_indo
         }
