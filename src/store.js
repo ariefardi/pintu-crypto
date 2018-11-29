@@ -35,13 +35,19 @@ export default new Vuex.Store({
                 console.log(payload,'payloadnya 0')
                 localStorage.setItem('version', 0)
                 commit('setVersion', 'english')
-                this.dispatch('fetchingBlogs', 'english')
+                console.log('ini statenya loh', this.state)
+                if (this.state.page==="blog") {
+                    this.dispatch('fetchingBlogs', 'english')
+                }
             }
             else if(payload===1) {
                 localStorage.setItem('version', 1)
                 console.log(payload,'payloadnya 0')
                 commit('setVersion', 'indonesia')
-                this.dispatch('fetchingBlogs', 'indonesia')
+                console.log('ini statenya loh', this.state)
+                if (this.state.page==="blog") {
+                    this.dispatch('fetchingBlogs', 'indonesia')
+                }
             }
         },
         fetchingBlogs ({commit}, payload) {
@@ -49,6 +55,7 @@ export default new Vuex.Store({
                 .where("published", "==", true)
                 .get()
                 .then(function(querySnapshot) {
+                    console.log('ini fetching blogs')
                     let temp = []
                     querySnapshot.forEach(function(doc) {
                         let data = doc.data()

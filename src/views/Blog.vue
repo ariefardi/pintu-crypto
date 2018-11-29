@@ -29,7 +29,7 @@
         mounted () {
             let version = localStorage.getItem('version')
             this.$store.commit('setPage', this.$route.name)
-            this.$store.dispatch('changeVersion', version)
+            this.$store.dispatch('fetchingBlogs', version)
         }
     }
 </script>
