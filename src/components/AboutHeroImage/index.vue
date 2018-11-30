@@ -1,6 +1,6 @@
 <template>
     <div class="container-image">
-        <img class="image-candi" :src="image_hero" alt="Cinque Terre">
+        <img v-if="width>480" class="image-candi" :src="image_hero" alt="Cinque Terre">
     </div>
 </template>
 
@@ -9,11 +9,14 @@
     import {candi1} from "../../config/images";
 
     export default {
+        mounted () {
+        },
         data () {
             return {
-                image_hero: candi1
+                image_hero: candi1,
             }
-        }
+        },
+
     }
 
 </script>

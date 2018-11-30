@@ -31,6 +31,14 @@
     .phone-image {
         padding-left: 0px;
     }
+    .image-web {
+        width: 400px;
+        height: auto;
+    }
+    .google-play {
+        width: 202px;
+        height: auto;
+    }
     .image-subs{
         width: 78px;
         height: auto;
@@ -80,6 +88,10 @@
     }
 
     @media only screen and (max-width: 720px) {
+        .image-mobile {
+            width: 260px !important;
+            height: auto;
+        }
         .title-header {
             font-size: 28px !important;
             padding-bottom: 0px !important;
@@ -144,12 +156,20 @@
 
     }
 
-
+    @font-face {
+        font-family: "MyWebFont";
+        src: url("/fonts/avenir/AvenirLTStd-Heavy.otf") format("opentype");
+        src: url("/fonts/avenir/AvenirLTStd-Heavy.ttf") format("truetype");
+        src: url("/fonts/avenir/AvenirLTStd-Heavy.woff") format("woff");
+        /*src: url("../src/assets/fonts/avenir/AvenirLTStd-Heavy.otf") format("opentype");*/
+        /*src: url("../src/assets/fonts/avenir/AvenirLTStd-Heavy.ttf") format("truetype");*/
+        /*src: url("../src/assets/fonts/avenir/AvenirLTStd-Heavy.woff") format("woff");*/
+    }
     h1, h2, h3, h4, h5, p, html, body {
-        font-family: 'Avenir' !important;
+        font-family: "MyWebFont" !important;
     }
     #app {
-        font-family: 'Avenir' !important;
+        font-family: "MyWebFont" !important;
     }
 
     .v-btn--active:before, .v-btn:hover:before, .v-btn:focus:before {

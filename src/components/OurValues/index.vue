@@ -5,8 +5,8 @@
                 <v-card-title>
                     <h1 class="title-header font-weight-heavy">{{title_english}}</h1>
                 </v-card-title>
-                <div v-for="(value, index) in values_english" :key="index" style="width: 100%;padding: 2rem;">
-                    <v-card-text class="values-sub-title font-weight-heavy align-center">
+                <div v-for="(value, index) in values_english" :key="index" style="width: 100%;padding: 2rem;" class="padding-mobile">
+                    <v-card-text class="values-sub-title font-weight-heavy align-center ">
                         {{value.sub_title}}
                     </v-card-text>
                     <v-card-text>
@@ -21,7 +21,7 @@
                 <v-card-title>
                     <h1 class="title-header font-weight-heavy">{{title_indo}}</h1>
                 </v-card-title>
-                <div v-for="(value, index) in values_indonesia" :key="index" style="width: 100%;padding: 2rem;">
+                <div v-for="(value, index) in values_indonesia" :key="index" style="width: 100%;padding: 2rem;" class="padding-mobile">
                     <v-card-text class="values-sub-title font-weight-heavy align-center">
                         {{value.sub_title}}
                     </v-card-text>
@@ -78,6 +78,9 @@
             text-align: center;
             margin: auto;
             font-size: 16px !important;
+        }
+        .padding-mobile {
+            padding: 0;
         }
     }
 </style>

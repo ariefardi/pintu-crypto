@@ -4,37 +4,38 @@
         <v-responsive :aspect-ratio="16/9">
         <div v-if="version==='english'" class="center">
             <v-card-text class="header-title color-white font-weight-heavy margin-top-minus"> {{content.title_english}} </v-card-text>
-            <v-card-text class="paragraph .text-no-wrap">
+            <v-card-text class="paragraph .text-no-wrap padding-our-name">
                 {{content.p1_english}}
             </v-card-text>
-            <v-card-text class="paragraph .text-no-wrap">
+            <v-card-text class="paragraph .text-no-wrap padding-our-name">
                 {{content.p2_english}}
             </v-card-text>
-            <v-card-text class="paragraph">
+            <v-card-text class="paragraph .text-no-wrap padding-our-name">
                 {{content.p3_english}}
             </v-card-text>
-            <v-card-text class="paragraph .text-no-wrap">
+            <v-card-text class="paragraph .text-no-wrap padding-our-name">
                 {{content.p4_english}}
             </v-card-text>
         </div>
         <div v-if="version==='indonesia'" class="center">
             <v-card-text class="header-title color-white font-weight-heavy margin-top-minus">{{content.title_indo}}</v-card-text>
-            <v-card-text class="paragraph .text-no-wrap">
+            <v-card-text class="paragraph .text-no-wrap padding-our-name" >
                 {{content.p1_indo}}
             </v-card-text>
-            <v-card-text class="paragraph .text-no-wrap">
+            <v-card-text class="paragraph .text-no-wrap padding-our-name">
                 {{content.p2_indo}}
             </v-card-text>
-            <v-card-text class="paragraph .text-no-wrap">
+            <v-card-text class="paragraph .text-no-wrap padding-our-name">
                 {{content.p3_indo}}
             </v-card-text>
-            <v-card-text class="paragraph .text-no-wrap">
+            <v-card-text class="paragraph .text-no-wrap padding-our-name">
                 {{content.p4_indo}}
             </v-card-text>
         </div>
 
         <!--<div class="opacity-image">-->
-            <img :src="image" alt="Cinque Terre" class="hero-image-name">
+            <img v-if="width>480" :src="image" alt="Cinque Terre" class="hero-image-name">
+            <img v-if="width<=480" :src="image_mb" alt="Cinque Terre" class="hero-image-name">
         <!--</div>-->
     <!--</div>-->
         </v-responsive>
@@ -42,10 +43,13 @@
 </template>
 
 <script>
-import {BlueCandi} from "../../config/images";
+import {BlueCandi, BlueCandiMobile} from "../../config/images";
 import {mapState} from 'vuex'
 import {our_name} from '../../config/documentAbout'
     export default {
+    mounted () {
+      this.checkingSize()
+    },
     computed: {
         ...mapState([
             'version'
@@ -54,7 +58,27 @@ import {our_name} from '../../config/documentAbout'
         data () {
             return {
                 image: BlueCandi,
-                content: our_name
+                image_mb: BlueCandiMobile,
+                content: our_name,
+                width: 2000,
+                height: 2000,
+            }
+        },
+        methods: {
+            checkingSize () {
+                window.addEventListener('resize', (e) => {
+                    this.width = e.target.innerWidth
+                    this.height = e.target.innerHeight
+                })
+                var w = window,
+                    d = document,
+                    e = d.documentElement,
+                    g = d.getElementsByTagName('body')[0],
+                    x = w.innerWidth || e.clientWidth || g.clientWidth,
+                    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+                this.width = x
+                this.height = y
+
             }
         }
     }
@@ -91,7 +115,7 @@ import {our_name} from '../../config/documentAbout'
     /*.margin-top-minus {*/
         /*margin-top: -12rem;*/
     /*}*/
-    @media only screen and (max-width: 720px) {
+    @media only screen and (max-width: 768px) {
         .paragraph {
             z-index: 9999;
             color: white;
@@ -107,6 +131,31 @@ import {our_name} from '../../config/documentAbout'
             text-align: center;
             padding-top: 4px;
             padding-bottom: 4px;
+        }
+    }
+    @media only screen and (max-width: 480px) {
+        .padding-our-name {
+            margin-top: 24px !important;
+        }
+        .paragraph {
+            z-index: 9999;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .header-title {
+            z-index: 9999;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .center {
+            padding: 2rem;
+            transform: translate(-50%, -50%);
         }
     }
     /*@media only screen and (max-width: 1200px) {*/

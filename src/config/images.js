@@ -29,18 +29,20 @@ import mit_logo from '../assets/new_mit.png'
 import kampus_logo from '../assets/new_kampus.png'
 // const yale_logo = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fyale_logo.png?alt=media&token=2581fb87-8175-433e-ae30-ce3ce7cafe8f'
 import yale_logo from '../assets/new_yale.png'
-// const instagram = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fronald%2Fig.png?alt=media&token=48077c39-0bcf-4c4c-8d59-36dbe044100a'
-import instagram from '../assets/instagram.png'
-// const facebook = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fronald%2Ff.png?alt=media&token=d4ec979e-2da1-4a08-9bc8-ce72abda982a'
-import facebook from '../assets/facebook.png'
-// const twitter = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Ftwitter.png?alt=media&token=1777d5c5-5291-4ac2-a220-ccd8bd198cfc'
-import twitter from '../assets/twitter.png'
+
+
+import instagram from '../assets/instagram.svg'
+import facebook from '../assets/facebook.svg'
+import twitter from '../assets/twitter.svg'
+import message from '../assets/whatsapp.svg'
+
 const mail_logo = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fmail_logo.png?alt=media&token=8d8f5c8f-13a5-4795-96d0-59b6491f92b6'
 
 // const message = 'https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fmessage.png?alt=media&token=f1248038-77f1-4199-8fbc-a0b8f12ad999'
-import message from '../assets/message.png'
+
 // const logoImage = "https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2FArtboard%201.png?alt=media&token=244012db-a7ef-42a0-afcb-e4b86aa48cca"
 import logoImage from '../assets/Artboard 1.png'
+import logoAja from '../assets/pintu_logo.svg'
 // const heroImageMobile = "https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2Fpintu.jpg?alt=media&token=b75f4e48-b3ea-4dd8-973d-d5d2a0caf947"
 import heroImageMobile from '../assets/pintu.jpg'
 // const flagUSA = "https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2FWhatsApp%20Image%202018-11-26%20at%2020.36.55.jpeg?alt=media&token=1526c6f0-b1c6-4b6d-98ef-93055d260a2c"
@@ -48,7 +50,9 @@ import flagUSA from '../assets/flagusa.jpeg'
 // const flagINDO = "https://firebasestorage.googleapis.com/v0/b/pintu-landing-pages.appspot.com/o/assets%2FWhatsApp%20Image%202018-11-26%20at%2020.35.51.jpeg?alt=media&token=4c3d911e-c789-4af5-9054-804bea495f21"
 import flagINDO from '../assets/flagindo.jpeg'
 import BlueCandi from '../assets/BlueCandi.png'
+import BlueCandiMobile from '../assets/BlueCandi_mobile.png'
 export {
+    logoAja,
     playstore,
     phone,
     defender,
@@ -74,5 +78,6 @@ export {
     heroImageMobile,
     flagINDO,
     flagUSA,
-    BlueCandi
+    BlueCandi,
+    BlueCandiMobile
 }

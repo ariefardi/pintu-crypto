@@ -10,8 +10,8 @@
                 </v-card-title>
                 <v-container>
                     <v-layout align-center justify-center column fill-height>
-                        <img class="phone-image per-30" width="30% !important" :src="image1" />
-                        <img class="phone-image" width="25% !important" :src="image2" />
+                        <v-img class="phone-image image-web image-mobile" :src="image1+'?lazy'" />
+                        <v-img class="phone-image google-play"  :src="image2+'?lazy'" />
                     </v-layout>
                 </v-container>
             </v-container>
@@ -57,7 +57,6 @@
                     y = w.innerHeight|| e.clientHeight|| g.clientHeight;
                 this.width = x
                 this.height = y
-                console.log("ini x", x)
             }
         }
     }

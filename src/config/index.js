@@ -1,5 +1,4 @@
 const firebase = require('firebase')
-console.log('Berhasil add')
 const config = {
     storageBucket: "pintu-landing-pages.appspot.com",
     projectId: "pintu-landing-pages",

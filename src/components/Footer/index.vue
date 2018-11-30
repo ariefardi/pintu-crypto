@@ -20,8 +20,8 @@
                     <v-flex sm12 md9>
                     <v-layout justify-end align-center row  class="logo-margin to-center-content" >
                     <v-flex xs4 sm2 md2 v-for="(icon, index) in icons" :key="index">
-                        <a  href="/">
-                            <img class="icon-footer" :src="icon" alt="">
+                        <a @click="toSocialMedia(icon.url)">
+                            <img class="icon-footer" :src="icon.icon" alt="">
                         </a>
                     </v-flex>
                     </v-layout>
@@ -60,9 +60,41 @@
         data: () => ({
             image: playstore,
             icons: [
-                instagram, facebook, twitter, message
+                {
+                    icon: instagram,
+                    url: "https://www.instagram.com/pintu.co.id/"
+                },
+                {
+                    icon: facebook,
+                    url: "https://www.facebook.com/pintu.co.id/"
+                },
+                {
+                    icon: twitter,
+                    url: "https://twitter.com/pintuasset "
+                },
+                {
+                    icon: message,
+                    url: "https://api.whatsapp.com/send?phone=6282122828696&text=&source=&data="
+                },
+                // instagram, facebook, twitter, message
             ]
-        })
+        }),
+        methods: {
+            toSocialMedia(url) {
+                if (url==="https://api.whatsapp.com/send?phone=6282122828696&text=&source=&data=")  {
+                    window.open(
+                        url,
+                        '_blank' // <- This is what makes it open in a new window.
+                    );
+                }
+                else {
+                    window.open(
+                        url,
+                        '_blank' // <- This is what makes it open in a new window.
+                    );
+                }
+            }
+        }
     }
 </script>
 

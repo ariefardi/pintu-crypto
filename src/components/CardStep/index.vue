@@ -9,7 +9,7 @@
                 </v-layout>
                 <v-container>
                     <v-layout align-center justify-center column fill-height>
-                        <img class="phone-image per-30-width"  :src="phoneImage" />
+                        <img class="phone-image image-web image-mobile"  :src="phoneImage" />
                     </v-layout>
                     <v-card-text class="isi-blog">
                         {{isi}}

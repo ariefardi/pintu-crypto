@@ -60,7 +60,8 @@
                 </v-btn>
             </v-btn-toggle>
             <v-spacer></v-spacer>
-            <img class="logo-image" :src="logo" alt="">
+            <!--<img class="logo-image" :src="logoAja" style="margin-right: 1.5rem" alt="">-->
+            <img class="logo-image" :src="logo" style="margin-right: 1.5rem; width: 38px; height: auto;" alt="">
             <v-spacer></v-spacer>
             <!--<v-toolbar-side-icon style="color: black" v-if="width<960 && page==='blog' && scroll<180" @click.stop="drawer = !drawer"></v-toolbar-side-icon>-->
             <!--<v-toolbar-side-icon style="color: black;" v-if="width<960 && page==='blog' && scroll>180" @click.stop="drawer = !drawer"></v-toolbar-side-icon>-->
@@ -100,7 +101,7 @@
 </template>
 
 <script>
-    import  {logoImage, flagUSA, flagINDO} from "../../../config/images";
+    import  {logoImage, flagUSA, flagINDO, logoAja} from "../../../config/images";
     import {mapState, mapActions} from 'vuex'
     import $ from "jquery";
     export default {
@@ -136,6 +137,7 @@
                 toggle_exclusive: 0,
                 downloadPosition: false,
                 logo : logoImage,
+                logoAja: logoAja ,
                 width: 2000,
                 height: 2000,
                 drawer: null,
@@ -154,7 +156,6 @@
                 'changeVersion'
             ]),
             toDownload () {
-                console.log('to download')
               $('html, body').animate({
                   scrollTop: $("#playstore").offset().top
               }, 2000)
@@ -162,12 +163,11 @@
             topScroll () {
                 $('html, body').animate({
                     scrollTop: (0,0)
-                }, 2000)
+                }, 0)
 
             },
             onScroll () {
-                console.log('scrollll')
-                $(window).scroll(function(e) {
+                $(window).scroll(function() {
                     let temp = $(window).scrollTop()
                     if (temp>200)  {
                         this.downloadPosition = true
@@ -183,18 +183,15 @@
             checkVersionsStorage () {
               let version = localStorage.getItem('version')
               if (version==1) {
-                  console.log('ini jalan gak')
                   this.toggle_exclusive = 1
                   this.$store.dispatch('changeVersion', 1)
               }
               else {
                   this.toggle_exclusive = 0
                   this.$store.dispatch('changeVersion', 0)
-                  console.log('ini jalan gak')
               }
             },
             triggerToggle (e) {
-                console.log(e)
                 this.changeVersion(e)
             },
             toLocation (location) {

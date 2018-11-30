@@ -119,7 +119,6 @@
     import {DB, swal} from '../../config'
     import {mapState} from 'vuex'
     import {subscribe} from '../../config/documentHome.json'
-    console.log(subscribe)
     export default {
         computed: {
             ...mapState([
@@ -129,7 +128,6 @@
         methods: {
             subs () {
                   if (this.email && this.validateEmail(this.email)) {
-                      console.log("kenapa dah")
                       let self = this
                       this.snackbar = true
                       DB.collection('subscribers').add({

@@ -7,7 +7,7 @@
                         <h1 class="title-header font-weight-heavy"> {{title_english}} </h1>
                     </v-card-title>
                     <div v-for="(value, index) in values_english" :key="index" style="width: 100%;padding: 2rem;">
-                        <v-card-text class="subheader font-weight-heavy color-blue align-left">
+                        <v-card-text class="position-title font-weight-heavy color-blue align-left">
                             {{value.job_name}}
                         </v-card-text>
                         <v-card-text>
@@ -29,7 +29,7 @@
                         <h1 class="title-header font-weight-heavy"> {{title_english}} </h1>
                     </v-card-title>
                     <div v-for="(value, index) in values_indo" :key="index" style="width: 100%;padding: 2rem;">
-                        <v-card-text class="subheader font-weight-heavy color-blue align-left">
+                        <v-card-text class="position-title font-weight-heavy color-blue align-left">
                             {{value.job_name}}
                         </v-card-text>
                         <v-card-text>
@@ -69,8 +69,6 @@
         },
         methods: {
             emailSend () {
-                console.log('change halaman')
-                // window.open('mailto:hr@pintu.co.id');
                 window.location.href = "mailto:hr@pintu.co.id?subject=Subject&body=message%20goes%20here";
             }
         }
@@ -83,12 +81,9 @@
     .container-job {
         padding: 1rem 2rem;
     }
-    .position-sub-title {
-        text-align: left;
+    .position-title {
         margin: auto;
         font-size: 28px !important;
-        font-weight: 500;
-        color: blue;
     }
 
     .position-container {
