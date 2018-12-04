@@ -1,6 +1,6 @@
 <template>
     <div class="container-image">
-        <img v-if="width>480" class="image-candi" :src="image_hero" alt="Cinque Terre">
+        <img class="image-candi" :src="image_hero" alt="Cinque Terre">
     </div>
 </template>
 

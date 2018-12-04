@@ -8,7 +8,8 @@ export default new Vuex.Store({
         drawer: null,
         page: "",
         version: "",
-        blogs: []
+        blogs: [],
+        dialog: false
 
     },
     mutations: {
@@ -23,6 +24,9 @@ export default new Vuex.Store({
         },
         setBlogs (state, payload) {
             state.blogs = payload
+        },
+        setDialog (state, payload) {
+            state.dialog = payload
         }
     },
     actions: {
@@ -81,3 +85,41 @@ export default new Vuex.Store({
         }
     }
 })
+
+
+
+/* eslint-disable */
+// import React from 'react';
+// import {connect} from 'react-redux';
+// import Album from './index'
+// import Nav from '../../components/Nav/index';
+// import ListAlbums from '../../components/ListAlbum/index';
+// import Footer from '../../components/Footer/index';
+// import AlbumsData from '../../store/action/albumsAction';
+// import LoadingView from '../../components/LoadingView';
+// import MapBox from '../../components/MapBox';
+// import Intercom from '../../components/Intercom';
+// import MetaTag from '../../components/MetaTag';
+// import OGMetaTagHeader from '../../components/OGMetaTagHeader';
+// import OGMetaTagTitle from '../../components/OGMetaTagTitle';
+// import OGMetaTagUrl from '../../components/OGMetaTagUrl';
+//
+// const mapStateToProps = state => ({
+//     albumsData: state.albums.albums,
+//     statusError: state.albums.statusError,
+//     allImages: state.albums.allImages,
+//     rawData: state.albums,
+// });
+//
+// const mapDispatchToProps = dispatch => ({
+//     retrievesAlbum(c) {
+//         dispatch(AlbumsData.retrieveAlbum(c));
+//     },
+// });
+//
+// describe("<Album />", () => {
+//     let wrapper = shallow(<Album />);
+//     it("should exist", () => {
+//         expect(wrapper.exists()).to.be.true;
+//     });
+// })

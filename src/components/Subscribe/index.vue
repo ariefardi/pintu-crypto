@@ -129,13 +129,13 @@
             subs () {
                   if (this.email && this.validateEmail(this.email)) {
                       let self = this
-                      this.snackbar = true
                       DB.collection('subscribers').add({
                           email: this.email,
                           subscribe_date: new Date()
                       }).then(function(docRef) {
                               console.log("Document written with ID: ", docRef);
                                 self.email = ""
+                                self.$store.commit('setDialog', true)
                           })
                           .catch(function(error) {
                               console.log("Error adding document: ", error);

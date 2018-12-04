@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container fluid>
         <v-card flat v-for="(blog, index) in blogs" :key="index">
             <v-container>
                 <v-layout row wrap align-center justify-center>
@@ -61,7 +61,7 @@
         padding-left: 3rem;
         padding-right: 3rem;
     }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 756px) {
         .title-style {
             font-size: 28px;
             padding: 0;
@@ -77,8 +77,8 @@
             font-size: 14px;
             font-weight: 700;
             color: slategrey;
-            padding-left: 3rem;
-            padding-right: 3rem;
+            padding-left: 12px;
+            padding-right: 12px;
         }
     }
     .image-content {

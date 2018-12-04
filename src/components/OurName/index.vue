@@ -60,8 +60,8 @@ import {our_name} from '../../config/documentAbout'
                 image: BlueCandi,
                 image_mb: BlueCandiMobile,
                 content: our_name,
-                width: 2000,
-                height: 2000,
+                width: 0,
+                height: 0,
             }
         },
         methods: {
@@ -121,43 +121,68 @@ import {our_name} from '../../config/documentAbout'
             color: white;
             font-size: 2vw;
             text-align: center;
-            padding-top: 4px;
-            padding-bottom: 4px;
+            padding-top: 4px !important;
+            padding-bottom: 4px !important;
         }
         .header-title {
             z-index: 9999;
             color: white;
             font-size: 4.5vw;
             text-align: center;
-            padding-top: 4px;
-            padding-bottom: 4px;
+            padding-top: 4px !important;
+            padding-bottom: 4px !important;
         }
     }
     @media only screen and (max-width: 480px) {
         .padding-our-name {
-            margin-top: 24px !important;
+            margin-top: 12px !important;
         }
         .paragraph {
             z-index: 9999;
             color: white;
-            font-size: 14px;
+            font-size: 4vw;
             text-align: center;
-            padding-top: 0;
-            padding-bottom: 0;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
         }
         .header-title {
             z-index: 9999;
             color: white;
-            font-size: 24px;
+            font-size: 4.5vw;
             text-align: center;
-            padding-top: 0;
-            padding-bottom: 0;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
         }
         .center {
-            padding: 2rem;
+            padding: 0 !important;
             transform: translate(-50%, -50%);
         }
     }
+    /*@media only screen and (max-width: 360px) {*/
+        /*.padding-our-name {*/
+            /*margin-top: 12px !important;*/
+        /*}*/
+        /*.paragraph {*/
+            /*z-index: 9999;*/
+            /*color: white;*/
+            /*font-size: 4.5vw;*/
+            /*text-align: center;*/
+            /*padding-top: 0;*/
+            /*padding-bottom: 0;*/
+        /*}*/
+        /*.header-title {*/
+            /*z-index: 9999;*/
+            /*color: white;*/
+            /*font-size: 4.5vw;*/
+            /*text-align: center;*/
+            /*padding-top: 0;*/
+            /*padding-bottom: 0;*/
+        /*}*/
+        /*.center {*/
+            /*padding: 4px;*/
+            /*transform: translate(-50%, -50%);*/
+        /*}*/
+    /*}*/
     /*@media only screen and (max-width: 1200px) {*/
         /*.header-title {*/
             /*font-weight: 700;*/

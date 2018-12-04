@@ -20,6 +20,7 @@
                      :isi="card.content"/>
       </div>
       <Footer />
+    <ModalSubs/>
   </v-container>
 </template>
 
@@ -29,13 +30,15 @@ import HowTo from '../components/HowTo'
 import CardStep from '../components/CardStep'
 import Subscribe from '../components/Subscribe'
 import Footer from '../components/Footer'
+import ModalSubs from '../components/ModalSubs'
 import {phone} from '../config/images'
 import {mapState} from 'vuex'
 import {card_step} from '../config/documentHome.json'
 
+
   export default {
     components: {
-        GooglePlay, HowTo, CardStep, Subscribe, Footer
+        GooglePlay, HowTo, CardStep, Subscribe, Footer, ModalSubs
     },
       computed: {
           ...mapState([

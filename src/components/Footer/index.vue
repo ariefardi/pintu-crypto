@@ -70,7 +70,7 @@
                 },
                 {
                     icon: twitter,
-                    url: "https://twitter.com/pintuasset "
+                    url: "https://twitter.com/pintuasset"
                 },
                 {
                     icon: message,

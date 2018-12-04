@@ -1,5 +1,7 @@
 <template>
     <div>
+
+        <!--Toolbar versi Web-->
         <v-toolbar id="nav-class" style="margin-right: 300px" fixed flat>
             <img v-if="width>960" class="logo-image" :src="logo" alt="">
             <v-btn-toggle v-if="width>960" style="margin-left: 1rem" @change="triggerToggle" v-model="toggle_exclusive">
@@ -44,21 +46,51 @@
             <v-btn  v-if="width>=960" @click="toDownload" class="button-download" color="#1867c0">Download</v-btn>
             <v-toolbar-side-icon  v-if="width<960" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         </v-toolbar>
+        <!--Toolbar versi Web-->
+
+
+        <!--Toolbar versi Mobile-->
         <v-toolbar v-if="width<960" style="margin-right: 400px" fixed id="nav-class" flat >
-            <v-btn-toggle v-if="width<960" @change="triggerToggle" v-model="toggle_exclusive">
-                <v-btn class="button-toggle" v-if="!this.toggle_exclusive" color="blue darken-4" :value="0" >
-                    <img class="img-flag" :src="flagUSA" alt="">
+            <!--<v-btn-toggle v-if="width<960" @change="triggerToggle" v-model="toggle_exclusive">-->
+                <!--<v-btn small class="button-toggle" v-if="!this.toggle_exclusive" color="blue darken-4" :value="0" >-->
+                    <!--<img class="img-flag" :src="flagUSA" alt="">-->
+                <!--</v-btn>-->
+                <!--<v-btn small  v-if="this.toggle_exclusive" color="blue-grey lighten-4" :value="0" >-->
+                    <!--<img class="img-flag" :src="flagUSA" alt="">-->
+                <!--</v-btn>-->
+                <!--<v-btn small class="button-toggle" v-if="this.toggle_exclusive" color="blue darken-4" :value="1">-->
+                    <!--<img class="img-flag" :src="flagINDO" alt="">-->
+                <!--</v-btn>-->
+                <!--<v-btn small v-if="!this.toggle_exclusive" color="blue-grey lighten-4" :value="1">-->
+                    <!--<img class="img-flag" :src="flagINDO" alt="">-->
+                <!--</v-btn>-->
+            <!--</v-btn-toggle>-->
+            <v-menu offset-y >
+                <!--<v-btn-->
+                        <!--slot="activator"-->
+                        <!--color="primary"-->
+                        <!--dark-->
+                <!--&gt;-->
+                    <!--Dropdown-->
+                <!--</v-btn>-->
+                <v-btn slot="activator" small class="button-toggle width-button" v-if="!this.toggle_exclusive" flat >
+                    <img class="img-flag" :src="flagUSA" style="padding: 0;text-align: center;" alt="">
+                    <v-icon small >arrow_drop_down</v-icon>
                 </v-btn>
-                <v-btn  v-if="this.toggle_exclusive" color="blue-grey lighten-4" :value="0" >
-                    <img class="img-flag" :src="flagUSA" alt="">
+                <v-btn  slot="activator" small class="button-toggle width-button" v-if="this.toggle_exclusive" flat >
+                    <img class="img-flag" :src="flagINDO" style="padding: 0; text-align: center;" alt="">
+                    <v-icon small >arrow_drop_down</v-icon>
                 </v-btn>
-                <v-btn class="button-toggle" v-if="this.toggle_exclusive" color="blue darken-4" :value="1">
-                    <img class="img-flag" :src="flagINDO" alt="">
-                </v-btn>
-                <v-btn v-if="!this.toggle_exclusive" color="blue-grey lighten-4" :value="1">
-                    <img class="img-flag" :src="flagINDO" alt="">
-                </v-btn>
-            </v-btn-toggle>
+                <v-list>
+                    <v-list-tile
+                            v-for="(item, index) in itemsButton"
+                            :key="index"
+                            @click="triggerToggle(item.value)"
+                    >
+                        <img class="img-flag" :src="item.flag" alt="">
+                    </v-list-tile>
+                </v-list>
+            </v-menu>
             <v-spacer></v-spacer>
             <!--<img class="logo-image" :src="logoAja" style="margin-right: 1.5rem" alt="">-->
             <img class="logo-image" :src="logo" style="margin-right: 1.5rem; width: 38px; height: auto;" alt="">
@@ -69,6 +101,9 @@
             <!--<v-toolbar-side-icon  v-if="width<960 && page==='about'" @click.stop="drawer = !drawer"></v-toolbar-side-icon>-->
             <v-toolbar-side-icon  v-if="width<960" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         </v-toolbar>
+        <!--Toolbar versi Mobile-->
+
+
 
         <v-navigation-drawer
                 v-model="drawer"
@@ -148,13 +183,27 @@
                     { title: 'Download', location: '/download' }
                 ],
                 right: null,
-                scroll: 0
+                scroll: 0,
+                // itemsButton: [flagUSA, flagINDO]
+                itemsButton:[
+                    {
+                        flag: flagUSA,
+                        value: 0
+                    },
+                    {
+                        flag: flagINDO,
+                        value: 1
+                    }
+                ]
             }
         },
         methods: {
             ...mapActions([
                 'changeVersion'
             ]),
+            checkButton() {
+              console.log('oke deh')
+            },
             toDownload () {
               $('html, body').animate({
                   scrollTop: $("#playstore").offset().top
@@ -192,6 +241,7 @@
               }
             },
             triggerToggle (e) {
+                this.toggle_exclusive = e
                 this.changeVersion(e)
             },
             toLocation (location) {
@@ -235,7 +285,6 @@
     }
     .logo-image {
         width: 64px;
-        margin-left: 2rem;
     }
     .button-download {
         text-transform: capitalize;
@@ -254,6 +303,7 @@
     .img-flag {
         width: 24px;
         height: auto;
+        margin: 0;
     }
     .position-drawer {
         margin-top: 2rem;
@@ -262,7 +312,16 @@
     @media only screen and (max-width: 960px) {
         .logo-image {
             width: 64px;
-            margin-left: -24px !important;
+            margin-left: -36px !important;
+        }
+        .width-button {
+            width: 32px !important;
+        }
+    }
+    @media only screen and (max-width: 756px) {
+        .img-flag {
+            width: 24px;
+            height: auto;
         }
     }
 </style>
