@@ -312,7 +312,7 @@
     @media only screen and (max-width: 960px) {
         .logo-image {
             width: 64px;
-            margin-left: -36px !important;
+            margin-left: -39px !important;
         }
         .width-button {
             width: 32px !important;
