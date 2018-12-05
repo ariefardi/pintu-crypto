@@ -23,6 +23,5 @@ exports.plugins.push(
         ]
     }
 )
-console.log('ini jalan gak webpacknya')
 
 
