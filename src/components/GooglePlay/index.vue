@@ -11,7 +11,7 @@
                 <v-container>
                     <v-layout align-center justify-center column fill-height>
                         <!--<v-img class="phone-image image-web image-mobile" :src="image1+'?lazy'" />-->
-                        <video class="phone-image image-web image-mobile" loop muted playsinline>
+                        <video class="phone-image image-web image-mobile" loop muted playsinline autoplay>
                             <source :src="video" type="video/mp4">
                         </video>
                         <v-img class="phone-image google-play"  :src="image2+'?lazy'" />

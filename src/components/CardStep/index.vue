@@ -4,8 +4,8 @@
         <v-card flat>
             <v-container class="card-container">
                 <v-layout align-start justify-center column fill-height>
-                    <h1 class="title-header font-weight-heavy justify-center">{{title1}}</h1>
-                    <h1 class="title-header font-weight-heavy justify-center">{{title2}}</h1>
+                    <h1 class="title-header font-weight-heavy justify-center padding-mobile">{{title1}}</h1>
+                    <h1 class="title-header font-weight-heavy justify-center padding-mobile">{{title2}}</h1>
                 </v-layout>
                 <v-container>
                     <v-layout align-center justify-center column fill-height>
@@ -34,6 +34,11 @@
     }
 </script>
 <style>
-
+@media only screen and (max-width: 300px) {
+    .padding-mobile {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
 </style>
 

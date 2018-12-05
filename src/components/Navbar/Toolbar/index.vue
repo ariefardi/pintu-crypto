@@ -74,12 +74,12 @@
                     <!--Dropdown-->
                 <!--</v-btn>-->
                 <v-btn slot="activator" small class="button-toggle width-button" v-if="!this.toggle_exclusive" flat >
-                    <img class="img-flag" :src="flagUSA" style="padding: 0;text-align: center;" alt="">
-                    <v-icon small >arrow_drop_down</v-icon>
+                    <img class="img-flag" :src="flagUSA" style="padding: 0;text-align: center; margin-left: -42px" alt="">
+                    <v-icon small color="grey"  >arrow_drop_down</v-icon>
                 </v-btn>
                 <v-btn  slot="activator" small class="button-toggle width-button" v-if="this.toggle_exclusive" flat >
                     <img class="img-flag" :src="flagINDO" style="padding: 0; text-align: center;" alt="">
-                    <v-icon small >arrow_drop_down</v-icon>
+                    <v-icon small color="grey" >arrow_drop_down</v-icon>
                 </v-btn>
                 <v-list>
                     <v-list-tile
