@@ -51,7 +51,10 @@ import flagUSA from '../assets/flagusa.jpeg'
 import flagINDO from '../assets/flagindo.jpeg'
 import BlueCandi from '../assets/BlueCandi.png'
 import BlueCandiMobile from '../assets/BlueCandi_mobile.png'
+
+import video from '../assets/Comp 1.mp4'
 export {
+    video,
     logoAja,
     playstore,
     phone,

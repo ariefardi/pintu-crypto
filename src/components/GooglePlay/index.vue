@@ -10,7 +10,10 @@
                 </v-card-title>
                 <v-container>
                     <v-layout align-center justify-center column fill-height>
-                        <v-img class="phone-image image-web image-mobile" :src="image1+'?lazy'" />
+                        <!--<v-img class="phone-image image-web image-mobile" :src="image1+'?lazy'" />-->
+                        <video class="phone-image image-web image-mobile" loop muted playsinline>
+                            <source :src="video" type="video/mp4">
+                        </video>
                         <v-img class="phone-image google-play"  :src="image2+'?lazy'" />
                     </v-layout>
                 </v-container>
@@ -20,7 +23,7 @@
 </template>
 
 <script>
-    import {playstore, phone} from "../../config/images";
+    import {playstore, phone, video} from "../../config/images";
     import {mapState} from 'vuex'
     import {google_play} from '../../config/documentHome.json'
     export default {
@@ -34,7 +37,8 @@
                 width: 2000,
                 height: 2000,
                 title_english: google_play.title_english,
-                title_indo: google_play.title_indo
+                title_indo: google_play.title_indo,
+                video
 
             }
         },

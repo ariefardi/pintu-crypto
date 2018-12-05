@@ -8,7 +8,7 @@
                     :key="index"
                     :title1="card.top"
                     :title2="card.bottom"
-                    :phoneImage="phoneImage"
+                    :phoneImage="phoneImage[index]"
                     :isi="card.content"/>
       </div>
       <div v-if="version=='english'" lass="max-width" >
@@ -16,7 +16,7 @@
                      :key="index"
                      :title1="card.top"
                      :title2="card.bottom"
-                     :phoneImage="phoneImage"
+                     :phoneImage="phoneImage[index]"
                      :isi="card.content"/>
       </div>
       <Footer />
@@ -31,9 +31,12 @@ import CardStep from '../components/CardStep'
 import Subscribe from '../components/Subscribe'
 import Footer from '../components/Footer'
 import ModalSubs from '../components/ModalSubs'
-import {phone} from '../config/images'
 import {mapState} from 'vuex'
 import {card_step} from '../config/documentHome.json'
+import edukasiKecil from '../assets/edukasi kecil.png'
+import feelesKecil from '../assets/feeless kecil.png'
+import stabilKecil from '../assets/stabil kecil.png'
+import amanKecil from '../assets/aman kecil.png'
 
 
   export default {
@@ -47,7 +50,7 @@ import {card_step} from '../config/documentHome.json'
       },
     data () {
         return {
-            phoneImage: phone,
+            phoneImage: [feelesKecil, amanKecil, stabilKecil, edukasiKecil],
             cardData_eng: card_step.card_english,
             cardData_ind: card_step.card_indo
         }

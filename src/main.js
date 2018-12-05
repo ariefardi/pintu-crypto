@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import './plugins/vuetify'
-import '@babel/polyfill'
-import '@babel/preset-env'
 import App from './App.vue'
 import router from './router'
 import store from './store'
