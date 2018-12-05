@@ -36,8 +36,8 @@
 <style>
 @media only screen and (max-width: 300px) {
     .padding-mobile {
-        padding-left: 12px;
-        padding-right: 12px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 </style>
