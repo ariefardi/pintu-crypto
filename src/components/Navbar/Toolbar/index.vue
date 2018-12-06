@@ -218,11 +218,11 @@
             onScroll () {
                 $(window).scroll(function() {
                     let temp = $(window).scrollTop()
-                    if (temp>200)  {
+                    if (temp>50)  {
                         this.downloadPosition = true
                         document.getElementById('nav-class').style.backgroundColor = "white"
                     }
-                    else if(temp<=200) {
+                    else if(temp<=50) {
                         this.downloadPosition = false
                         document.getElementById('nav-class').style.backgroundColor = "transparent"
                     }

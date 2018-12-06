@@ -57,8 +57,13 @@
         playstore
     } from '../../config/images.js'
     export default {
+        mounted () {
+            this.checkingSize()
+        },
         data: () => ({
             image: playstore,
+            width: 2000,
+            height: 1900,
             icons: [
                 {
                     icon: instagram,
@@ -93,6 +98,33 @@
                         '_blank' // <- This is what makes it open in a new window.
                     );
                 }
+            },
+            checkingSize () {
+                window.addEventListener('resize', (e) => {
+                    this.width = e.target.innerWidth
+                    this.height = e.target.innerHeight
+                    if (this.width<756) {
+                        this.icons[3].url = 'https://api.whatsapp.com/send?phone=6282122828696&text=&source=&data='
+                    }
+                    else {
+                        this.icons[3].url = 'https://web.whatsapp.com/send?phone=6282122828696'
+                    }
+                })
+                var w = window,
+                    d = document,
+                    e = d.documentElement,
+                    g = d.getElementsByTagName('body')[0],
+                    x = w.innerWidth || e.clientWidth || g.clientWidth,
+                    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+                this.width = x
+                this.height = y
+                if (this.width<756) {
+                    this.icons[3].url = 'https://api.whatsapp.com/send?phone=6282122828696&text=&source=&data='
+                }
+                else {
+                    this.icons[3].url = 'https://web.whatsapp.com/send?phone=6282122828696'
+                }
+
             }
         }
     }
