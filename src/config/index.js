@@ -1,8 +1,10 @@
 const firebase = require('firebase')
 const config = {
-    storageBucket: "pintu-landing-pages.appspot.com",
-    projectId: "pintu-landing-pages",
+    storageBucket: "pintu-web.appspot.com",
+    projectId: "pintu-web",
 };
+
+
 firebase.initializeApp(config);
 
 const DB = firebase.firestore()
