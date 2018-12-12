@@ -3,13 +3,6 @@
         <v-layout>
             <v-card flat width="100%">
                 <v-container class="container-card">
-                    <v-card-title v-if="version=='indonesia'" class="title-header font-weight-heavy no-padding justify-center">
-                        {{title_indo}}
-                    </v-card-title>
-
-                    <v-card-title v-if="version=='english'" class="title-header font-weight-heavy no-padding justify-center">
-                        {{title_english}}
-                    </v-card-title>
                 </v-container>
                 <v-container fluid>
                     <v-layout align-center justify-center row wrap>

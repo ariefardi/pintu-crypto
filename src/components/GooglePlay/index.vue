@@ -13,8 +13,11 @@
                         <!--<v-img class="phone-image image-web image-mobile" :src="image1+'?lazy'" />-->
                         <video class="phone-image image-web image-mobile" style="background-color: transparent !important;" loop muted autoplay>
                             <source :src="video" type="video/mp4">
+                            <source :src="video2" type="video/webm">
+                            <img :src="image1" alt="">
+                            your browser not support video tag
                         </video>
-                        <v-img class="phone-image google-play"  :src="image2+'?lazy'" />
+                        <!--<v-img class="phone-image google-play"  :src="image2+'?lazy'" />-->
                     </v-layout>
                 </v-container>
             </v-container>
@@ -23,7 +26,7 @@
 </template>
 
 <script>
-    import {playstore, phone, video} from "../../config/images";
+    import {playstore, phone, video, video2} from "../../config/images";
     import {mapState} from 'vuex'
     import {google_play} from '../../config/documentHome.json'
     export default {
@@ -38,7 +41,8 @@
                 height: 2000,
                 title_english: google_play.title_english,
                 title_indo: google_play.title_indo,
-                video
+                video,
+                video2
 
             }
         },

@@ -1,4 +1,8 @@
 {
+  "footer" : {
+    "title_footer_english": "Enter the crypto world through Pintu",
+    "title_footer_indo": "Buka Pintu ke Dunia Kripto"
+  },
   "google_play": {
     "title_english": "The best place to buy and sell crypto",
     "title_indo": "Tempat terbaik untuk jual beli kripto"
@@ -73,7 +77,7 @@
       },
       {
         "top": "Learn Crypto.",
-        "bottom": "Langsung Praktek."
+        "bottom": "Act Immediately ."
       }
     ]
   },

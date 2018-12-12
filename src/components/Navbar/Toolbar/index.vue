@@ -19,7 +19,7 @@
                 </v-btn>
             </v-btn-toggle>
             <v-spacer></v-spacer>
-            <v-toolbar-items class="hidden-sm-and-down" style="margin-right: 4rem">
+            <v-toolbar-items class="hidden-sm-and-down" style="margin-right: 11.4rem">
                 <v-btn :ripple="false" v-if="page!=='home'" to="/" class="button-menu" @click="topScroll" flat>
                     <p style="padding: 0;margin: 0;">App</p>
                 </v-btn>
@@ -43,7 +43,7 @@
                 </v-btn>
             </v-toolbar-items>
             <v-spacer></v-spacer>
-            <v-btn  v-if="width>=960" @click="toDownload" class="button-download" color="#1867c0">Download</v-btn>
+            <!--<v-btn  v-if="width>=960" @click="toDownload" class="button-download" color="#1867c0">Download</v-btn>-->
             <v-toolbar-side-icon  v-if="width<960" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
         </v-toolbar>
         <!--Toolbar versi Web-->
@@ -78,7 +78,7 @@
                     <v-icon small color="grey"  >arrow_drop_down</v-icon>
                 </v-btn>
                 <v-btn  slot="activator" small class="button-toggle width-button" v-if="this.toggle_exclusive" flat >
-                    <img class="img-flag" :src="flagINDO" style="padding: 0; text-align: center;" alt="">
+                    <img class="img-flag" :src="flagINDO" style="padding: 0; text-align: center; margin-left: -42px" alt="">
                     <v-icon small color="grey" >arrow_drop_down</v-icon>
                 </v-btn>
                 <v-list>
@@ -180,7 +180,7 @@
                     { title: 'App', location: '/' },
                     { title: 'Blog', location: '/blog' },
                     { title: 'About', location: '/about' },
-                    { title: 'Download', location: '/download' }
+                    // { title: 'Download', location: '/download' }
                 ],
                 right: null,
                 scroll: 0,

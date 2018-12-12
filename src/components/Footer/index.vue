@@ -9,12 +9,15 @@
                 class="color-card white--text text-xs-center"
                 width="100%"
         >
-            <v-card-text class="white--text pt-0 title-footer">
+            <v-card-text v-if="version==='indonesia'" class="white--text pt-0 title-footer">
                     Buka Pintu ke Dunia Kripto
             </v-card-text>
-            <a href="" id="playstore">
-                <img class="image-footer" :src="image" alt="">
-            </a>
+            <v-card-text v-if="version==='english'" class="white--text pt-0 title-footer">
+                    Enter the crypto world through Pintu
+            </v-card-text>
+            <!--<a href="" id="playstore">-->
+                <!--<img class="image-footer" :src="image" alt="">-->
+            <!--</a>-->
             <v-container fluid>
                 <v-layout row wrap>
                     <v-flex sm12 md9>
@@ -56,7 +59,13 @@
         message,
         playstore
     } from '../../config/images.js'
+    import {mapState} from 'vuex'
     export default {
+        computed: {
+            ...mapState([
+                'version'
+            ])
+        },
         mounted () {
             this.checkingSize()
         },

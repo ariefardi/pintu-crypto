@@ -53,8 +53,12 @@ import BlueCandi from '../assets/BlueCandi.png'
 import BlueCandiMobile from '../assets/BlueCandi_mobile.png'
 
 import video from '../assets/Comp 1.mp4'
+
+import video2 from '../assets/videopintu.webm'
+// import video3 from '../assets/videopintu.ogv'
 export {
     video,
+    video2,
     logoAja,
     playstore,
     phone,
