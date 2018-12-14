@@ -52,6 +52,7 @@ export default new Vuex.Store({
         fetchingBlogs ({commit}, payload) {
             DB.collection("blogs")
                 .where("published", "==", true)
+                .orderBy("publish_date", "desc")
                 .get()
                 .then(function(querySnapshot) {
                     let temp = []
