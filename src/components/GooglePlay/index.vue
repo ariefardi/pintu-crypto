@@ -9,14 +9,23 @@
                     {{title_indo}}
                 </v-card-title>
                 <v-container>
-                    <v-layout align-center justify-center column fill-height>
+                    <v-layout v-if="!saver" align-center justify-center column fill-height>
                         <!--<v-img class="phone-image image-web image-mobile" :src="image1+'?lazy'" />-->
-                        <video class="phone-image image-web image-mobile" style="background-color: transparent !important;" loop muted autoplay>
+                        <video  class="phone-image image-web image-mobile" style="background-color: transparent !important;" loop muted autoplay>
                             <source :src="video" type="video/mp4">
-                            <source :src="video2" type="video/webm">
                             <img :src="image1" alt="">
                             your browser not support video tag
                         </video>
+                        <!--<v-img class="phone-image google-play"  :src="image2+'?lazy'" />-->
+                    </v-layout>
+                    <v-layout v-if="saver" align-center justify-center column fill-height>
+                        <!--<v-img class="phone-image image-web image-mobile" :src="image1+'?lazy'" />-->
+                        <!--<video class="phone-image image-web image-mobile" style="background-color: transparent !important;" playsinline controls muted>-->
+                            <!--<source :src="video" type="video/mp4">-->
+                            <!--<img :src="image1" alt="">-->
+                            <!--your browser not support video tag-->
+                        <!--</video>-->
+                        <img class="phone-image image-web image-mobile" :src="image1" alt="">
                         <!--<v-img class="phone-image google-play"  :src="image2+'?lazy'" />-->
                     </v-layout>
                 </v-container>
@@ -26,23 +35,26 @@
 </template>
 
 <script>
-    import {playstore, phone, video, video2} from "../../config/images";
+    import {playstore, video, video2} from "../../config/images";
     import {mapState} from 'vuex'
     import {google_play} from '../../config/documentHome.json'
+    import feelesKecil from '../../assets/feeless kecil.png'
     export default {
         mounted () {
             this.checkingSize()
+            this.checkingDataSaver()
         },
         data () {
             return {
-                image1: phone,
+                image1: feelesKecil,
                 image2: playstore,
                 width: 2000,
                 height: 2000,
                 title_english: google_play.title_english,
                 title_indo: google_play.title_indo,
                 video,
-                video2
+                video2,
+                saver: null
 
             }
         },
@@ -52,6 +64,19 @@
             ])
         },
         methods: {
+            checkingDataSaver () {
+                if('connection' in navigator){
+                    if(navigator.connection.saveData){
+                        console.log(`Your save data mode is = ${navigator.connection.saveData}`)
+                        console.log('ini true', navigator.connection.saveData)
+                        this.saver = true
+                    }else{
+                        console.log(`Your save data mode is = ${navigator.connection.saveData}`)
+                        console.log('ini false', navigator.connection.saveData)
+                        this.saver = false
+                    }
+                }
+            },
             checkingSize () {
                 window.addEventListener('resize', (e) => {
                     this.width = e.target.innerWidth

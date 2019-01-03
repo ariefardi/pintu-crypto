@@ -142,9 +142,10 @@
     export default {
         created () {
             // this.checkPage()
-            this.checkVersionsStorage()
+
         },
         mounted () {
+            this.checkVersionsStorage()
             this.checkingSize()
             this.checkPage()
             // this.checkVersionsStorage()
@@ -154,7 +155,7 @@
         },
         computed: {
             ...mapState([
-                "page"
+                "page", "toggle_exclusive"
             ]),
             page : {
                 get () {
@@ -169,7 +170,7 @@
             return {
                 flagUSA: flagUSA,
                 flagINDO: flagINDO,
-                toggle_exclusive: 0,
+                // toggle_exclusive: 0,
                 downloadPosition: false,
                 logo : logoImage,
                 logoAja: logoAja ,
@@ -229,19 +230,9 @@
 
                 })
             },
-            checkVersionsStorage () {
-              let version = localStorage.getItem('version')
-              if (version==1) {
-                  this.toggle_exclusive = 1
-                  this.$store.dispatch('changeVersion', 1)
-              }
-              else {
-                  this.toggle_exclusive = 0
-                  this.$store.dispatch('changeVersion', 0)
-              }
-            },
+
             triggerToggle (e) {
-                this.toggle_exclusive = e
+                this.$store.commit('setToggle', e)
                 this.changeVersion(e)
             },
             toLocation (location) {

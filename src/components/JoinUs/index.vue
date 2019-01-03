@@ -17,6 +17,7 @@
 <script>
     import {mapState} from 'vuex'
     import {join_us} from '../../config/documentAbout.json'
+    import $ from 'jquery'
     export default {
         computed: {
             ...mapState([
@@ -32,13 +33,15 @@
         },
         methods: {
             scrollDown () {
-                console.log("image work")
-                window.scrollBy({
-                    top: 500, // could be negative value
-                    left: 0,
-                    behavior: 'smooth'
-                });
-                location.href = "#positions-job"
+                // console.log("image work")
+                // window.scrollBy({
+                //     top: 500, // could be negative value
+                //     left: 0,
+                //     behavior: 'smooth'
+                // });
+                    $('html, body').animate({
+                        scrollTop: $("#positions-job").offset().top
+                    }, 2000);
 
             }
         }

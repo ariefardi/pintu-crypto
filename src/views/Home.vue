@@ -56,10 +56,41 @@ import amanKecil from '../assets/aman kecil.png'
         }
     },
       methods: {
-
+        checkingRoute () {
+            // console.log(this.$route)
+            for (var key in this.$route.query) {
+                console.log(key)
+                if (key) {
+                    localStorage.setItem('ref', key)
+                }
+            }
+        },
+          checkVersionsStorage () {
+              let version = localStorage.getItem('version')
+              console.log('ini version', version)
+              console.log(this.$route)
+              if (this.$route.name==='en-home') {
+                  version = 0
+              }
+              else if (this.$route.name==='id-home') {
+                  version = 1
+              }
+              console.log('version', version)
+              if (version==1) {
+                  // this.toggle_exclusive = 1
+                  this.$store.commit('setToggle', 1)
+                  this.$store.dispatch('changeVersion', 1)
+              }
+              else {
+                  this.$store.commit('setToggle', 0)
+                  this.$store.dispatch('changeVersion', 0)
+              }
+          },
       },
       mounted () {
           this.$store.commit('setPage', this.$route.name)
+          this.checkVersionsStorage()
+          this.checkingRoute()
       }
   }
 </script>

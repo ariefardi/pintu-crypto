@@ -9,10 +9,14 @@ export default new Vuex.Store({
         page: "",
         version: "",
         blogs: [],
-        dialog: false
+        dialog: false,
+        toggle_exclusive: 0
 
     },
     mutations: {
+        setToggle (state, payload) {
+          state.toggle_exclusive = payload
+        },
         setDrawer (state, payload) {
             state.drawer = payload
         },
@@ -124,3 +128,4 @@ export default new Vuex.Store({
 //         expect(wrapper.exists()).to.be.true;
 //     });
 // })
+

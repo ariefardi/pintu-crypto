@@ -27,7 +27,6 @@
 </template>
 
 <script>
-    import moment from 'moment'
     export default {
         props: ['blogs'],
         data () {
@@ -37,8 +36,14 @@
         },
         filters : {
             getDate (value) {
-                let date = moment(value.seconds*1000).format("MMMM Do YYYY");
-                return date
+                const data = new Date(value.seconds*1000)
+                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                const indexMonth = data.getMonth()
+                let month = months[indexMonth]
+                let day = data.getDate()
+                let year = data.getFullYear()
+                console.log(day,month, year)
+                return `${day} ${month} ${year}`
             }
         }
     }

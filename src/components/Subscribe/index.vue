@@ -19,7 +19,8 @@
                         <v-flex style="margin-bottom: 2rem" xs12 md3>
                             <v-layout align-center justify-center row fill-height>
                                 <v-btn
-                                       class="white--text"
+                                        id="button-subs"
+                                       class="white--text button-subs-class"
                                        style="text-transform: capitalize; background-color: blue !important;border-radius: 5px !important;"
                                        @click="subs"
                                 >
@@ -120,11 +121,21 @@
         },
         methods: {
             subs () {
+                let ref = localStorage.getItem('ref')
+                let ref_link = 'web'
+                if (ref) {
+                    ref_link = ref
+                }
+                else {
+                    ref_link = 'web'
+                }
+
                   if (this.email && this.validateEmail(this.email)) {
                       let self = this
                       DB.collection('subscribers').add({
                           email: this.email,
-                          subscribe_date: new Date()
+                          subscribe_date: new Date(),
+                          ref_link
                       }).then(function(docRef) {
                               console.log("Document written with ID: ", docRef);
                                 self.email = ""
