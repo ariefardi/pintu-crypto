@@ -1,6 +1,6 @@
 <template>
   <v-app style="background-color: white !important;">
-    <Navbar id="navbar-tool" />
+    <Navbar v-if="page!=='thanks'" id="navbar-tool" />
     <router-view></router-view>
   </v-app>
 </template>
@@ -12,9 +12,16 @@
     components: {
         Navbar,
     },
+        computed: {
+        page: {
+            get () {
+                return this.$store.state.page
+            }
+        }
+        },
     data () {
       return {
-        //
+
       }
     }
   }

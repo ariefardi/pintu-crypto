@@ -145,7 +145,6 @@
 
         },
         mounted () {
-            this.checkVersionsStorage()
             this.checkingSize()
             this.checkPage()
             // this.checkVersionsStorage()
@@ -245,6 +244,7 @@
             },
             checkPage () {
                 this.page = this.$route.name
+                console.log(this.page)
             },
             checkingSize () {
                 window.addEventListener('resize', (e) => {

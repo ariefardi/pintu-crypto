@@ -139,7 +139,8 @@
                       }).then(function(docRef) {
                               console.log("Document written with ID: ", docRef);
                                 self.email = ""
-                                self.$store.commit('setDialog', true)
+                                // self.$store.commit('setDialog', true)
+                          self.$router.push('/thanks')
                           })
                           .catch(function(error) {
                               console.log("Error adding document: ", error);
