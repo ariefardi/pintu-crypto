@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container id="subscribe-page">
         <v-layout>
             <v-card flat width="100%">
                 <v-container class="container-card">
@@ -113,13 +113,33 @@
     import {DB, swal} from '../../config'
     import {mapState} from 'vuex'
     import {subscribe} from '../../config/documentHome.json'
+    import $ from 'jquery'
     export default {
+        mounted () {
+          this.toSubsScroll()
+        },
         computed: {
             ...mapState([
                 'version'
             ])
         },
         methods: {
+            toSubsScroll () {
+                // subscribe-page
+                console.log('in idari subs',this.$route.name)
+                if (this.$route.name==='subscribe') {
+                        $([document.documentElement, document.body]).animate({
+                            scrollTop: $("#subscribe-page").offset().top
+
+                        }, 0);
+
+                        $([document.documentElement, document.body]).animate({
+                            scrollTop: 500
+
+                        }, 100);
+
+                }
+            },
             subs () {
                 let ref = localStorage.getItem('ref')
                 let ref_link = 'web'
