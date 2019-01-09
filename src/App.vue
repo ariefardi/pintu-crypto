@@ -1,38 +1,29 @@
 <template>
-  <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-    </v-toolbar>
-
-    <v-content>
-      <HelloWorld/>
-    </v-content>
+  <v-app style="background-color: white !important;">
+    <Navbar v-if="page!=='thank'" id="navbar-tool" />
+    <router-view></router-view>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+    // const Navbar = import('./components/Navbar/Toolbar/index')
+    import Navbar from './components/Navbar/Toolbar/index'
+    export default {
+    name: 'App',
+    components: {
+        Navbar,
+    },
+        computed: {
+        page: {
+            get () {
+                return this.$store.state.page
+            }
+        }
+        },
+    data () {
+      return {
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  },
-  data () {
-    return {
-      //
+      }
     }
   }
-}
 </script>

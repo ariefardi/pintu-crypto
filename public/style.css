@@ -1,0 +1,209 @@
+    .title-header {
+        font-size: 56px;
+        padding: 4rem;
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
+        width: 70%;
+        margin: auto;
+        text-align: center;
+        color: #1D1D1D;
+    }
+    .max-width {
+        width: 100%;
+    }
+    .per-30-width {
+        width: 30% ;
+    }
+    .subtitle-header {
+        font-size: 44px;
+        font-weight: 500;
+    }
+    .subheader {
+        font-size: 28px;
+        font-weight: 500;
+    }
+    .page-wrapper {
+        padding: 0 !important;
+    }
+    .card-container {
+        text-align: center;
+    }
+    .phone-image {
+        padding-left: 0px;
+    }
+    .image-web {
+        width: 400px;
+        height: auto;
+    }
+    .google-play {
+        width: 202px;
+        height: auto;
+    }
+    .image-subs{
+        width: 78px;
+        height: auto;
+        margin-left: 1rem;
+        margin-bottom: -1rem;
+    }
+    .content-subscribe {
+        color: slategray;
+        font-size: 28px;
+        font-weight: 500;
+        padding-top: 0 !important;
+    }
+    .image-how {
+        width: 64px;
+        height: auto !important;
+        padding: 1rem;
+        margin-top: 12px !important;
+    }
+
+
+
+    .card-border {
+        border-radius: 20px;
+        margin-top: 2rem;
+    }
+
+    .card-how {
+        width: 400px;
+    }
+    .card-content {
+        font-size: 18px;
+        font-weight: 700 !important;
+        text-align: center;
+
+    }
+
+    .isi-blog {
+        font-size: 24px;
+        font-weight: 700;
+        color: slategrey;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .btn--blue {
+        text-transform: capitalize; background-color: blue !important;border-radius: 5px !important;
+    }
+
+    @media only screen and (max-width: 720px) {
+        .image-mobile {
+            width: 260px !important;
+            height: auto;
+        }
+        .title-header {
+            font-size: 28px !important;
+            padding-bottom: 0px !important;
+            padding-top: 0px !important;
+            width: 100% !important;
+            margin: auto;
+            font-weight: 500;
+            color: #1D1D1D;
+        }
+        .card-container {
+            text-align: center !important;
+        }
+        .subtitle-header {
+            font-size: 40px;
+        }
+        .subheader {
+            font-size: 14px !important;
+            font-weight: 500;
+        }
+        .content-subscribe {
+            font-size: 14px;
+            font-weight: 500;
+            padding-top: 0 !important;
+        }
+        .card-content {
+            font-size: 14px !important;
+            text-align: center;
+        }
+        .card-how {
+            width: 300px;
+        }
+        .image-how {
+            width: 64px;
+            height: auto !important;
+            padding: 1rem;
+            margin-top: 12px !important;
+        }
+        .isi-blog {
+            font-size: 14px !important;
+            padding: 0px;
+            padding-bottom: 0px !important;
+            padding-top: 0px !important;
+            width: 100% !important;
+            margin: auto;
+            font-weight: 500;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .card-how {
+            width: 300px;
+        }
+        .subheader {
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+    @media only screen and (max-width: 200px) {
+        .card-how {
+            width: 100%;
+        }
+
+    }
+
+    @font-face {
+        font-family: "MyWebFont";
+        src: url("/fonts/avenir/AvenirLTStd-Heavy.otf") format("opentype");
+        src: url("/fonts/avenir/AvenirLTStd-Heavy.ttf") format("truetype");
+        src: url("/fonts/avenir/AvenirLTStd-Heavy.woff") format("woff");
+        /*src: url("../src/assets/fonts/avenir/AvenirLTStd-Heavy.otf") format("opentype");*/
+        /*src: url("../src/assets/fonts/avenir/AvenirLTStd-Heavy.ttf") format("truetype");*/
+        /*src: url("../src/assets/fonts/avenir/AvenirLTStd-Heavy.woff") format("woff");*/
+    }
+    h1, h2, h3, h4, h5, p, html, body {
+        font-family: "MyWebFont" !important;
+    }
+    #app {
+        font-family: "MyWebFont" !important;
+    }
+
+    .v-btn--active:before, .v-btn:hover:before, .v-btn:focus:before {
+        background-color: transparent !important;
+    }
+
+    .color-grey {
+        color: slategray;
+    }
+    .color-white {
+        color: white;
+    }
+    .color-blue {
+        color: #1347C9;
+    }
+    .align-center {
+        text-align: center !important;
+    }
+    .align-left {
+        text-align: left !important;
+    }
+    .align-right {
+        text-align: right;
+    }
+
+    .no-padding {
+        padding: 0 !important;
+    }
+    .padding-16 {
+        padding: 16px;
+    }
+    .padding-24 {
+        padding: 24px;
+    }
+    .font-weight-heavy {
+        font-weight: bold ;
+    }
