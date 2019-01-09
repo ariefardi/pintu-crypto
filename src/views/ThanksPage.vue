@@ -26,7 +26,7 @@
 <script>
     export default {
         mounted () {
-            this.$store.commit('setPage', 'thanks')
+            this.$store.commit('setPage', 'thank')
         },
         methods: {
             toHome() {

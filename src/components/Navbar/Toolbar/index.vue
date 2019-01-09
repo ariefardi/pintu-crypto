@@ -201,9 +201,6 @@
             ...mapActions([
                 'changeVersion'
             ]),
-            checkButton() {
-              console.log('oke deh')
-            },
             toDownload () {
               $('html, body').animate({
                   scrollTop: $("#playstore").offset().top

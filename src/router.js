@@ -9,22 +9,22 @@ export default new Router({
       {
         path: '/',
         name: 'home',
-        component: () => import(/* webpackChunkName: "about" */ './views/Home.vue')
+        component: () => import(/* webpackChunkName: "Home" */ './views/Home.vue')
       },
         {
             path: '/id',
             name: 'id-home',
-            component: () => import(/* webpackChunkName: "about" */ './views/Home.vue')
+            component: () => import(/* webpackChunkName: "Home" */ './views/Home.vue')
         },
         {
             path: '/en',
             name: 'en-home',
-            component: () => import(/* webpackChunkName: "about" */ './views/Home.vue')
+            component: () => import(/* webpackChunkName: "Home" */ './views/Home.vue')
         },
         {
             path: '/subscribe',
             name: 'subscribe',
-            component: () => import(/* webpackChunkName: "about" */ './views/Home.vue')
+            component: () => import(/* webpackChunkName: "Home" */ './views/Home.vue')
         },
       {
         path: '/about',
@@ -40,8 +40,8 @@ export default new Router({
             component: () => import(/* webpackChunkName: "blog" */ './views/Blog.vue' )
         },
         {
-            path: '/thanks',
-            name: 'thanks',
+            path: '/thank',
+            name: 'thank',
             component: () => import(/* webpackChunkName: "blog" */ './views/ThanksPage.vue' )
         }
   ]

@@ -12,6 +12,13 @@
 
 
 <script>
+  // const AboutHeroImage = () => import(/* webpackChunkName: "AboutHeroImage" */ '../components/AboutHeroImage')
+  // const JoinUs = () => import(/* webpackChunkName: "JoinUs" */ '../components/JoinUs')
+  // const OurName = () => import(/* webpackChunkName: "OurName" */ '../components/OurName')
+  // const OurValues = () => import(/* webpackChunkName: "OurValues" */ '../components/OurValues')
+  // const OurWorkplace = () => import(/* webpackChunkName: "OurWorkplace" */ '../components/OurWorkplace')
+  // const OpenPositions = () => import(/* webpackChunkName: "OpenPositions" */ '../components/OpenPositions')
+  // const Footer = () => import(/* webpackChunkName: "Footer" */ '../components/Footer')
   import AboutHeroImage from '../components/AboutHeroImage'
   import JoinUs from '../components/JoinUs'
   import OurName from '../components/OurName'
