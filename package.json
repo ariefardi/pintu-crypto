@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "vue-cli-service serve",
+    "dev2": "webpack --mode=development --progress --config build/webpack.config.js 'build/webpack.config.js'",
     "build": "vue-cli-service build",
     "modern": "vue-cli-service build --modern",
     "lint": "vue-cli-service lint",
@@ -35,6 +36,7 @@
     "stylus-loader": "^3.0.1",
     "vue-cli-plugin-vuetify": "^0.4.6",
     "vue-template-compiler": "^2.5.17",
-    "vuetify-loader": "^1.0.5"
+    "vuetify-loader": "^1.0.5",
+    "webpack-cli": "^3.2.1"
   }
 }

@@ -44,7 +44,9 @@ import edukasiKecil from '../assets/edukasi kecil.png'
 import feelesKecil from '../assets/feeless kecil.png'
 import stabilKecil from '../assets/stabil kecil.png'
 import amanKecil from '../assets/aman kecil.png'
-import $ from 'jquery'
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;
 
   export default {
     // components: {

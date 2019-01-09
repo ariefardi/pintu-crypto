@@ -44,6 +44,9 @@
                     }, 2000);
 
             }
+        },
+        mounted () {
+            console.log('this is from', this.title_indo)
         }
     }
 </script>

@@ -30,8 +30,32 @@
       components: {
           AboutHeroImage, JoinUs, OurName, OurValues, OurWorkplace, OpenPositions, Footer
       },
+      methods: {
+          checkVersionsStorage () {
+              let version = localStorage.getItem('version')
+              console.log('ini version', version)
+              console.log(this.$route)
+              if (this.$route.name==='en-home') {
+                  version = 0
+              }
+              else if (this.$route.name==='id-home') {
+                  version = 1
+              }
+              console.log('version', version)
+              if (version==1) {
+                  // this.toggle_exclusive = 1
+                  this.$store.commit('setToggle', 1)
+                  this.$store.dispatch('changeVersion', 1)
+              }
+              else {
+                  this.$store.commit('setToggle', 0)
+                  this.$store.dispatch('changeVersion', 0)
+              }
+          },
+      },
       mounted () {
           this.$store.commit('setPage', this.$route.name)
+          this.checkVersionsStorage()
       }
 
   }
